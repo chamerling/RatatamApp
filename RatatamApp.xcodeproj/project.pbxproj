@@ -1,0 +1,307 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C96A281114F507570081DF05 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C96A281014F507570081DF05 /* Cocoa.framework */; };
+		C96A281B14F507570081DF05 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C96A281914F507570081DF05 /* InfoPlist.strings */; };
+		C96A281D14F507570081DF05 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C96A281C14F507570081DF05 /* main.m */; };
+		C96A282114F507570081DF05 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = C96A281F14F507570081DF05 /* Credits.rtf */; };
+		C96A282414F507570081DF05 /* RatatamAppAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C96A282314F507570081DF05 /* RatatamAppAppDelegate.m */; };
+		C96A282714F507570081DF05 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = C96A282514F507570081DF05 /* MainMenu.xib */; };
+		C96A282A14F507570081DF05 /* RatatamApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C96A282814F507570081DF05 /* RatatamApp.xcdatamodeld */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		C96A280C14F507570081DF05 /* RatatamApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RatatamApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C96A281014F507570081DF05 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		C96A281314F507570081DF05 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		C96A281414F507570081DF05 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		C96A281514F507570081DF05 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		C96A281814F507570081DF05 /* RatatamApp-Info.plist */ = {isa = PBXFileReference; path = "RatatamApp-Info.plist"; sourceTree = "<group>"; };
+		C96A281A14F507570081DF05 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C96A281C14F507570081DF05 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C96A281E14F507570081DF05 /* RatatamApp-Prefix.pch */ = {isa = PBXFileReference; path = "RatatamApp-Prefix.pch"; sourceTree = "<group>"; };
+		C96A282014F507570081DF05 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		C96A282214F507570081DF05 /* RatatamAppAppDelegate.h */ = {isa = PBXFileReference; path = RatatamAppAppDelegate.h; sourceTree = "<group>"; };
+		C96A282314F507570081DF05 /* RatatamAppAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RatatamAppAppDelegate.m; sourceTree = "<group>"; };
+		C96A282614F507570081DF05 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		C96A282914F507570081DF05 /* RatatamApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RatatamApp.xcdatamodel; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C96A280914F507570081DF05 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C96A281114F507570081DF05 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C96A280114F507560081DF05 = {
+			isa = PBXGroup;
+			children = (
+				C96A281614F507570081DF05 /* RatatamApp */,
+				C96A280F14F507570081DF05 /* Frameworks */,
+				C96A280D14F507570081DF05 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C96A280D14F507570081DF05 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C96A280C14F507570081DF05 /* RatatamApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C96A280F14F507570081DF05 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C96A281014F507570081DF05 /* Cocoa.framework */,
+				C96A281214F507570081DF05 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C96A281214F507570081DF05 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C96A281314F507570081DF05 /* AppKit.framework */,
+				C96A281414F507570081DF05 /* CoreData.framework */,
+				C96A281514F507570081DF05 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		C96A281614F507570081DF05 /* RatatamApp */ = {
+			isa = PBXGroup;
+			children = (
+				C96A282214F507570081DF05 /* RatatamAppAppDelegate.h */,
+				C96A282314F507570081DF05 /* RatatamAppAppDelegate.m */,
+				C96A282514F507570081DF05 /* MainMenu.xib */,
+				C96A282814F507570081DF05 /* RatatamApp.xcdatamodeld */,
+				C96A281714F507570081DF05 /* Supporting Files */,
+			);
+			path = RatatamApp;
+			sourceTree = "<group>";
+		};
+		C96A281714F507570081DF05 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C96A281814F507570081DF05 /* RatatamApp-Info.plist */,
+				C96A281914F507570081DF05 /* InfoPlist.strings */,
+				C96A281C14F507570081DF05 /* main.m */,
+				C96A281E14F507570081DF05 /* RatatamApp-Prefix.pch */,
+				C96A281F14F507570081DF05 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C96A280B14F507570081DF05 /* RatatamApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C96A282D14F507570081DF05 /* Build configuration list for PBXNativeTarget "RatatamApp" */;
+			buildPhases = (
+				C96A280814F507570081DF05 /* Sources */,
+				C96A280914F507570081DF05 /* Frameworks */,
+				C96A280A14F507570081DF05 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RatatamApp;
+			productName = RatatamApp;
+			productReference = C96A280C14F507570081DF05 /* RatatamApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C96A280314F507560081DF05 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = C96A280614F507560081DF05 /* Build configuration list for PBXProject "RatatamApp" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = C96A280114F507560081DF05;
+			productRefGroup = C96A280D14F507570081DF05 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C96A280B14F507570081DF05 /* RatatamApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C96A280A14F507570081DF05 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C96A281B14F507570081DF05 /* InfoPlist.strings in Resources */,
+				C96A282114F507570081DF05 /* Credits.rtf in Resources */,
+				C96A282714F507570081DF05 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C96A280814F507570081DF05 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C96A281D14F507570081DF05 /* main.m in Sources */,
+				C96A282414F507570081DF05 /* RatatamAppAppDelegate.m in Sources */,
+				C96A282A14F507570081DF05 /* RatatamApp.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		C96A281914F507570081DF05 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C96A281A14F507570081DF05 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		C96A281F14F507570081DF05 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C96A282014F507570081DF05 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		C96A282514F507570081DF05 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C96A282614F507570081DF05 /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C96A282B14F507570081DF05 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		C96A282C14F507570081DF05 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		C96A282E14F507570081DF05 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RatatamApp/RatatamApp-Prefix.pch";
+				INFOPLIST_FILE = "RatatamApp/RatatamApp-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		C96A282F14F507570081DF05 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RatatamApp/RatatamApp-Prefix.pch";
+				INFOPLIST_FILE = "RatatamApp/RatatamApp-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C96A280614F507560081DF05 /* Build configuration list for PBXProject "RatatamApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C96A282B14F507570081DF05 /* Debug */,
+				C96A282C14F507570081DF05 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C96A282D14F507570081DF05 /* Build configuration list for PBXNativeTarget "RatatamApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C96A282E14F507570081DF05 /* Debug */,
+				C96A282F14F507570081DF05 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C96A282814F507570081DF05 /* RatatamApp.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C96A282914F507570081DF05 /* RatatamApp.xcdatamodel */,
+			);
+			currentVersion = C96A282914F507570081DF05 /* RatatamApp.xcdatamodel */;
+			path = RatatamApp.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = C96A280314F507560081DF05 /* Project object */;
+}
