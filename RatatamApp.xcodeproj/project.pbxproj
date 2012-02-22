@@ -22,12 +22,12 @@
 		C96A281314F507570081DF05 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		C96A281414F507570081DF05 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		C96A281514F507570081DF05 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		C96A281814F507570081DF05 /* RatatamApp-Info.plist */ = {isa = PBXFileReference; path = "RatatamApp-Info.plist"; sourceTree = "<group>"; };
+		C96A281814F507570081DF05 /* RatatamApp-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RatatamApp-Info.plist"; sourceTree = "<group>"; };
 		C96A281A14F507570081DF05 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C96A281C14F507570081DF05 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		C96A281E14F507570081DF05 /* RatatamApp-Prefix.pch */ = {isa = PBXFileReference; path = "RatatamApp-Prefix.pch"; sourceTree = "<group>"; };
+		C96A281E14F507570081DF05 /* RatatamApp-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RatatamApp-Prefix.pch"; sourceTree = "<group>"; };
 		C96A282014F507570081DF05 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
-		C96A282214F507570081DF05 /* RatatamAppAppDelegate.h */ = {isa = PBXFileReference; path = RatatamAppAppDelegate.h; sourceTree = "<group>"; };
+		C96A282214F507570081DF05 /* RatatamAppAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RatatamAppAppDelegate.h; sourceTree = "<group>"; };
 		C96A282314F507570081DF05 /* RatatamAppAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RatatamAppAppDelegate.m; sourceTree = "<group>"; };
 		C96A282614F507570081DF05 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		C96A282914F507570081DF05 /* RatatamApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RatatamApp.xcdatamodel; sourceTree = "<group>"; };
