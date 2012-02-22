@@ -15,9 +15,31 @@
     self = [super init];
     if (self) {
         // Initialization code here.
+        client = [[InstagramClient alloc] init];
+        
     }
     
     return self;
+}
+
+- (void) pause {
+    
+}
+
+- (void) resume {
+    
+}
+
+- (void) start {
+    
+    // get data
+    
+    // save last for future cache
+    
+    // compare with last
+    
+    // send notifications
+    
 }
 
 @end

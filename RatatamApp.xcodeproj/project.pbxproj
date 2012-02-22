@@ -14,7 +14,41 @@
 		C96A282414F507570081DF05 /* RatatamAppAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C96A282314F507570081DF05 /* RatatamAppAppDelegate.m */; };
 		C96A282714F507570081DF05 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = C96A282514F507570081DF05 /* MainMenu.xib */; };
 		C96A282A14F507570081DF05 /* RatatamApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C96A282814F507570081DF05 /* RatatamApp.xcdatamodeld */; };
+		C96A283B14F508E30081DF05 /* MASPreferencesWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = C96A283714F508E30081DF05 /* MASPreferencesWindow.xib */; };
+		C96A283C14F508E30081DF05 /* MASPreferencesWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = C96A283A14F508E30081DF05 /* MASPreferencesWindowController.m */; };
+		C96A284314F508EE0081DF05 /* XMLReader.m in Sources */ = {isa = PBXBuildFile; fileRef = C96A283E14F508EE0081DF05 /* XMLReader.m */; };
+		C96A284414F508EE0081DF05 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = C96A284014F508EE0081DF05 /* NSData+Base64.m */; };
+		C96A284514F508EE0081DF05 /* NSWorkspaceHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C96A284214F508EE0081DF05 /* NSWorkspaceHelper.m */; };
+		C96A285814F508F80081DF05 /* ASIDataCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = C96A284814F508F80081DF05 /* ASIDataCompressor.m */; };
+		C96A285914F508F80081DF05 /* ASIDataDecompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = C96A284A14F508F80081DF05 /* ASIDataDecompressor.m */; };
+		C96A285A14F508F80081DF05 /* ASIDownloadCache.m in Sources */ = {isa = PBXBuildFile; fileRef = C96A284C14F508F80081DF05 /* ASIDownloadCache.m */; };
+		C96A285B14F508F80081DF05 /* ASIFormDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C96A284E14F508F80081DF05 /* ASIFormDataRequest.m */; };
+		C96A285C14F508F80081DF05 /* ASIHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C96A285014F508F80081DF05 /* ASIHTTPRequest.m */; };
+		C96A285D14F508F80081DF05 /* ASIInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = C96A285414F508F80081DF05 /* ASIInputStream.m */; };
+		C96A285E14F508F80081DF05 /* ASINetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = C96A285614F508F80081DF05 /* ASINetworkQueue.m */; };
+		C96A286014F509150081DF05 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C96A285F14F509150081DF05 /* SystemConfiguration.framework */; };
+		C96A286214F5091E0081DF05 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C96A286114F5091E0081DF05 /* Security.framework */; };
+		C96A286414F5092B0081DF05 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C96A286314F5092B0081DF05 /* libz.dylib */; };
+		C96A286714F509BA0081DF05 /* InstagramClient.m in Sources */ = {isa = PBXBuildFile; fileRef = C96A286614F509BA0081DF05 /* InstagramClient.m */; };
+		C9FCEEB914F50BAA00DA3B7E /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FCEEB814F50BAA00DA3B7E /* JSONKit.m */; };
+		C9FCEEC014F5107900DA3B7E /* InstagramFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FCEEBF14F5107900DA3B7E /* InstagramFetcher.m */; };
+		C9FCEEC214F51BAB00DA3B7E /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9FCEEC114F51BAB00DA3B7E /* Growl.framework */; };
+		C9FCEEC414F51BED00DA3B7E /* Growl.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = C9FCEEC114F51BAB00DA3B7E /* Growl.framework */; };
+		C9FCEEC714F51C2B00DA3B7E /* NotificationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FCEEC614F51C2B00DA3B7E /* NotificationManager.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C9FCEEC314F51BD500DA3B7E /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				C9FCEEC414F51BED00DA3B7E /* Growl.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		C96A280C14F507570081DF05 /* RatatamApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RatatamApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -31,6 +65,46 @@
 		C96A282314F507570081DF05 /* RatatamAppAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RatatamAppAppDelegate.m; sourceTree = "<group>"; };
 		C96A282614F507570081DF05 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		C96A282914F507570081DF05 /* RatatamApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RatatamApp.xcdatamodel; sourceTree = "<group>"; };
+		C96A283714F508E30081DF05 /* MASPreferencesWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MASPreferencesWindow.xib; sourceTree = "<group>"; };
+		C96A283814F508E30081DF05 /* MASPreferencesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASPreferencesViewController.h; sourceTree = "<group>"; };
+		C96A283914F508E30081DF05 /* MASPreferencesWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASPreferencesWindowController.h; sourceTree = "<group>"; };
+		C96A283A14F508E30081DF05 /* MASPreferencesWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASPreferencesWindowController.m; sourceTree = "<group>"; };
+		C96A283D14F508EE0081DF05 /* XMLReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLReader.h; sourceTree = "<group>"; };
+		C96A283E14F508EE0081DF05 /* XMLReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLReader.m; sourceTree = "<group>"; };
+		C96A283F14F508EE0081DF05 /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
+		C96A284014F508EE0081DF05 /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
+		C96A284114F508EE0081DF05 /* NSWorkspaceHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSWorkspaceHelper.h; sourceTree = "<group>"; };
+		C96A284214F508EE0081DF05 /* NSWorkspaceHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSWorkspaceHelper.m; sourceTree = "<group>"; };
+		C96A284614F508F80081DF05 /* ASICacheDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASICacheDelegate.h; sourceTree = "<group>"; };
+		C96A284714F508F80081DF05 /* ASIDataCompressor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIDataCompressor.h; sourceTree = "<group>"; };
+		C96A284814F508F80081DF05 /* ASIDataCompressor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIDataCompressor.m; sourceTree = "<group>"; };
+		C96A284914F508F80081DF05 /* ASIDataDecompressor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIDataDecompressor.h; sourceTree = "<group>"; };
+		C96A284A14F508F80081DF05 /* ASIDataDecompressor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIDataDecompressor.m; sourceTree = "<group>"; };
+		C96A284B14F508F80081DF05 /* ASIDownloadCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIDownloadCache.h; sourceTree = "<group>"; };
+		C96A284C14F508F80081DF05 /* ASIDownloadCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIDownloadCache.m; sourceTree = "<group>"; };
+		C96A284D14F508F80081DF05 /* ASIFormDataRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIFormDataRequest.h; sourceTree = "<group>"; };
+		C96A284E14F508F80081DF05 /* ASIFormDataRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIFormDataRequest.m; sourceTree = "<group>"; };
+		C96A284F14F508F80081DF05 /* ASIHTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIHTTPRequest.h; sourceTree = "<group>"; };
+		C96A285014F508F80081DF05 /* ASIHTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIHTTPRequest.m; sourceTree = "<group>"; };
+		C96A285114F508F80081DF05 /* ASIHTTPRequestConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIHTTPRequestConfig.h; sourceTree = "<group>"; };
+		C96A285214F508F80081DF05 /* ASIHTTPRequestDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIHTTPRequestDelegate.h; sourceTree = "<group>"; };
+		C96A285314F508F80081DF05 /* ASIInputStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIInputStream.h; sourceTree = "<group>"; };
+		C96A285414F508F80081DF05 /* ASIInputStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIInputStream.m; sourceTree = "<group>"; };
+		C96A285514F508F80081DF05 /* ASINetworkQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASINetworkQueue.h; sourceTree = "<group>"; };
+		C96A285614F508F80081DF05 /* ASINetworkQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASINetworkQueue.m; sourceTree = "<group>"; };
+		C96A285714F508F80081DF05 /* ASIProgressDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIProgressDelegate.h; sourceTree = "<group>"; };
+		C96A285F14F509150081DF05 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		C96A286114F5091E0081DF05 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		C96A286314F5092B0081DF05 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		C96A286514F509BA0081DF05 /* InstagramClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstagramClient.h; sourceTree = "<group>"; };
+		C96A286614F509BA0081DF05 /* InstagramClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstagramClient.m; sourceTree = "<group>"; };
+		C9FCEEB714F50BAA00DA3B7E /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
+		C9FCEEB814F50BAA00DA3B7E /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
+		C9FCEEBE14F5107900DA3B7E /* InstagramFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstagramFetcher.h; sourceTree = "<group>"; };
+		C9FCEEBF14F5107900DA3B7E /* InstagramFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstagramFetcher.m; sourceTree = "<group>"; };
+		C9FCEEC114F51BAB00DA3B7E /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Growl.framework; sourceTree = "<group>"; };
+		C9FCEEC514F51C2B00DA3B7E /* NotificationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationManager.h; sourceTree = "<group>"; };
+		C9FCEEC614F51C2B00DA3B7E /* NotificationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,7 +112,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C96A286414F5092B0081DF05 /* libz.dylib in Frameworks */,
+				C96A286214F5091E0081DF05 /* Security.framework in Frameworks */,
+				C96A286014F509150081DF05 /* SystemConfiguration.framework in Frameworks */,
 				C96A281114F507570081DF05 /* Cocoa.framework in Frameworks */,
+				C9FCEEC214F51BAB00DA3B7E /* Growl.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +143,10 @@
 		C96A280F14F507570081DF05 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C9FCEEC114F51BAB00DA3B7E /* Growl.framework */,
+				C96A286314F5092B0081DF05 /* libz.dylib */,
+				C96A286114F5091E0081DF05 /* Security.framework */,
+				C96A285F14F509150081DF05 /* SystemConfiguration.framework */,
 				C96A281014F507570081DF05 /* Cocoa.framework */,
 				C96A281214F507570081DF05 /* Other Frameworks */,
 			);
@@ -84,11 +166,18 @@
 		C96A281614F507570081DF05 /* RatatamApp */ = {
 			isa = PBXGroup;
 			children = (
+				C96A283014F508A20081DF05 /* Dependencies */,
 				C96A282214F507570081DF05 /* RatatamAppAppDelegate.h */,
 				C96A282314F507570081DF05 /* RatatamAppAppDelegate.m */,
 				C96A282514F507570081DF05 /* MainMenu.xib */,
 				C96A282814F507570081DF05 /* RatatamApp.xcdatamodeld */,
 				C96A281714F507570081DF05 /* Supporting Files */,
+				C96A286514F509BA0081DF05 /* InstagramClient.h */,
+				C96A286614F509BA0081DF05 /* InstagramClient.m */,
+				C9FCEEBE14F5107900DA3B7E /* InstagramFetcher.h */,
+				C9FCEEBF14F5107900DA3B7E /* InstagramFetcher.m */,
+				C9FCEEC514F51C2B00DA3B7E /* NotificationManager.h */,
+				C9FCEEC614F51C2B00DA3B7E /* NotificationManager.m */,
 			);
 			path = RatatamApp;
 			sourceTree = "<group>";
@@ -105,6 +194,67 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		C96A283014F508A20081DF05 /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				C9FCEEB514F50B9A00DA3B7E /* JSONKit */,
+				C96A283D14F508EE0081DF05 /* XMLReader.h */,
+				C96A283E14F508EE0081DF05 /* XMLReader.m */,
+				C96A283F14F508EE0081DF05 /* NSData+Base64.h */,
+				C96A284014F508EE0081DF05 /* NSData+Base64.m */,
+				C96A284114F508EE0081DF05 /* NSWorkspaceHelper.h */,
+				C96A284214F508EE0081DF05 /* NSWorkspaceHelper.m */,
+				C96A283614F508D10081DF05 /* MASPreferences */,
+				C96A283514F508C80081DF05 /* ASIHTTP */,
+			);
+			name = Dependencies;
+			sourceTree = "<group>";
+		};
+		C96A283514F508C80081DF05 /* ASIHTTP */ = {
+			isa = PBXGroup;
+			children = (
+				C96A284614F508F80081DF05 /* ASICacheDelegate.h */,
+				C96A284714F508F80081DF05 /* ASIDataCompressor.h */,
+				C96A284814F508F80081DF05 /* ASIDataCompressor.m */,
+				C96A284914F508F80081DF05 /* ASIDataDecompressor.h */,
+				C96A284A14F508F80081DF05 /* ASIDataDecompressor.m */,
+				C96A284B14F508F80081DF05 /* ASIDownloadCache.h */,
+				C96A284C14F508F80081DF05 /* ASIDownloadCache.m */,
+				C96A284D14F508F80081DF05 /* ASIFormDataRequest.h */,
+				C96A284E14F508F80081DF05 /* ASIFormDataRequest.m */,
+				C96A284F14F508F80081DF05 /* ASIHTTPRequest.h */,
+				C96A285014F508F80081DF05 /* ASIHTTPRequest.m */,
+				C96A285114F508F80081DF05 /* ASIHTTPRequestConfig.h */,
+				C96A285214F508F80081DF05 /* ASIHTTPRequestDelegate.h */,
+				C96A285314F508F80081DF05 /* ASIInputStream.h */,
+				C96A285414F508F80081DF05 /* ASIInputStream.m */,
+				C96A285514F508F80081DF05 /* ASINetworkQueue.h */,
+				C96A285614F508F80081DF05 /* ASINetworkQueue.m */,
+				C96A285714F508F80081DF05 /* ASIProgressDelegate.h */,
+			);
+			name = ASIHTTP;
+			sourceTree = "<group>";
+		};
+		C96A283614F508D10081DF05 /* MASPreferences */ = {
+			isa = PBXGroup;
+			children = (
+				C96A283714F508E30081DF05 /* MASPreferencesWindow.xib */,
+				C96A283814F508E30081DF05 /* MASPreferencesViewController.h */,
+				C96A283914F508E30081DF05 /* MASPreferencesWindowController.h */,
+				C96A283A14F508E30081DF05 /* MASPreferencesWindowController.m */,
+			);
+			name = MASPreferences;
+			sourceTree = "<group>";
+		};
+		C9FCEEB514F50B9A00DA3B7E /* JSONKit */ = {
+			isa = PBXGroup;
+			children = (
+				C9FCEEB714F50BAA00DA3B7E /* JSONKit.h */,
+				C9FCEEB814F50BAA00DA3B7E /* JSONKit.m */,
+			);
+			name = JSONKit;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -115,6 +265,7 @@
 				C96A280814F507570081DF05 /* Sources */,
 				C96A280914F507570081DF05 /* Frameworks */,
 				C96A280A14F507570081DF05 /* Resources */,
+				C9FCEEC314F51BD500DA3B7E /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -155,6 +306,7 @@
 				C96A281B14F507570081DF05 /* InfoPlist.strings in Resources */,
 				C96A282114F507570081DF05 /* Credits.rtf in Resources */,
 				C96A282714F507570081DF05 /* MainMenu.xib in Resources */,
+				C96A283B14F508E30081DF05 /* MASPreferencesWindow.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,6 +320,21 @@
 				C96A281D14F507570081DF05 /* main.m in Sources */,
 				C96A282414F507570081DF05 /* RatatamAppAppDelegate.m in Sources */,
 				C96A282A14F507570081DF05 /* RatatamApp.xcdatamodeld in Sources */,
+				C96A283C14F508E30081DF05 /* MASPreferencesWindowController.m in Sources */,
+				C96A284314F508EE0081DF05 /* XMLReader.m in Sources */,
+				C96A284414F508EE0081DF05 /* NSData+Base64.m in Sources */,
+				C96A284514F508EE0081DF05 /* NSWorkspaceHelper.m in Sources */,
+				C96A285814F508F80081DF05 /* ASIDataCompressor.m in Sources */,
+				C96A285914F508F80081DF05 /* ASIDataDecompressor.m in Sources */,
+				C96A285A14F508F80081DF05 /* ASIDownloadCache.m in Sources */,
+				C96A285B14F508F80081DF05 /* ASIFormDataRequest.m in Sources */,
+				C96A285C14F508F80081DF05 /* ASIHTTPRequest.m in Sources */,
+				C96A285D14F508F80081DF05 /* ASIInputStream.m in Sources */,
+				C96A285E14F508F80081DF05 /* ASINetworkQueue.m in Sources */,
+				C96A286714F509BA0081DF05 /* InstagramClient.m in Sources */,
+				C9FCEEB914F50BAA00DA3B7E /* JSONKit.m in Sources */,
+				C9FCEEC014F5107900DA3B7E /* InstagramFetcher.m in Sources */,
+				C9FCEEC714F51C2B00DA3B7E /* NotificationManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,6 +416,10 @@
 		C96A282E14F507570081DF05 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RatatamApp/RatatamApp-Prefix.pch";
 				INFOPLIST_FILE = "RatatamApp/RatatamApp-Info.plist";
@@ -260,6 +431,10 @@
 		C96A282F14F507570081DF05 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RatatamApp/RatatamApp-Prefix.pch";
 				INFOPLIST_FILE = "RatatamApp/RatatamApp-Info.plist";
@@ -287,6 +462,7 @@
 				C96A282F14F507570081DF05 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

@@ -7,7 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <Growl/GrowlApplicationBridge.h>
 
-@interface NotificationManager : NSObject
+@interface NotificationManager : NSObject<GrowlApplicationBridgeDelegate>
+
+- (void) notifyNewImage:(NSDictionary *)dictionary;
 
 @end

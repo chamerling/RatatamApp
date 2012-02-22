@@ -7,7 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "InstagramClient.h"
 
 @interface InstagramFetcher : NSObject
+{
+    NSDictionary *latest;
+    InstagramClient *client;    
+}
+
+- (void) pause;
+- (void) resume;
+- (void) start;
 
 @end

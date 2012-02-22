@@ -7,6 +7,8 @@
 //
 
 #import "RatatamAppAppDelegate.h"
+#import "InstagramClient.h"
+#import "NotificationManager.h"
 
 @implementation RatatamAppAppDelegate
 
@@ -14,7 +16,20 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
+    NotificationManager *manager = [[NotificationManager alloc] init];
+    
     // Insert code here to initialize your application
+    InstagramClient *client = [[InstagramClient alloc] init];
+    
+    NSLog(@"%@", [client getSelfUser:@""]);
+    
+    NSDictionary *result = [client getPhotosForUser:@"" nb:3];
+    NSDictionary *data = [result valueForKey:@"data"];
+    for (NSDictionary *photo in data) {
+        NSLog(@"[%@] Created by %@ at %@", [photo valueForKey:@"id"], [[photo valueForKey:@"user"] valueForKey:@"username"], [photo valueForKey:@"created_time"]);
+        [manager notifyNewImage:photo];
+    }
+    
 }
 
 /**
