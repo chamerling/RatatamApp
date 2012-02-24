@@ -13,7 +13,13 @@
 
 - (NSDictionary*) getSelfUser:(NSString*) token;
 - (NSDictionary*) getPhotosForUser:(NSString*) token nb:(int)size;
+- (NSDictionary*) getPhotosForUser:(NSString*) token since:(NSString*)lastId;
 - (NSDictionary*) getCommentsForUser:(NSString*) token nb:(int)size;
 - (NSDictionary*) getLikesForUser:(NSString*) token nb:(int)size;
+
+- (void) likePhoto:(NSString*) token photoId:(NSString*)photo;
+- (void) disLikePhoto:(NSString*) token photoId:(NSString*)photo;
+
+- (void) commentPhoto:(NSString*) token photoId:(NSString*)photo commnent:(NSString*) comment;
 
 @end

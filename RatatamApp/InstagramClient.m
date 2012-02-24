@@ -33,14 +33,26 @@
 }
 
 - (NSDictionary*) getPhotosForUser:(NSString*) token nb:(int)size {
-    NSString *url = [NSString stringWithFormat:@"https://api.instagram.com/v1/users/self/feed?count=%ld&access_token=714184.f59def8.cd491d15143d4f349095b2e960538e8a", size];
+    NSString *tk = @"714184.f59def8.cd491d15143d4f349095b2e960538e8a";
+    NSString *url = [NSString stringWithFormat:@"https://api.instagram.com/v1/users/self/feed?count=%ld&access_token=%@", size, tk];
     ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:url]];
     [request setDelegate:self];
     [request startSynchronous];
     
     NSDictionary* dict = [[request responseString] objectFromJSONString];
     return dict;
+}
 
+- (NSDictionary*) getPhotosForUser:(NSString*) token since:(NSString*)lastId {
+    NSString *tk = @"714184.f59def8.cd491d15143d4f349095b2e960538e8a";
+
+    NSString *url = [NSString stringWithFormat:@"https://api.instagram.com/v1/users/self/feed?min_id=%@&access_token=%@", lastId, tk];
+    ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:url]];
+    [request setDelegate:self];
+    [request startSynchronous];
+    
+    NSDictionary* dict = [[request responseString] objectFromJSONString];
+    return dict;
 }
 
 - (NSDictionary*) getCommentsForUser:(NSString*) token nb:(int)size {
@@ -49,6 +61,35 @@
 
 - (NSDictionary*) getLikesForUser:(NSString*) token nb:(int)size {
     return nil;
+}
+
+- (void) likePhoto:(NSString*) token photoId:(NSString*)photo {
+    // /media/{media-id}/likes/
+    NSString *url = [NSString stringWithFormat:@"https://api.instagram.com/v1/media/%@/likes/&access_token=714184.f59def8.cd491d15143d4f349095b2e960538e8a", photo];
+    ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:url]];
+    [request setRequestMethod:@"POST"];
+    [request setDelegate:self];
+    [request startSynchronous];
+    
+    NSDictionary* dict = [[request responseString] objectFromJSONString];
+    NSLog(@"%@", dict);
+}
+
+- (void) disLikePhoto:(NSString*) token photoId:(NSString*)photo {
+    // /media/{media-id}/likes/
+    // /media/{media-id}/likes/
+    NSString *url = [NSString stringWithFormat:@"https://api.instagram.com/v1/media/%@/likes/&access_token=714184.f59def8.cd491d15143d4f349095b2e960538e8a", photo];
+    ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:url]];
+    [request setRequestMethod:@"DELETE"];
+    [request setDelegate:self];
+    [request startSynchronous];
+    
+    NSDictionary* dict = [[request responseString] objectFromJSONString];
+    NSLog(@"%@", dict);
+}
+
+- (void) commentPhoto:(NSString*) token photoId:(NSString*)photo commnent:(NSString*) commennt {
+    
 }
 
 @end

@@ -22,8 +22,6 @@
 }
 
 - (void) notifyNewImage:(NSDictionary *)dictionary {
-    //NSImage *image = [[[NSImage alloc] initWithContentsOfURL:[[NSBundle mainBundle] URLForImageResource:growllogo]] autorelease];
-    
     NSString *url = [[[dictionary valueForKey:@"images"] valueForKey:@"thumbnail"]valueForKey:@"url"];
     
     NSImage *image = [[NSImage alloc] initWithContentsOfURL:[NSURL URLWithString:url]];
