@@ -22,6 +22,8 @@
     
     //photos = [client getPhotosForUser:nil nb:15];
     //NSLog(@"%@");
+    [window setBackgroundColor:[NSColor colorWithPatternImage:[NSImage imageNamed:@"background"]]];
+    
         
     InstagramFetcher *fetch = [[InstagramFetcher alloc] init];
     if (fetch && ratatamController) {

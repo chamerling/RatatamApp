@@ -33,6 +33,7 @@
 		C9DFA45314F697BF00467DC8 /* RatatamController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9DFA45214F697BF00467DC8 /* RatatamController.m */; };
 		C9DFA45E14F705A000467DC8 /* chat.png in Resources */ = {isa = PBXBuildFile; fileRef = C9DFA45D14F705A000467DC8 /* chat.png */; };
 		C9DFA46014F707B100467DC8 /* heart.png in Resources */ = {isa = PBXBuildFile; fileRef = C9DFA45F14F707B000467DC8 /* heart.png */; };
+		C9DFA4AF14FBA77300467DC8 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = C9DFA4AE14FBA77100467DC8 /* background.png */; };
 		C9FCEEB914F50BAA00DA3B7E /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FCEEB814F50BAA00DA3B7E /* JSONKit.m */; };
 		C9FCEEC014F5107900DA3B7E /* InstagramFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FCEEBF14F5107900DA3B7E /* InstagramFetcher.m */; };
 		C9FCEEC214F51BAB00DA3B7E /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9FCEEC114F51BAB00DA3B7E /* Growl.framework */; };
@@ -107,6 +108,7 @@
 		C9DFA45214F697BF00467DC8 /* RatatamController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RatatamController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		C9DFA45D14F705A000467DC8 /* chat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chat.png; sourceTree = "<group>"; };
 		C9DFA45F14F707B000467DC8 /* heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heart.png; sourceTree = "<group>"; };
+		C9DFA4AE14FBA77100467DC8 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
 		C9FCEEB714F50BAA00DA3B7E /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
 		C9FCEEB814F50BAA00DA3B7E /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
 		C9FCEEBE14F5107900DA3B7E /* InstagramFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstagramFetcher.h; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 			children = (
 				C9DFA45F14F707B000467DC8 /* heart.png */,
 				C9DFA45D14F705A000467DC8 /* chat.png */,
+				C9DFA4AE14FBA77100467DC8 /* background.png */,
 				C9DFA45114F697BF00467DC8 /* RatatamController.h */,
 				C9DFA45214F697BF00467DC8 /* RatatamController.m */,
 				C96A281714F507570081DF05 /* Supporting Files */,
@@ -330,6 +333,7 @@
 				C96A283B14F508E30081DF05 /* MASPreferencesWindow.xib in Resources */,
 				C9DFA45E14F705A000467DC8 /* chat.png in Resources */,
 				C9DFA46014F707B100467DC8 /* heart.png in Resources */,
+				C9DFA4AF14FBA77300467DC8 /* background.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
