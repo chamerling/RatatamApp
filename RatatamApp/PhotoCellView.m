@@ -13,8 +13,6 @@
 @synthesize contactImage;
 @synthesize username;
 @synthesize date;
-@synthesize likes;
-@synthesize comments;
 @synthesize likeButton;
 @synthesize commentButton;
 
