@@ -59,6 +59,8 @@
 
 - (void)getNewPhotos:(id)sender {
     
+    BOOL firstCall = (lastId == nil);
+    
     NSDictionary *photos = nil;
     if (!lastId) {
         // first call, we get 10 photos for now...
@@ -70,10 +72,9 @@
      
     NSDictionary *data = [photos valueForKey:@"data"];
     
-    // TODO : Make a diff from the last fetch
     int i = 0;
     for (NSDictionary *photo in data) {
-        NSLog(@"Processing photo %@ from %@", [photo valueForKey:@"id"], [photo valueForKey:@"user"]);
+        //NSLog(@"Processing photo %@ from %@", [photo valueForKey:@"id"], [photo valueForKey:@"user"]);
         if (photo && i == 0) {
             lastId = [photo valueForKey:@"id"];
         }
@@ -82,7 +83,10 @@
         // check if this image is new
         // we whould already be here if only the photo is new...
         
-        [notificationManager notifyNewImage:photo];
+        if (!firstCall) {
+            [notificationManager notifyNewImage:photo];
+        }
+        
         InstagramPhoto *ip = [[InstagramPhoto alloc] init];
         [ip setProperties:[[NSMutableDictionary alloc] initWithDictionary:photo]];
         [ratatamController addPhoto:ip];

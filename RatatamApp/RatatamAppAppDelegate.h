@@ -31,4 +31,7 @@
 
 - (IBAction)saveAction:(id)sender;
 
+- (IBAction)like:(id)sender;
+- (IBAction)comment:(id)sender;
+
 @end

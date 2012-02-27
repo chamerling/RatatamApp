@@ -7,6 +7,7 @@
 //
 
 #import "PhotoCellView.h"
+#import "PhotoAddCommentWindowController.h"
 
 @implementation PhotoCellView
 @synthesize image;
@@ -15,31 +16,22 @@
 @synthesize date;
 @synthesize likeButton;
 @synthesize commentButton;
+@synthesize box;
 
 - (id)init
 {
     self = [super init];
     if (self) {
         // Initialization code here.
+        NSLog(@"BOXXXXXX %@", box);
     }
     
     return self;
 }
 
-- (IBAction)likeAction:(id)sender {
-    
-}
-
-- (IBAction)commentAction:(id)sender{
-    
-}
-
-- (IBAction)downloadAction:(id)sender {
-    
-}
-
-- (IBAction)tweetAction:(id)sender {
-    
+- (id)initWithFrame:(NSRect)frameRect {
+    NSLog(@"Init with frame %@", box);
+    return self;
 }
 
 @end

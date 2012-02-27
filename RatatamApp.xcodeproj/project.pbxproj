@@ -34,6 +34,9 @@
 		C9DFA45E14F705A000467DC8 /* chat.png in Resources */ = {isa = PBXBuildFile; fileRef = C9DFA45D14F705A000467DC8 /* chat.png */; };
 		C9DFA46014F707B100467DC8 /* heart.png in Resources */ = {isa = PBXBuildFile; fileRef = C9DFA45F14F707B000467DC8 /* heart.png */; };
 		C9DFA4AF14FBA77300467DC8 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = C9DFA4AE14FBA77100467DC8 /* background.png */; };
+		C9DFA4B214FBAB9500467DC8 /* DateValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = C9DFA4B114FBAB9100467DC8 /* DateValueTransformer.m */; };
+		C9E1F6A414FBFF8700868888 /* PhotoAddCommentWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E1F6A314FBFF8700868888 /* PhotoAddCommentWindowController.m */; };
+		C9E1F6A614FBFF9900868888 /* PhotoAddCommentWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9E1F6A514FBFF9900868888 /* PhotoAddCommentWindow.xib */; };
 		C9FCEEB914F50BAA00DA3B7E /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FCEEB814F50BAA00DA3B7E /* JSONKit.m */; };
 		C9FCEEC014F5107900DA3B7E /* InstagramFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FCEEBF14F5107900DA3B7E /* InstagramFetcher.m */; };
 		C9FCEEC214F51BAB00DA3B7E /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9FCEEC114F51BAB00DA3B7E /* Growl.framework */; };
@@ -109,6 +112,11 @@
 		C9DFA45D14F705A000467DC8 /* chat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chat.png; sourceTree = "<group>"; };
 		C9DFA45F14F707B000467DC8 /* heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heart.png; sourceTree = "<group>"; };
 		C9DFA4AE14FBA77100467DC8 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
+		C9DFA4B014FBAB8D00467DC8 /* DateValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateValueTransformer.h; sourceTree = "<group>"; };
+		C9DFA4B114FBAB9100467DC8 /* DateValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateValueTransformer.m; sourceTree = "<group>"; };
+		C9E1F6A214FBFF8700868888 /* PhotoAddCommentWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoAddCommentWindowController.h; sourceTree = "<group>"; };
+		C9E1F6A314FBFF8700868888 /* PhotoAddCommentWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoAddCommentWindowController.m; sourceTree = "<group>"; };
+		C9E1F6A514FBFF9900868888 /* PhotoAddCommentWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhotoAddCommentWindow.xib; sourceTree = "<group>"; };
 		C9FCEEB714F50BAA00DA3B7E /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
 		C9FCEEB814F50BAA00DA3B7E /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
 		C9FCEEBE14F5107900DA3B7E /* InstagramFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstagramFetcher.h; sourceTree = "<group>"; };
@@ -202,6 +210,11 @@
 				C9FCEEC614F51C2B00DA3B7E /* NotificationManager.m */,
 				C9FCEEE514F59B0200DA3B7E /* PhotoCellView.h */,
 				C9FCEEE614F59B0200DA3B7E /* PhotoCellView.m */,
+				C9DFA4B014FBAB8D00467DC8 /* DateValueTransformer.h */,
+				C9DFA4B114FBAB9100467DC8 /* DateValueTransformer.m */,
+				C9E1F6A214FBFF8700868888 /* PhotoAddCommentWindowController.h */,
+				C9E1F6A514FBFF9900868888 /* PhotoAddCommentWindow.xib */,
+				C9E1F6A314FBFF8700868888 /* PhotoAddCommentWindowController.m */,
 			);
 			path = RatatamApp;
 			sourceTree = "<group>";
@@ -334,6 +347,7 @@
 				C9DFA45E14F705A000467DC8 /* chat.png in Resources */,
 				C9DFA46014F707B100467DC8 /* heart.png in Resources */,
 				C9DFA4AF14FBA77300467DC8 /* background.png in Resources */,
+				C9E1F6A614FBFF9900868888 /* PhotoAddCommentWindow.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -365,6 +379,8 @@
 				C9FCEEE714F59B0200DA3B7E /* PhotoCellView.m in Sources */,
 				C9FCEEEE14F6452200DA3B7E /* InstagramPhoto.m in Sources */,
 				C9DFA45314F697BF00467DC8 /* RatatamController.m in Sources */,
+				C9DFA4B214FBAB9500467DC8 /* DateValueTransformer.m in Sources */,
+				C9E1F6A414FBFF8700868888 /* PhotoAddCommentWindowController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

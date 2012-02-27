@@ -17,16 +17,15 @@
     IBOutlet NSButton *likeButton;
     IBOutlet NSButton *commentButton;
     IBOutlet NSImageView *contactImage;
-    
+    IBOutlet NSBox *box;
 }
 
+@property(assign) NSBox *box;
 @property(assign) NSImageView *image;
 @property(assign) NSImageView *contactImage;
 @property(assign) NSTextField *username;
 @property(assign) NSTextField *date;
 @property(assign) NSButton *commentButton;
 @property(assign) NSButton *likeButton;
-
-
 
 @end

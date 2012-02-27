@@ -10,6 +10,7 @@
 #import "NotificationManager.h"
 #import "PhotoCellView.h"
 #import "InstagramFetcher.h"
+#import "PhotoAddCommentWindowController.h"
 
 @implementation RatatamAppAppDelegate
 @synthesize arrayController = _arrayController;
@@ -202,6 +203,16 @@
     }
 
     return NSTerminateNow;
+}
+
+- (IBAction)like:(id)sender {
+    NSLog(@"LIKE %@", sender);
+    
+}
+
+- (IBAction)comment:(id)sender {
+    PhotoAddCommentWindowController *commentWindow = [[PhotoAddCommentWindowController alloc] initWithWindowNibName:@"PhotoAddCommentWindow"];
+    [NSApp beginSheet:[commentWindow window] modalForWindow:[self window] modalDelegate:nil didEndSelector:nil contextInfo:nil];
 }
 
 - (void)dealloc

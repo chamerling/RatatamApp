@@ -48,14 +48,14 @@
             NSString *newPhotoId = [[photo valueForKey:@"properties"] valueForKey:@"id"];
             
             if ([photoId isEqualToString:newPhotoId]) {
-                NSLog(@"Already in! %@", photoId);
+                //NSLog(@"Already in! %@", photoId);
                 return;
             } else {
                 // not in, tell that we have a new photo!
-            
+                //NSLog(@"Not in, let's add!!!!");
             }
         }
-        
+    
         [self performSelectorOnMainThread:@selector(doAddPhoto:) withObject:photo waitUntilDone:YES];
     }
 }
