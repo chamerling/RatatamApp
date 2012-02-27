@@ -1447,8 +1447,9 @@
 						<reference ref="569093711"/>
 						<reference ref="754028217"/>
 					</object>
-					<object class="NSMutableArray" key="NSToolbarIBDefaultItems">
+					<object class="NSArray" key="NSToolbarIBDefaultItems">
 						<bool key="EncodedWithXMLCoder">YES</bool>
+						<reference ref="754028217"/>
 						<reference ref="889280529"/>
 						<reference ref="569093711"/>
 					</object>
@@ -1597,7 +1598,6 @@
 									<string key="NSFrame">{{0, 655}, {500, 15}}</string>
 									<reference key="NSSuperview" ref="64130925"/>
 									<reference key="NSWindow"/>
-									<reference key="NSNextKeyView"/>
 									<string key="NSReuseIdentifierKey">_NS:1216</string>
 									<bool key="NSEnabled">YES</bool>
 									<int key="NSsFlags">1</int>
@@ -1624,8 +1624,8 @@
 					<reference key="NSNextKeyView" ref="64130925"/>
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {1680, 1028}}</string>
-				<string key="NSMinSize">{500, 741}</string>
-				<string key="NSMaxSize">{500, 741}</string>
+				<string key="NSMinSize">{500, 777}</string>
+				<string key="NSMaxSize">{500, 777}</string>
 				<bool key="NSWindowIsRestorable">YES</bool>
 			</object>
 			<object class="NSCustomObject" id="976324537">

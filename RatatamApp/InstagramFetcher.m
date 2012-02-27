@@ -61,7 +61,7 @@
     
     NSDictionary *photos = nil;
     if (!lastId) {
-        // first call, we get 20 photos for now...
+        // first call, we get 10 photos for now...
         photos = [client getPhotosForUser:nil nb:10];
         // update lastId
     } else {
@@ -78,10 +78,6 @@
             lastId = [photo valueForKey:@"id"];
         }
         i++;
-        
-        NSString *time = [photo valueForKey:@"created_time"];
-        NSDate *date = [NSDate dateWithTimeIntervalSince1970:[time longLongValue]];
-        NSLog(@"Date is : %@", date);
         
         // check if this image is new
         // we whould already be here if only the photo is new...
