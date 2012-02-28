@@ -8,6 +8,7 @@
 
 #import "InstagramClient.h"
 #import "ASIHTTPRequest.h"
+#import "ASIFormDataRequest.h"
 #import "JSONKit.h"
 
 @implementation InstagramClient
@@ -65,11 +66,15 @@
 
 - (void) likePhoto:(NSString*) token photoId:(NSString*)photo {
     // /media/{media-id}/likes/
-    NSString *url = [NSString stringWithFormat:@"https://api.instagram.com/v1/media/%@/likes/&access_token=714184.f59def8.cd491d15143d4f349095b2e960538e8a", photo];
-    ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:url]];
-    [request setRequestMethod:@"POST"];
+    NSString *url = [NSString stringWithFormat:@"https://api.instagram.com/v1/media/%@/likes/", photo];
+    ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:url]];
+    [request setPostValue:@"714184.f59def8.cd491d15143d4f349095b2e960538e8a" forKey:@"access_token"];
+    //[request setRequestMethod:@"POST"];
     [request setDelegate:self];
     [request startSynchronous];
+    
+    NSLog(@"Response %@", [request responseString]);
+    NSLog(@"Code %d", [request responseStatusCode]);
     
     NSDictionary* dict = [[request responseString] objectFromJSONString];
     NSLog(@"%@", dict);
@@ -84,12 +89,35 @@
     [request setDelegate:self];
     [request startSynchronous];
     
+    int code = [request responseStatusCode];
     NSDictionary* dict = [[request responseString] objectFromJSONString];
-    NSLog(@"%@", dict);
+    
+    if (code != 200 && dict) {
+        // ouch!
+        NSString *error = [dict valueForKey:@"data"];
+    } else {
+        // well done...
+    }
 }
 
 - (void) commentPhoto:(NSString*) token photoId:(NSString*)photo commnent:(NSString*) commennt {
+    NSString *url = [NSString stringWithFormat:@"https://api.instagram.com/v1/media/%@/comments", photo];
+    ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:url]];
+    [request setPostValue:@"714184.f59def8.cd491d15143d4f349095b2e960538e8a" forKey:@"access_token"];
+    [request setPostValue:commennt forKey:@"text"];
+
+    [request setDelegate:self];
+    [request startSynchronous];
     
+    int code = [request responseStatusCode];
+    NSDictionary* dict = [[request responseString] objectFromJSONString];
+
+    if (code != 200 && dict) {
+        // ouch!
+        NSString *error = [dict valueForKey:@"data"];
+    } else {
+        // well done...
+    }
 }
 
 @end
