@@ -11,7 +11,7 @@
 #import "InstagramClient.h"
 
 @interface RatatamController (Private)
-- (void) doAddPhoto:(InstagramPhoto *) photo;
+- (void) doAddPhoto:(NSDictionary *) photo;
 @end
 
 @implementation RatatamController
@@ -40,7 +40,7 @@
     return self;
 }
 
-- (void) addPhoto:(InstagramPhoto*) photo {
+- (void) addPhoto:(InstagramPhoto*) photo atTop:(BOOL)top {
     if (photo) {
         
         for (NSDictionary *available in photos) {
@@ -55,14 +55,19 @@
                 //NSLog(@"Not in, let's add!!!!");
             }
         }
+        
+        NSMutableDictionary *arg = [[NSMutableDictionary alloc] init];
+        NSNumber *toptop = [[NSNumber alloc] initWithBool:top];
+        [arg setValue:toptop forKey:@"top"];
+        [arg setValue:photo forKey:@"photo"];
     
-        [self performSelectorOnMainThread:@selector(doAddPhoto:) withObject:photo waitUntilDone:YES];
+        [self performSelectorOnMainThread:@selector(doAddPhoto:) withObject:arg waitUntilDone:YES];
     }
 }
 
 // add photo to the array and then notify the table that there is a new photo. 
 // This works with KVO and bindings.
-- (void) doAddPhoto:(InstagramPhoto *) photo {
+- (void) doAddPhoto:(NSDictionary *) dict {
     
     // works but just for init, same with add object...
     //[photos insertObject:photo atIndex:0];
@@ -73,9 +78,20 @@
     //[photos release];
     //photos = array;
     
+    InstagramPhoto *photo = [dict valueForKey:@"photo"];
+    NSNumber *top = [dict valueForKey:@"top"];
+    
     // this proxy is KVO enabled, not the photos array itself...
     id proxy = [self mutableArrayValueForKey:@"photos"];
-    [proxy insertObject:photo atIndex:[proxy count]];
+    NSInteger index = 0;
+    if([top boolValue]) {
+        index = [proxy count];
+    } else {
+        
+    }
+    NSLog(@"index %d", index);
+    
+    [proxy insertObject:photo atIndex:index];
 }
 
 @end

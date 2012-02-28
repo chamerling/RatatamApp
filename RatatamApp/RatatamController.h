@@ -17,6 +17,6 @@
 
 @property (nonatomic, retain) NSMutableArray *photos;
 
-- (void) addPhoto:(InstagramPhoto*) photo;
+- (void) addPhoto:(InstagramPhoto*) photo atTop:(BOOL)top;
 
 @end

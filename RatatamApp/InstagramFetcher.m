@@ -89,7 +89,7 @@
         
         InstagramPhoto *ip = [[InstagramPhoto alloc] init];
         [ip setProperties:[[NSMutableDictionary alloc] initWithDictionary:photo]];
-        [ratatamController addPhoto:ip];
+        [ratatamController addPhoto:ip atTop:YES];
     }
 }
 
