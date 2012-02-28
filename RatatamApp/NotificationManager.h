@@ -12,5 +12,7 @@
 @interface NotificationManager : NSObject<GrowlApplicationBridgeDelegate>
 
 - (void) notifyNewImage:(NSDictionary *)dictionary;
+- (void) notifyNewComment:(NSDictionary *)dictionary;
+- (void) notifyNewLike:(NSDictionary *)dictionary;
 
 @end

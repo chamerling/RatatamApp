@@ -36,7 +36,14 @@
 								   priority:0
 								   isSticky:NO
 							   clickContext:nil]; 
-    
+}
+
+- (void) notifyNewComment:(NSDictionary *)dictionary {
+    // NOP  
+}
+
+- (void) notifyNewLike:(NSDictionary *)dictionary {
+    // NOP 
 }
 
 #pragma mark - growl delegate
