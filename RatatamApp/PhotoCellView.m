@@ -23,17 +23,11 @@
 {
     self = [super init];
     if (self) {
-        // Initialization code here.
-        NSLog(@"BOXXXXXX %@", box);
     }
     
     return self;
 }
 
-- (id)initWithFrame:(NSRect)frameRect {
-    NSLog(@"Init with frame %@", box);
-    return self;
-}
 
 - (void)drawRect:(NSRect)dirtyRect {
     /*
