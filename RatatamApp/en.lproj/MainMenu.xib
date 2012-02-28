@@ -1601,6 +1601,7 @@
 									<string key="NSFrame">{{0, 655}, {500, 15}}</string>
 									<reference key="NSSuperview" ref="64130925"/>
 									<reference key="NSWindow"/>
+									<reference key="NSNextKeyView"/>
 									<string key="NSReuseIdentifierKey">_NS:1216</string>
 									<bool key="NSEnabled">YES</bool>
 									<int key="NSsFlags">1</int>
@@ -2406,7 +2407,7 @@
 												<object class="NSButton" id="312967669">
 													<reference key="NSNextResponder" ref="645489830"/>
 													<int key="NSvFlags">268</int>
-													<string key="NSFrame">{{307, 9}, {67, 17}}</string>
+													<string key="NSFrame">{{80, 9}, {67, 17}}</string>
 													<reference key="NSSuperview" ref="645489830"/>
 													<reference key="NSNextKeyView" ref="607042108"/>
 													<int key="NSViewLayerContentsRedrawPolicy">2</int>
@@ -2434,7 +2435,7 @@
 												<object class="NSButton" id="607042108">
 													<reference key="NSNextResponder" ref="645489830"/>
 													<int key="NSvFlags">268</int>
-													<string key="NSFrame">{{379, 9}, {67, 17}}</string>
+													<string key="NSFrame">{{152, 9}, {67, 17}}</string>
 													<reference key="NSSuperview" ref="645489830"/>
 													<reference key="NSNextKeyView" ref="19361071"/>
 													<int key="NSViewLayerContentsRedrawPolicy">2</int>
