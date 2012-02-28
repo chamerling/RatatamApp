@@ -207,11 +207,13 @@
 
 - (IBAction)like:(id)sender {
     NSLog(@"LIKE %@", sender);
-    
 }
 
 - (IBAction)comment:(id)sender {
+    NSDictionary *data = sender;
     PhotoAddCommentWindowController *commentWindow = [[PhotoAddCommentWindowController alloc] initWithWindowNibName:@"PhotoAddCommentWindow"];
+    NSMutableDictionary *photoData = [[NSMutableDictionary alloc] initWithDictionary:data copyItems:NO];
+    [commentWindow setPhotoData: photoData];
     [NSApp beginSheet:[commentWindow window] modalForWindow:[self window] modalDelegate:nil didEndSelector:nil contextInfo:nil];
 }
 

@@ -89,7 +89,6 @@
     } else {
         
     }
-    NSLog(@"index %d", index);
     
     [proxy insertObject:photo atIndex:index];
 }

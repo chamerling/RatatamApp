@@ -9,6 +9,11 @@
 #import "PhotoAddCommentWindowController.h"
 
 @implementation PhotoAddCommentWindowController
+@synthesize titleField;
+@synthesize photoView;
+@synthesize progress;
+@synthesize commentText;
+@synthesize  photoData;
 
 - (id)initWithWindow:(NSWindow *)window
 {
@@ -25,7 +30,9 @@
 {
     [super windowDidLoad];
     
-    // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
+    [titleField setStringValue:[NSString stringWithFormat:@"Comment %@'s photo", [[photoData valueForKey:@"user"] valueForKey:@"username"]]];
+    NSString *url = [[[photoData valueForKey:@"images"] valueForKey:@"thumbnail"] valueForKey:@"url"];
+    [photoView setImage:[[NSImage alloc] initWithContentsOfURL:[NSURL URLWithString:url]]];
 }
 
 - (IBAction)comment:(id)sender {

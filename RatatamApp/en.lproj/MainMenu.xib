@@ -2746,22 +2746,6 @@
 					<int key="connectionID">720</int>
 				</object>
 				<object class="IBConnectionRecord">
-					<object class="IBActionConnection" key="connection">
-						<string key="label">comment:</string>
-						<reference key="source" ref="976324537"/>
-						<reference key="destination" ref="607042108"/>
-					</object>
-					<int key="connectionID">730</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBActionConnection" key="connection">
-						<string key="label">like:</string>
-						<reference key="source" ref="976324537"/>
-						<reference key="destination" ref="312967669"/>
-					</object>
-					<int key="connectionID">731</int>
-				</object>
-				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
 						<string key="label">argument: objectValue.properties</string>
 						<reference key="source" ref="312967669"/>
