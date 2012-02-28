@@ -29,7 +29,7 @@
     
     NSString *description = [NSString stringWithFormat:@"%@ added a photo", [user valueForKey:@"full_name"]];
     
-    [GrowlApplicationBridge notifyWithTitle:@"New photo"
+    [GrowlApplicationBridge notifyWithTitle:@"New photo on Instagram"
 								description:description
 						   notificationName:@"Ratatam"
 								   iconData:[image TIFFRepresentation]
