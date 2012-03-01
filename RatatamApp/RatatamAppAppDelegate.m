@@ -206,7 +206,9 @@
 }
 
 - (IBAction)like:(id)sender {
-    NSLog(@"LIKE %@", sender);
+    NSString *photoId = [sender valueForKey:@"id"];
+    InstagramClient *client = [[InstagramClient alloc] init];
+    [client likePhoto:nil photoId:photoId];
 }
 
 - (IBAction)comment:(id)sender {
