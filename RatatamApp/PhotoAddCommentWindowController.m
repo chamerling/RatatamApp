@@ -7,6 +7,7 @@
 //
 
 #import "PhotoAddCommentWindowController.h"
+#import "InstagramClient.h"
 
 @implementation PhotoAddCommentWindowController
 @synthesize titleField;
@@ -36,6 +37,17 @@
 }
 
 - (IBAction)comment:(id)sender {
+    NSString *text = [[commentText string] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    NSString *photoId = [photoData valueForKey:@"id"];
+
+    if (text && photoId) {
+        [progress startAnimation:self];
+        InstagramClient *client = [[InstagramClient alloc] init];
+        [client commentPhoto:nil photoId:photoId commnent:text];
+        [progress stopAnimation:self];
+    } else {
+        // i
+    }
     [NSApp endSheet: [self window]];
     [[self window] orderOut: self];
 }
