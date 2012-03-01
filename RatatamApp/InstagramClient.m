@@ -73,11 +73,15 @@
     [request setDelegate:self];
     [request startSynchronous];
     
-    NSLog(@"Response %@", [request responseString]);
-    NSLog(@"Code %d", [request responseStatusCode]);
-    
+    int code = [request responseStatusCode];
     NSDictionary* dict = [[request responseString] objectFromJSONString];
-    NSLog(@"%@", dict);
+    
+    if (code != 200 && dict) {
+        // ouch!
+        NSString *error = [dict valueForKey:@"data"];
+    } else {
+        // well done...
+    }
 }
 
 - (void) disLikePhoto:(NSString*) token photoId:(NSString*)photo {
