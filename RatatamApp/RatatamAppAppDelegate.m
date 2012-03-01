@@ -255,8 +255,6 @@
             NSString* oauth = [url substringFromIndex:[expectedURL length]];
             
             if (oauth) {
-                [fetcher stop];
-                // TODO = clean photos
                 [[Preferences sharedInstance]storeToken:oauth];
                 // TODO = show window
                 [fetcher start];
@@ -280,6 +278,8 @@
     {
         AccountPreferencesViewController *accountViewController = [[AccountPreferencesViewController alloc] init];
         UserPreferences *userPreferences = [[UserPreferences alloc] init];
+        [userPreferences setFetcher:fetcher];
+        [userPreferences setRatatamController:ratatamController];
         
         NSArray *controllers = [[NSArray alloc] initWithObjects:userPreferences, accountViewController, nil];
         

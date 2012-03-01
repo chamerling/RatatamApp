@@ -80,4 +80,10 @@
     [proxy insertObject:photo atIndex:index];
 }
 
+- (void) removeAllPhotos {
+    NSLog(@"Remove all");
+    id proxy = [self mutableArrayValueForKey:@"photos"];
+    [proxy removeAllObjects];    
+}
+
 @end

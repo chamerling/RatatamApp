@@ -9,6 +9,7 @@
 #import <Cocoa/Cocoa.h>
 #import "MASPreferencesViewController.h"
 #import "InstagramFetcher.h"
+#import "RatatamController.h"
 
 @interface UserPreferences : NSViewController<MASPreferencesViewController> {
     
@@ -19,6 +20,7 @@
     NSProgressIndicator *progressIndicator;
     
     InstagramFetcher *fetcher;
+    RatatamController *ratatamController;
 }
 @property (assign) IBOutlet NSProgressIndicator *progressIndicator;
 @property (assign) IBOutlet NSImageView *avatar;
@@ -27,6 +29,7 @@
 @property (assign) IBOutlet NSButton *accessButton;
 
 @property (assign) InstagramFetcher *fetcher;
+@property (assign) RatatamController *ratatamController;
 
 - (IBAction)accessAction:(id)sender;
 

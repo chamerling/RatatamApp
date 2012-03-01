@@ -44,6 +44,7 @@
 
 - (void)stop {
     [newPhotoTimer invalidate];
+    lastId = nil;
 }
 
 - (void) doStart:(id) sender {

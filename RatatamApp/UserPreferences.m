@@ -23,6 +23,7 @@
 @synthesize accessButton;
 
 @synthesize fetcher;
+@synthesize ratatamController;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -88,8 +89,8 @@
         
         [pref storeToken:@""];
 
-        [fetcher pause];
-        // TODO : clear table data
+        [fetcher stop];
+        [ratatamController removeAllPhotos];
         
         [lastName setStringValue:@""];
         [accessButton setTitle:@"Authorize"];
