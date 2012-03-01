@@ -25,7 +25,10 @@
 }
 
 - (id)transformedValue:(id)value {
-    return [NSDate dateWithTimeIntervalSince1970:[value longLongValue]];    
+    NSDateFormatter *f = [[NSDateFormatter alloc] init];
+    [f setDateStyle:NSDateFormatterLongStyle];
+    [f setTimeStyle:NSDateFormatterMediumStyle];
+    return [f stringFromDate:[NSDate dateWithTimeIntervalSince1970:[value longLongValue]]];
 }
 
 @end
