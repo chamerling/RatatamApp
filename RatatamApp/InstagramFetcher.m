@@ -42,6 +42,10 @@
     [self performSelectorInBackground:@selector(doStart:) withObject:nil];        
 }
 
+- (void)stop {
+    [newPhotoTimer invalidate];
+}
+
 - (void) doStart:(id) sender {
     
     NSAutoreleasePool* pool = [[NSAutoreleasePool alloc] init];
@@ -64,10 +68,10 @@
     NSDictionary *photos = nil;
     if (!lastId) {
         // first call, we get 10 photos for now...
-        photos = [client getPhotosForUser:nil nb:20];
+        photos = [client getNPhotos:20];
         // update lastId
     } else {
-        photos = [client getPhotosForUser:nil since:lastId];
+        photos = [client getPhotosSince:lastId];
     }
      
     NSDictionary *data = [photos valueForKey:@"data"];

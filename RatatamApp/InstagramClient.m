@@ -10,6 +10,7 @@
 #import "ASIHTTPRequest.h"
 #import "ASIFormDataRequest.h"
 #import "JSONKit.h"
+#import "Preferences.h"
 
 @implementation InstagramClient
 
@@ -23,57 +24,112 @@
     return self;
 }
 
-- (NSDictionary*) getSelfUser:(NSString*) token {
-    NSString *url = @"https://api.instagram.com/v1/users/self/?access_token=714184.f59def8.cd491d15143d4f349095b2e960538e8a";
+- (NSString *)getAuthToken {
+    NSString* clientID = @"";
+    NSString* redirectURI = @"";
+    
+    NSString* url = [NSString stringWithFormat:@"https://instagram.com/oauth/authorize/?client_id=%@&redirect_uri=%@&response_type=token", clientID, redirectURI];
+    
+    // http://your-redirect-uri#access_token=ACCESS-TOKEN
     ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:url]];
     [request setDelegate:self];
     [request startSynchronous];
+    
+    int code = [request responseStatusCode];
+    if (code == 200) {
+        
+    } else {
+        
+    }
+    
+    return nil;
+    
+    // https://instagram.com/oauth/authorize/?client_id=CLIENT-ID&redirect_uri=REDIRECT-URI&response_type=token
+
+}
+
+- (NSDictionary*) getSelfUser {
+    Preferences *pref = [Preferences sharedInstance];
+    NSString *url = [NSString stringWithFormat:@"https://api.instagram.com/v1/users/self/?access_token=%@", [pref oauthToken]];
+    ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:url]];
+    [request setDelegate:self];
+    [request startSynchronous];
+    
+    if ([request responseStatusCode] == 0) {
+        // fail!!!
+        return nil;
+    } 
     
     NSDictionary* dict = [[request responseString] objectFromJSONString];
     return dict;
 }
 
-- (NSDictionary*) getPhotosForUser:(NSString*) token nb:(int)size {
-    NSString *tk = @"714184.f59def8.cd491d15143d4f349095b2e960538e8a";
-    NSString *url = [NSString stringWithFormat:@"https://api.instagram.com/v1/users/self/feed?count=%ld&access_token=%@", size, tk];
+- (NSDictionary*) getNPhotos:(int)size {
+    Preferences *pref = [Preferences sharedInstance];
+
+    //NSString *tk = @"714184.f59def8.cd491d15143d4f349095b2e960538e8a";
+    NSString *url = [NSString stringWithFormat:@"https://api.instagram.com/v1/users/self/feed?count=%ld&access_token=%@", size, [pref oauthToken]];
     ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:url]];
     [request setDelegate:self];
     [request startSynchronous];
+    
+    if ([request responseStatusCode] == 0) {
+        // fail!!!
+        return nil;
+    } 
     
     NSDictionary* dict = [[request responseString] objectFromJSONString];
     return dict;
 }
 
-- (NSDictionary*) getPhotosForUser:(NSString*) token since:(NSString*)lastId {
-    NSString *tk = @"714184.f59def8.cd491d15143d4f349095b2e960538e8a";
+- (NSDictionary*) getPhotosSince:(NSString*)lastId {
+    Preferences *pref = [Preferences sharedInstance];
 
-    NSString *url = [NSString stringWithFormat:@"https://api.instagram.com/v1/users/self/feed?min_id=%@&access_token=%@", lastId, tk];
+    //NSString *tk = @"714184.f59def8.cd491d15143d4f349095b2e960538e8a";
+
+    NSString *url = [NSString stringWithFormat:@"https://api.instagram.com/v1/users/self/feed?min_id=%@&access_token=%@", lastId, [pref oauthToken]];
     ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:url]];
     [request setDelegate:self];
     [request startSynchronous];
+    
+    if ([request responseStatusCode] == 0) {
+        // fail!!!
+        return nil;
+    } 
     
     NSDictionary* dict = [[request responseString] objectFromJSONString];
     return dict;
 }
 
-- (NSDictionary*) getCommentsForUser:(NSString*) token nb:(int)size {
+- (NSDictionary*) getCommentsForUser:(int)size {
+    //Preferences *pref = [Preferences sharedInstance];
+
     return nil;
 }
 
-- (NSDictionary*) getLikesForUser:(NSString*) token nb:(int)size {
+- (NSDictionary*) getLikesForUser:(int)size {
+    //Preferences *pref = [Preferences sharedInstance];
+
     return nil;
 }
 
-- (void) likePhoto:(NSString*) token photoId:(NSString*)photo {
+- (void) likePhoto:(NSString*)photo {
     // /media/{media-id}/likes/
+    Preferences *pref = [Preferences sharedInstance];
+
     NSString *url = [NSString stringWithFormat:@"https://api.instagram.com/v1/media/%@/likes/", photo];
     ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:url]];
-    [request setPostValue:@"714184.f59def8.cd491d15143d4f349095b2e960538e8a" forKey:@"access_token"];
+    [request setPostValue:[pref oauthToken] forKey:@"access_token"];
     //[request setRequestMethod:@"POST"];
     [request setDelegate:self];
     [request startSynchronous];
     
     int code = [request responseStatusCode];
+    
+    if (code == 0) {
+        return;
+    }
+    
     NSDictionary* dict = [[request responseString] objectFromJSONString];
     
     if (code != 200 && dict) {
@@ -84,16 +140,22 @@
     }
 }
 
-- (void) disLikePhoto:(NSString*) token photoId:(NSString*)photo {
+- (void) disLikePhoto:(NSString*)photo {
     // /media/{media-id}/likes/
     // /media/{media-id}/likes/
-    NSString *url = [NSString stringWithFormat:@"https://api.instagram.com/v1/media/%@/likes/&access_token=714184.f59def8.cd491d15143d4f349095b2e960538e8a", photo];
+    Preferences *pref = [Preferences sharedInstance];
+
+    NSString *url = [NSString stringWithFormat:@"https://api.instagram.com/v1/media/%@/likes/&access_token=%@", photo, [pref oauthToken]];
     ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:url]];
     [request setRequestMethod:@"DELETE"];
     [request setDelegate:self];
     [request startSynchronous];
     
     int code = [request responseStatusCode];
+    if (code == 0) {
+        return;
+    }
+    
     NSDictionary* dict = [[request responseString] objectFromJSONString];
     
     if (code != 200 && dict) {
@@ -104,16 +166,23 @@
     }
 }
 
-- (void) commentPhoto:(NSString*) token photoId:(NSString*)photo commnent:(NSString*) commennt {
+- (void) commentPhoto:(NSString*)photo commnent:(NSString*) commennt {
+    Preferences *pref = [Preferences sharedInstance];
+
     NSString *url = [NSString stringWithFormat:@"https://api.instagram.com/v1/media/%@/comments", photo];
     ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:url]];
-    [request setPostValue:@"714184.f59def8.cd491d15143d4f349095b2e960538e8a" forKey:@"access_token"];
+    [request setPostValue:[pref oauthToken] forKey:@"access_token"];
     [request setPostValue:commennt forKey:@"text"];
 
     [request setDelegate:self];
     [request startSynchronous];
     
     int code = [request responseStatusCode];
+    
+    if (code == 0) {
+        return;    
+    }
+    
     NSDictionary* dict = [[request responseString] objectFromJSONString];
 
     if (code != 200 && dict) {

@@ -32,5 +32,6 @@
 - (void) pause;
 - (void) resume;
 - (void) start;
+- (void) stop;
 
 @end

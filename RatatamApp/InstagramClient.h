@@ -10,16 +10,18 @@
 
 @interface InstagramClient : NSObject
 
+- (NSString *) getAuthToken;
 
-- (NSDictionary*) getSelfUser:(NSString*) token;
-- (NSDictionary*) getPhotosForUser:(NSString*) token nb:(int)size;
-- (NSDictionary*) getPhotosForUser:(NSString*) token since:(NSString*)lastId;
-- (NSDictionary*) getCommentsForUser:(NSString*) token nb:(int)size;
-- (NSDictionary*) getLikesForUser:(NSString*) token nb:(int)size;
 
-- (void) likePhoto:(NSString*) token photoId:(NSString*)photo;
-- (void) disLikePhoto:(NSString*) token photoId:(NSString*)photo;
+- (NSDictionary*) getSelfUser;
+- (NSDictionary*) getNPhotos:(int)size;
+- (NSDictionary*) getPhotosSince:(NSString*)lastId;
+- (NSDictionary*) getCommentsForUser:(int)size;
+- (NSDictionary*) getLikesForUser:(int)size;
 
-- (void) commentPhoto:(NSString*) token photoId:(NSString*)photo commnent:(NSString*) comment;
+- (void) likePhoto:(NSString*)photo;
+- (void) disLikePhoto:(NSString*)photo;
+
+- (void) commentPhoto:(NSString*)photo commnent:(NSString*) comment;
 
 @end

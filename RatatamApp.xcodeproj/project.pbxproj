@@ -32,6 +32,12 @@
 		C96A286714F509BA0081DF05 /* InstagramClient.m in Sources */ = {isa = PBXBuildFile; fileRef = C96A286614F509BA0081DF05 /* InstagramClient.m */; };
 		C9DE90DA14FFC5A7003FA27F /* RatatamApp.icns in Resources */ = {isa = PBXBuildFile; fileRef = C9DE90D914FFC5A7003FA27F /* RatatamApp.icns */; };
 		C9DE90DD14FFC5B8003FA27F /* RatatamApp.icns in Resources */ = {isa = PBXBuildFile; fileRef = C9DE90DC14FFC5B8003FA27F /* RatatamApp.icns */; };
+		C9DE90EC150014F9003FA27F /* Preferences.m in Sources */ = {isa = PBXBuildFile; fileRef = C9DE90EB150014F9003FA27F /* Preferences.m */; };
+		C9DE90F2150018C8003FA27F /* UserPreferences.m in Sources */ = {isa = PBXBuildFile; fileRef = C9DE90F0150018C8003FA27F /* UserPreferences.m */; };
+		C9DE90F3150018C8003FA27F /* UserPreferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9DE90F1150018C8003FA27F /* UserPreferences.xib */; };
+		C9DE90F71500194F003FA27F /* AccountPreferencesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9DE90F51500194F003FA27F /* AccountPreferencesViewController.m */; };
+		C9DE90F81500194F003FA27F /* AccountPreferencesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9DE90F61500194F003FA27F /* AccountPreferencesViewController.xib */; };
+		C9DE90FB15002DB6003FA27F /* NSString+JavaAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = C9DE90FA15002DB6003FA27F /* NSString+JavaAPI.m */; };
 		C9DFA45314F697BF00467DC8 /* RatatamController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9DFA45214F697BF00467DC8 /* RatatamController.m */; };
 		C9DFA4AF14FBA77300467DC8 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = C9DFA4AE14FBA77100467DC8 /* background.png */; };
 		C9DFA4B214FBAB9500467DC8 /* DateValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = C9DFA4B114FBAB9100467DC8 /* DateValueTransformer.m */; };
@@ -109,6 +115,16 @@
 		C96A286614F509BA0081DF05 /* InstagramClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstagramClient.m; sourceTree = "<group>"; };
 		C9DE90D914FFC5A7003FA27F /* RatatamApp.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = RatatamApp.icns; sourceTree = "<group>"; };
 		C9DE90DC14FFC5B8003FA27F /* RatatamApp.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = RatatamApp.icns; sourceTree = "<group>"; };
+		C9DE90EA150014F9003FA27F /* Preferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Preferences.h; sourceTree = "<group>"; };
+		C9DE90EB150014F9003FA27F /* Preferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Preferences.m; sourceTree = "<group>"; };
+		C9DE90EF150018C8003FA27F /* UserPreferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserPreferences.h; sourceTree = "<group>"; };
+		C9DE90F0150018C8003FA27F /* UserPreferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserPreferences.m; sourceTree = "<group>"; };
+		C9DE90F1150018C8003FA27F /* UserPreferences.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserPreferences.xib; sourceTree = "<group>"; };
+		C9DE90F41500194F003FA27F /* AccountPreferencesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountPreferencesViewController.h; sourceTree = "<group>"; };
+		C9DE90F51500194F003FA27F /* AccountPreferencesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountPreferencesViewController.m; sourceTree = "<group>"; };
+		C9DE90F61500194F003FA27F /* AccountPreferencesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AccountPreferencesViewController.xib; sourceTree = "<group>"; };
+		C9DE90F915002DB6003FA27F /* NSString+JavaAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+JavaAPI.h"; sourceTree = "<group>"; };
+		C9DE90FA15002DB6003FA27F /* NSString+JavaAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+JavaAPI.m"; sourceTree = "<group>"; };
 		C9DFA45114F697BF00467DC8 /* RatatamController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RatatamController.h; sourceTree = "<group>"; };
 		C9DFA45214F697BF00467DC8 /* RatatamController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RatatamController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		C9DFA4AE14FBA77100467DC8 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
@@ -190,6 +206,7 @@
 		C96A281614F507570081DF05 /* RatatamApp */ = {
 			isa = PBXGroup;
 			children = (
+				C9DE90EE15001839003FA27F /* Preferences */,
 				C96A281714F507570081DF05 /* Supporting Files */,
 				C96A283014F508A20081DF05 /* Dependencies */,
 				C9C9D7EF14FD39A300521B1D /* Images */,
@@ -214,6 +231,8 @@
 				C9E1F6A214FBFF8700868888 /* PhotoAddCommentWindowController.h */,
 				C9E1F6A514FBFF9900868888 /* PhotoAddCommentWindow.xib */,
 				C9E1F6A314FBFF8700868888 /* PhotoAddCommentWindowController.m */,
+				C9DE90EA150014F9003FA27F /* Preferences.h */,
+				C9DE90EB150014F9003FA27F /* Preferences.m */,
 			);
 			path = RatatamApp;
 			sourceTree = "<group>";
@@ -240,6 +259,8 @@
 				C96A284014F508EE0081DF05 /* NSData+Base64.m */,
 				C96A284114F508EE0081DF05 /* NSWorkspaceHelper.h */,
 				C96A284214F508EE0081DF05 /* NSWorkspaceHelper.m */,
+				C9DE90F915002DB6003FA27F /* NSString+JavaAPI.h */,
+				C9DE90FA15002DB6003FA27F /* NSString+JavaAPI.m */,
 				C96A283614F508D10081DF05 /* MASPreferences */,
 				C96A283514F508C80081DF05 /* ASIHTTP */,
 			);
@@ -289,6 +310,19 @@
 				C9DFA4AE14FBA77100467DC8 /* background.png */,
 			);
 			name = Images;
+			sourceTree = "<group>";
+		};
+		C9DE90EE15001839003FA27F /* Preferences */ = {
+			isa = PBXGroup;
+			children = (
+				C9DE90F41500194F003FA27F /* AccountPreferencesViewController.h */,
+				C9DE90F51500194F003FA27F /* AccountPreferencesViewController.m */,
+				C9DE90F61500194F003FA27F /* AccountPreferencesViewController.xib */,
+				C9DE90EF150018C8003FA27F /* UserPreferences.h */,
+				C9DE90F0150018C8003FA27F /* UserPreferences.m */,
+				C9DE90F1150018C8003FA27F /* UserPreferences.xib */,
+			);
+			name = Preferences;
 			sourceTree = "<group>";
 		};
 		C9FCEEB514F50B9A00DA3B7E /* JSONKit */ = {
@@ -356,6 +390,8 @@
 				C9E1F6A614FBFF9900868888 /* PhotoAddCommentWindow.xib in Resources */,
 				C9DE90DA14FFC5A7003FA27F /* RatatamApp.icns in Resources */,
 				C9DE90DD14FFC5B8003FA27F /* RatatamApp.icns in Resources */,
+				C9DE90F3150018C8003FA27F /* UserPreferences.xib in Resources */,
+				C9DE90F81500194F003FA27F /* AccountPreferencesViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -389,6 +425,10 @@
 				C9DFA45314F697BF00467DC8 /* RatatamController.m in Sources */,
 				C9DFA4B214FBAB9500467DC8 /* DateValueTransformer.m in Sources */,
 				C9E1F6A414FBFF8700868888 /* PhotoAddCommentWindowController.m in Sources */,
+				C9DE90EC150014F9003FA27F /* Preferences.m in Sources */,
+				C9DE90F2150018C8003FA27F /* UserPreferences.m in Sources */,
+				C9DE90F71500194F003FA27F /* AccountPreferencesViewController.m in Sources */,
+				C9DE90FB15002DB6003FA27F /* NSString+JavaAPI.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

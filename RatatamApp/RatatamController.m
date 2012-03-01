@@ -22,20 +22,7 @@
     self = [super init];
     if (self) {
         photos = [[NSMutableArray alloc] init];
-        
-        /*
-        InstagramClient *client = [[InstagramClient alloc] init];
-        NSDictionary *result = [client getPhotosForUser:nil nb:5];
-        
-        NSDictionary *data = [result valueForKey:@"data"];
-        for (NSDictionary *photo in data) {
-                InstagramPhoto *ip = [[InstagramPhoto alloc] init];
-                [ip setProperties:[[NSMutableDictionary alloc] initWithDictionary:photo]];
-                [self addPhoto:ip];
-            }
-         */
-         
-        }
+    }
          
     return self;
 }

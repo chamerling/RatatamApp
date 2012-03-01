@@ -11,6 +11,10 @@
 #import "PhotoCellView.h"
 #import "InstagramFetcher.h"
 #import "PhotoAddCommentWindowController.h"
+#import "Preferences.h"
+#import "AccountPreferencesViewController.h"
+#import "UserPreferences.h"
+#import "NSString+JavaAPI.h"
 
 @implementation RatatamAppAppDelegate
 @synthesize arrayController = _arrayController;
@@ -21,16 +25,21 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     
-    //photos = [client getPhotosForUser:nil nb:15];
-    //NSLog(@"%@");
     [window setBackgroundColor:[NSColor colorWithPatternImage:[NSImage imageNamed:@"background"]]];
     
-        
-    InstagramFetcher *fetch = [[InstagramFetcher alloc] init];
-    if (fetch && ratatamController) {
-        [fetch setRatatamController:ratatamController];
+    [self registerURLHandler:nil];
+    
+    fetcher = [[InstagramFetcher alloc] init];
+    if (fetcher && ratatamController) {
+        [fetcher setRatatamController:ratatamController];
     }
-    [fetch start];
+    
+    Preferences* preferences = [Preferences sharedInstance];
+    if ([[preferences oauthToken]length] == 0) {
+        [self openPreferences:nil];
+    } else {
+        [fetcher start];   
+    }
 }
 
 /**
@@ -208,7 +217,7 @@
 - (IBAction)like:(id)sender {
     NSString *photoId = [sender valueForKey:@"id"];
     InstagramClient *client = [[InstagramClient alloc] init];
-    [client likePhoto:nil photoId:photoId];
+    [client likePhoto:photoId];
 }
 
 - (IBAction)comment:(id)sender {
@@ -218,6 +227,76 @@
     [commentWindow setPhotoData: photoData];
     [NSApp beginSheet:[commentWindow window] modalForWindow:[self window] modalDelegate:nil didEndSelector:nil contextInfo:nil];
 }
+
+#pragma mark - Custom URL handling
+- (void)registerURLHandler:(id) sender
+{
+    NSString *bundleID = [[NSBundle mainBundle] bundleIdentifier];
+    OSStatus httpResult = LSSetDefaultHandlerForURLScheme((CFStringRef)@"ratatam", (CFStringRef)bundleID);
+    //NSLog(@"Result : %@", httpResult);
+	[[NSAppleEventManager sharedAppleEventManager] setEventHandler:self andSelector:@selector(getUrl:) forEventClass:kInternetEventClass andEventID:kAEGetURL];
+}
+
+- (void)getUrl:(NSAppleEventDescriptor *)event {
+	NSString *url = [[event paramDescriptorForKeyword:keyDirectObject] stringValue];
+
+    if (url) {
+        NSString* expectedURL = @"ratatam://oauth#access_token=";
+        
+        if ([url startsWith:expectedURL]) {
+            // for now we do not support N operations, so 'oauth' is the only one. Will need to add more...
+            // ratatam://oauth#access_token=ACCESS-TOKEN
+            //NSLog(@"query %@", query);
+            
+            if ([[[Preferences sharedInstance] oauthToken]length] > 0) {
+                return;
+            }
+            
+            NSString* oauth = [url substringFromIndex:[expectedURL length]];
+            
+            if (oauth) {
+                [fetcher stop];
+                // TODO = clean photos
+                [[Preferences sharedInstance]storeToken:oauth];
+                // TODO = show window
+                [fetcher start];
+            } else {
+                // display error
+            }
+        } else {
+            // ?
+        }
+    }
+}
+
+- (IBAction)openPreferences:(id)sender {
+    [NSApp activateIgnoringOtherApps: YES];
+    [self.preferencesWindowController showWindow:nil];
+}
+
+- (MASPreferencesWindowController *)preferencesWindowController
+{
+    if (_preferencesWindowController == nil)
+    {
+        AccountPreferencesViewController *accountViewController = [[AccountPreferencesViewController alloc] init];
+        UserPreferences *userPreferences = [[UserPreferences alloc] init];
+        
+        NSArray *controllers = [[NSArray alloc] initWithObjects:userPreferences, accountViewController, nil];
+        
+        [accountViewController release];
+        [userPreferences release];
+        
+        NSString *title = NSLocalizedString(@"Preferences", @"Common title for Preferences window");
+        _preferencesWindowController = [[MASPreferencesWindowController alloc] initWithViewControllers:controllers title:title];
+        
+        [_preferencesWindowController selectControllerAtIndex:0];
+        [controllers release];
+    } else {
+        [_preferencesWindowController selectControllerAtIndex:0];        
+    }
+    return _preferencesWindowController;
+}
+
 
 - (void)dealloc
 {

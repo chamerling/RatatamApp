@@ -43,7 +43,7 @@
     if (text && photoId) {
         [progress startAnimation:self];
         InstagramClient *client = [[InstagramClient alloc] init];
-        [client commentPhoto:nil photoId:photoId commnent:text];
+        [client commentPhoto:photoId commnent:text];
         [progress stopAnimation:self];
     } else {
         // i
