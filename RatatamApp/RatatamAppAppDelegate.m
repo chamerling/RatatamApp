@@ -297,6 +297,11 @@
     return _preferencesWindowController;
 }
 
+- (IBAction)showMainWindow:(id)sender {
+    [window makeKeyAndOrderFront:nil];
+    [NSApp activateIgnoringOtherApps:YES];
+}
+
 
 - (void)dealloc
 {

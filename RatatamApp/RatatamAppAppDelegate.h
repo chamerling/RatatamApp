@@ -50,5 +50,8 @@
 
 - (IBAction)openPreferences:(id)sender;
 
+# pragma mark - Window management
+- (IBAction)showMainWindow:(id)sender;
+
 
 @end
