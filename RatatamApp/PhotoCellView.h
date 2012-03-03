@@ -14,6 +14,7 @@
     IBOutlet NSImageView *image;
     IBOutlet NSTextField *username;
     IBOutlet NSTextField *date;
+    IBOutlet NSTextField *caption;
     IBOutlet NSButton *likeButton;
     IBOutlet NSButton *commentButton;
     IBOutlet NSImageView *contactImage;
@@ -25,6 +26,7 @@
 @property(assign) NSImageView *contactImage;
 @property(assign) NSTextField *username;
 @property(assign) NSTextField *date;
+@property(assign) NSTextField *caption;
 @property(assign) NSButton *commentButton;
 @property(assign) NSButton *likeButton;
 

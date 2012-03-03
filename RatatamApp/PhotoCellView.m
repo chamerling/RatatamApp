@@ -15,6 +15,7 @@
 @synthesize contactImage;
 @synthesize username;
 @synthesize date;
+@synthesize caption;
 @synthesize likeButton;
 @synthesize commentButton;
 @synthesize box;
