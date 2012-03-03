@@ -81,7 +81,6 @@
 }
 
 - (void) removeAllPhotos {
-    NSLog(@"Remove all");
     id proxy = [self mutableArrayValueForKey:@"photos"];
     [proxy removeAllObjects];    
 }

@@ -81,7 +81,7 @@
         // authorize
         NSString* clientId = @"e0c974aaf875403eb2385ab71cb849b5";
         NSString* redirectId = @"ratatam://oauth";
-        NSString* oauthsite = [NSString stringWithFormat:@"https://instagram.com/oauth/authorize/?client_id=%@&redirect_uri=%@&response_type=token", clientId, redirectId];
+        NSString* oauthsite = [NSString stringWithFormat:@"https://instagram.com/oauth/authorize/?client_id=%@&redirect_uri=%@&response_type=token&scope=likes+comments", clientId, redirectId];
         [accessButton setTitle:@"Revoke Access"];
         [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:oauthsite]];
     } else {
