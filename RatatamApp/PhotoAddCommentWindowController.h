@@ -10,21 +10,22 @@
 
 @interface PhotoAddCommentWindowController : NSWindowController {
     NSProgressIndicator *progress;
+    NSTextField *captionText;
     NSImageView *photoView;
     NSTextField *titleField;
     
     NSDictionary *photoData;
-    NSTextView *commentText;
+    NSTextField *commentText;
 }
-
 
 - (IBAction) comment:(id)sender;
 - (IBAction) cancel:(id)sender;
 
-@property (assign) IBOutlet NSTextView *commentText;
+@property (assign) IBOutlet NSTextField *commentText;
 @property (assign) NSDictionary *photoData;
 @property (assign) IBOutlet NSTextField *titleField;
 @property (assign) IBOutlet NSImageView *photoView;
 @property (assign) IBOutlet NSProgressIndicator *progress;
+@property (assign) IBOutlet NSTextField *captionText;
 
 @end

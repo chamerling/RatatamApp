@@ -13,6 +13,7 @@
 @synthesize titleField;
 @synthesize photoView;
 @synthesize progress;
+@synthesize captionText;
 @synthesize commentText;
 @synthesize  photoData;
 
@@ -32,12 +33,13 @@
     [super windowDidLoad];
     
     [titleField setStringValue:[NSString stringWithFormat:@"Comment %@'s photo", [[photoData valueForKey:@"user"] valueForKey:@"username"]]];
+    [captionText setStringValue:[[photoData valueForKey:@"caption"] valueForKey:@"text"]];
     NSString *url = [[[photoData valueForKey:@"images"] valueForKey:@"thumbnail"] valueForKey:@"url"];
     [photoView setImage:[[NSImage alloc] initWithContentsOfURL:[NSURL URLWithString:url]]];
 }
 
 - (IBAction)comment:(id)sender {
-    NSString *text = [[commentText string] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    NSString *text = [[commentText stringValue] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     NSString *photoId = [photoData valueForKey:@"id"];
 
     if (text && photoId) {
@@ -47,7 +49,9 @@
         [progress stopAnimation:self];
     } else {
         // i
+        NSBeep();
     }
+    
     [NSApp endSheet: [self window]];
     [[self window] orderOut: self];
 }

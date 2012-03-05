@@ -58,6 +58,7 @@
     
     if ([request responseStatusCode] == 0) {
         // fail!!!
+        [[NotificationManager get] notifyError:@"Error while sending request"];
         return nil;
     } 
     
@@ -75,6 +76,7 @@
     
     if ([request responseStatusCode] == 0) {
         // fail!!!
+        [[NotificationManager get] notifyError:@"Error while sending request"];
         return nil;
     } 
     
@@ -92,6 +94,7 @@
     
     if ([request responseStatusCode] == 0) {
         // fail!!!
+        [[NotificationManager get] notifyError:@"Error while sending request"];
         return nil;
     } 
     
@@ -124,6 +127,7 @@
     int code = [request responseStatusCode];
     
     if (code == 0) {
+        [[NotificationManager get] notifyError:@"Error while sending request"];
         return;
     }
     
@@ -153,6 +157,7 @@
     
     int code = [request responseStatusCode];
     if (code == 0) {
+        [[NotificationManager get] notifyError:@"Error while sending request"];
         return;
     }
     
@@ -180,6 +185,7 @@
     int code = [request responseStatusCode];
     
     if (code == 0) {
+        [[NotificationManager get] notifyError:@"Error while sending request"];
         return;    
     }
     
@@ -188,8 +194,11 @@
     if (code != 200 && dict) {
         // ouch!
         NSString *error = [dict valueForKey:@"data"];
+        [[NotificationManager get] notifyError:@"Error while commenting image"];
+
     } else {
         // well done...
+        [[NotificationManager get] notifyOK:@"Photo commented"];
     }
 }
 
