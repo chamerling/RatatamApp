@@ -100,4 +100,8 @@
     [[[NSApplication sharedApplication] dockTile] setBadgeLabel:nil];    
 }
 
+- (void) showRootView:(BOOL)show {
+    [rootView setHidden:!show];
+}
+
 @end

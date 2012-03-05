@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C94436F31505653B00EDED22 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C94436F11505653800EDED22 /* BaseViewController.m */; };
+		C94436F41505653B00EDED22 /* BaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C94436F21505653900EDED22 /* BaseViewController.xib */; };
 		C96A281114F507570081DF05 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C96A281014F507570081DF05 /* Cocoa.framework */; };
 		C96A281B14F507570081DF05 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C96A281914F507570081DF05 /* InfoPlist.strings */; };
 		C96A281D14F507570081DF05 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C96A281C14F507570081DF05 /* main.m */; };
@@ -66,6 +68,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		C94436F01505653600EDED22 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		C94436F11505653800EDED22 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		C94436F21505653900EDED22 /* BaseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaseViewController.xib; sourceTree = "<group>"; };
 		C96A280C14F507570081DF05 /* RatatamApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RatatamApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C96A281014F507570081DF05 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		C96A281314F507570081DF05 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -233,6 +238,9 @@
 				C9E1F6A314FBFF8700868888 /* PhotoAddCommentWindowController.m */,
 				C9DE90EA150014F9003FA27F /* Preferences.h */,
 				C9DE90EB150014F9003FA27F /* Preferences.m */,
+				C94436F01505653600EDED22 /* BaseViewController.h */,
+				C94436F11505653800EDED22 /* BaseViewController.m */,
+				C94436F21505653900EDED22 /* BaseViewController.xib */,
 			);
 			path = RatatamApp;
 			sourceTree = "<group>";
@@ -392,6 +400,7 @@
 				C9DE90DD14FFC5B8003FA27F /* RatatamApp.icns in Resources */,
 				C9DE90F3150018C8003FA27F /* UserPreferences.xib in Resources */,
 				C9DE90F81500194F003FA27F /* AccountPreferencesViewController.xib in Resources */,
+				C94436F41505653B00EDED22 /* BaseViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -429,6 +438,7 @@
 				C9DE90F2150018C8003FA27F /* UserPreferences.m in Sources */,
 				C9DE90F71500194F003FA27F /* AccountPreferencesViewController.m in Sources */,
 				C9DE90FB15002DB6003FA27F /* NSString+JavaAPI.m in Sources */,
+				C94436F31505653B00EDED22 /* BaseViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

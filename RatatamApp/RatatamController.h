@@ -15,6 +15,7 @@
     
     IBOutlet NSArrayController *arrayController;
     IBOutlet NSWindow *mainWindow;
+    IBOutlet NSView *rootView;
 }
 
 @property (nonatomic, retain) NSMutableArray *photos;
@@ -23,5 +24,6 @@
 - (void) removeAllPhotos;
 - (void) incrementBadgeCount;
 - (void) clearBadgeCount;
+- (void) showRootView:(BOOL)show;
 
 @end

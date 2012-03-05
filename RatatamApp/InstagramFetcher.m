@@ -67,6 +67,9 @@
 - (void)getNewPhotos:(id)sender {
     
     BOOL firstCall = (lastId == nil);
+    if (firstCall) {
+        [ratatamController showRootView:NO];    
+    }
     
     NSDictionary *photos = nil;
     if (!lastId) {
@@ -99,6 +102,11 @@
         } else {
             [ratatamController addPhoto:ip atTop:YES];            
         }
+    }
+    
+    if (firstCall) {
+        // first call, we show the final view when all is loaded
+        [ratatamController showRootView:YES];
     }
 }
 
