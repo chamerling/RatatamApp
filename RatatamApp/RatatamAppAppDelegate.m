@@ -16,6 +16,10 @@
 #import "UserPreferences.h"
 #import "NSString+JavaAPI.h"
 
+@interface RatatamAppAppDelegate (Private)
+- (void) doLike:(id) sender;
+@end
+
 @implementation RatatamAppAppDelegate
 @synthesize arrayController = _arrayController;
 
@@ -34,10 +38,14 @@
         [fetcher setRatatamController:ratatamController];
     }
     
+    notificationManager = [[NotificationManager alloc] init];
+    client = [[InstagramClient alloc] init];
+    
     Preferences* preferences = [Preferences sharedInstance];
     if ([[preferences oauthToken]length] == 0) {
         [self openPreferences:nil];
     } else {
+        [notificationManager notifyOK:@"Loading image feed..."];
         [fetcher start];   
     }
 }
@@ -215,9 +223,12 @@
 }
 
 - (IBAction)like:(id)sender {
-    NSString *photoId = [sender valueForKey:@"id"];
-    InstagramClient *client = [[InstagramClient alloc] init];
-    [client likePhoto:photoId];
+    [self performSelectorInBackground:@selector(doLike:) withObject:[sender valueForKey:@"id"]];            
+}
+
+- (void) doLike:(id)sender {
+    [client likePhoto:sender];
+    [notificationManager notifyOK:@"Photo liked!"];
 }
 
 - (IBAction)comment:(id)sender {

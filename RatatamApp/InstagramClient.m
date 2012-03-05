@@ -67,7 +67,6 @@
 - (NSDictionary*) getNPhotos:(int)size {
     Preferences *pref = [Preferences sharedInstance];
 
-    //NSString *tk = @"714184.f59def8.cd491d15143d4f349095b2e960538e8a";
     NSString *url = [NSString stringWithFormat:@"https://api.instagram.com/v1/users/self/feed?count=%ld&access_token=%@", size, [pref oauthToken]];
     ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:url]];
     [request setDelegate:self];
@@ -84,8 +83,6 @@
 
 - (NSDictionary*) getPhotosSince:(NSString*)lastId {
     Preferences *pref = [Preferences sharedInstance];
-
-    //NSString *tk = @"714184.f59def8.cd491d15143d4f349095b2e960538e8a";
 
     NSString *url = [NSString stringWithFormat:@"https://api.instagram.com/v1/users/self/feed?min_id=%@&access_token=%@", lastId, [pref oauthToken]];
     ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:url]];
@@ -120,7 +117,6 @@
     NSString *url = [NSString stringWithFormat:@"https://api.instagram.com/v1/media/%@/likes/", photo];
     ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:url]];
     [request setPostValue:[pref oauthToken] forKey:@"access_token"];
-    //[request setRequestMethod:@"POST"];
     [request setDelegate:self];
     [request startSynchronous];
     

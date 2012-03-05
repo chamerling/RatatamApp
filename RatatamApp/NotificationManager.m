@@ -46,6 +46,30 @@
     // NOP 
 }
 
+- (void) notifyError:(NSString *)error {
+    NSImage *image = [NSImage imageNamed:@"RatatamApp"];
+    
+    [GrowlApplicationBridge notifyWithTitle:@"Ratatam Error"
+								description:error
+						   notificationName:@"Ratatam"
+								   iconData:[image TIFFRepresentation]
+								   priority:0
+								   isSticky:NO
+							   clickContext:nil];
+}
+
+- (void) notifyOK:(NSString *)message {
+    NSImage *image = [NSImage imageNamed:@"RatatamApp"];
+    
+    [GrowlApplicationBridge notifyWithTitle:@"Ratatam Status"
+								description:message
+						   notificationName:@"Ratatam"
+								   iconData:[image TIFFRepresentation]
+								   priority:0
+								   isSticky:NO
+							   clickContext:nil];
+}
+
 #pragma mark - growl delegate
 - (NSDictionary *)registrationDictionaryForGrowl {
     NSArray *notifications = [NSArray arrayWithObject: @"Ratatam"];
