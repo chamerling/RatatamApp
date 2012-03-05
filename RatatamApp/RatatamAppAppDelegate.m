@@ -28,7 +28,6 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    
     [window setBackgroundColor:[NSColor colorWithPatternImage:[NSImage imageNamed:@"background"]]];
     
     [self registerURLHandler:nil];
@@ -308,6 +307,7 @@
 
 - (IBAction)showMainWindow:(id)sender {
     [window makeKeyAndOrderFront:nil];
+    [ratatamController clearBadgeCount];
     [NSApp activateIgnoringOtherApps:YES];
 }
 

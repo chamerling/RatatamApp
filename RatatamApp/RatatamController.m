@@ -22,6 +22,7 @@
     self = [super init];
     if (self) {
         photos = [[NSMutableArray alloc] init];
+        unread = 0;
     }
          
     return self;
@@ -76,13 +77,27 @@
     } else {
         
     }
-    
+    [self incrementBadgeCount];
     [proxy insertObject:photo atIndex:index];
 }
 
 - (void) removeAllPhotos {
     id proxy = [self mutableArrayValueForKey:@"photos"];
     [proxy removeAllObjects];    
+}
+
+- (void) incrementBadgeCount {
+    // only increments when the window is not visible
+    // TODO
+    unread ++;
+    if (![mainWindow isVisible]) {
+        [[[NSApplication sharedApplication] dockTile] setBadgeLabel:[NSString stringWithFormat:@"%d", unread]];
+    }
+}
+
+- (void) clearBadgeCount {
+    unread = 0;
+    [[[NSApplication sharedApplication] dockTile] setBadgeLabel:nil];    
 }
 
 @end

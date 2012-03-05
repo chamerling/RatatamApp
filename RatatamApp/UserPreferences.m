@@ -91,6 +91,7 @@
 
         [fetcher stop];
         [ratatamController removeAllPhotos];
+        [ratatamController clearBadgeCount];
         
         [lastName setStringValue:@""];
         [accessButton setTitle:@"Authorize"];
