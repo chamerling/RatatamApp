@@ -715,14 +715,14 @@
 			<object class="NSWindowTemplate" id="972006081">
 				<int key="NSWindowStyleMask">4111</int>
 				<int key="NSWindowBacking">2</int>
-				<string key="NSWindowRect">{{335, 390}, {500, 668}}</string>
+				<string key="NSWindowRect">{{335, 390}, {500, 600}}</string>
 				<int key="NSWTFlags">1954021376</int>
 				<string key="NSWindowTitle">RatatamApp</string>
 				<string key="NSWindowClass">NSWindow</string>
 				<nil key="NSViewClass"/>
 				<nil key="NSUserInterfaceItemIdentifier"/>
-				<string key="NSWindowContentMaxSize">{500, 700}</string>
-				<string key="NSWindowContentMinSize">{500, 700}</string>
+				<string key="NSWindowContentMaxSize">{500, 600}</string>
+				<string key="NSWindowContentMinSize">{500, 600}</string>
 				<object class="NSView" key="NSWindowView" id="439893737">
 					<reference key="NSNextResponder"/>
 					<int key="NSvFlags">256</int>
@@ -874,7 +874,7 @@
 									<double key="NSPercent">0.99403578528827041</double>
 								</object>
 							</object>
-							<string key="NSFrame">{{0, -1}, {500, 670}}</string>
+							<string key="NSFrame">{{0, -69}, {500, 670}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
 							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="711252609"/>
@@ -887,15 +887,15 @@
 							<bytes key="NSScrollAmts">QSAAAEEgAABEEYAARBGAAA</bytes>
 						</object>
 					</object>
-					<string key="NSFrameSize">{500, 668}</string>
+					<string key="NSFrameSize">{500, 600}</string>
 					<reference key="NSSuperview"/>
 					<reference key="NSWindow"/>
 					<reference key="NSNextKeyView" ref="64130925"/>
 					<int key="NSViewLayerContentsRedrawPolicy">2</int>
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {1680, 1028}}</string>
-				<string key="NSMinSize">{500, 722}</string>
-				<string key="NSMaxSize">{500, 722}</string>
+				<string key="NSMinSize">{500, 622}</string>
+				<string key="NSMaxSize">{500, 622}</string>
 				<bool key="NSWindowIsRestorable">YES</bool>
 			</object>
 			<object class="NSCustomObject" id="976324537">
