@@ -7,6 +7,7 @@
 //
 
 #import "InstagramFetcher.h"
+#import "NotificationManager.h"
 
 @interface InstagramFetcher (Private)
 - (void) doStart:(id) sender;
@@ -39,6 +40,7 @@
 }
 
 - (void)start {
+    [[NotificationManager get] notifyOK:@"Loading image feed..."];
     [self performSelectorInBackground:@selector(doStart:) withObject:nil];        
 }
 

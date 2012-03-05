@@ -17,4 +17,6 @@
 - (void) notifyError:(NSString *)error;
 - (void) notifyOK:(NSString *)message;
 
++ (NotificationManager *)get;
+
 @end

@@ -11,6 +11,7 @@
 #import "ASIFormDataRequest.h"
 #import "JSONKit.h"
 #import "Preferences.h"
+#import "NotificationManager.h"
 
 @implementation InstagramClient
 
@@ -131,8 +132,11 @@
     if (code != 200 && dict) {
         // ouch!
         NSString *error = [dict valueForKey:@"data"];
+        [[NotificationManager get] notifyError:@"Error while liking image"];
+
     } else {
         // well done...
+        [[NotificationManager get] notifyOK:@"Image liked"];
     }
 }
 

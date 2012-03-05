@@ -25,7 +25,6 @@
     
     MASPreferencesWindowController *_preferencesWindowController;
     InstagramFetcher *fetcher;
-    NotificationManager *notificationManager;
     InstagramClient *client;
     
 }

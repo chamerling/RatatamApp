@@ -8,8 +8,9 @@
 
 #import "NotificationManager.h"
 
-@implementation NotificationManager
+static NotificationManager *sharedInstance = nil;
 
+@implementation NotificationManager
 
 - (id)init
 {
@@ -19,6 +20,14 @@
     }
     
     return self;
+}
+
++ (NotificationManager *)get {
+    @synchronized(self) {
+        if (sharedInstance == nil)
+            sharedInstance = [[NotificationManager alloc] init];
+    }
+    return sharedInstance;
 }
 
 - (void) notifyNewImage:(NSDictionary *)dictionary {

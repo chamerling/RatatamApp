@@ -38,14 +38,12 @@
         [fetcher setRatatamController:ratatamController];
     }
     
-    notificationManager = [[NotificationManager alloc] init];
     client = [[InstagramClient alloc] init];
     
     Preferences* preferences = [Preferences sharedInstance];
     if ([[preferences oauthToken]length] == 0) {
         [self openPreferences:nil];
     } else {
-        [notificationManager notifyOK:@"Loading image feed..."];
         [fetcher start];   
     }
 }
@@ -228,7 +226,6 @@
 
 - (void) doLike:(id)sender {
     [client likePhoto:sender];
-    [notificationManager notifyOK:@"Photo liked!"];
 }
 
 - (IBAction)comment:(id)sender {
@@ -260,6 +257,7 @@
             //NSLog(@"query %@", query);
             
             if ([[[Preferences sharedInstance] oauthToken]length] > 0) {
+                [[NotificationManager get] notifyError:@"Error while getting OAuth token"];
                 return;
             }
             
