@@ -13,7 +13,7 @@
 #import "NotificationManager.h"
 #import "InstagramClient.h"
 
-@interface RatatamAppAppDelegate : NSObject <NSApplicationDelegate> {
+@interface RatatamAppAppDelegate : NSObject <NSApplicationDelegate, NSToolbarDelegate> {
     NSWindow *window;
     NSView *_view;
     NSPersistentStoreCoordinator *__persistentStoreCoordinator;
@@ -26,7 +26,10 @@
     MASPreferencesWindowController *_preferencesWindowController;
     InstagramFetcher *fetcher;
     InstagramClient *client;
-    
+
+    // toolbar
+    IBOutlet NSView *toolbarView;
+    IBOutlet NSToolbar *toolbar;
 }
 @property (assign) IBOutlet NSArrayController *arrayController;
 

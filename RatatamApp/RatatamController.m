@@ -104,4 +104,16 @@
     [rootView setHidden:!show];
 }
 
+- (void) startProgress:(NSString *) message {
+    [toolbarLabel setStringValue:message];
+    [toolbarLabel setHidden:NO];
+    [toolbarProgress startAnimation:nil];
+}
+
+- (void) stopProgress {
+    [toolbarLabel setHidden:YES];
+    [toolbarProgress stopAnimation:nil];
+    [toolbarLabel setStringValue:@""];
+}
+
 @end

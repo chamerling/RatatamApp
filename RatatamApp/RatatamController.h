@@ -16,6 +16,8 @@
     IBOutlet NSArrayController *arrayController;
     IBOutlet NSWindow *mainWindow;
     IBOutlet NSView *rootView;
+    IBOutlet NSProgressIndicator *toolbarProgress;
+    IBOutlet NSTextField *toolbarLabel;
 }
 
 @property (nonatomic, retain) NSMutableArray *photos;
@@ -25,5 +27,8 @@
 - (void) incrementBadgeCount;
 - (void) clearBadgeCount;
 - (void) showRootView:(BOOL)show;
+
+- (void) startProgress:(NSString *) message;
+- (void) stopProgress;
 
 @end

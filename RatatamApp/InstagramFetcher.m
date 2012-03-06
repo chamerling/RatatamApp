@@ -11,6 +11,7 @@
 
 @interface InstagramFetcher (Private)
 - (void) doStart:(id) sender;
+- (void) hideProgress:(id) sender;
 @end
 
 @implementation InstagramFetcher
@@ -41,6 +42,7 @@
 
 - (void)start {
     [[NotificationManager get] notifyOK:@"Loading image feed..."];
+    [ratatamController startProgress:@"Loading data..."];
     [self performSelectorInBackground:@selector(doStart:) withObject:nil];        
 }
 
@@ -106,8 +108,13 @@
     
     if (firstCall) {
         // first call, we show the final view when all is loaded
+        [self performSelectorOnMainThread:@selector(hideProgress:) withObject:nil waitUntilDone:YES];
         [ratatamController showRootView:YES];
     }
+}
+
+- (void)hideProgress:(id)sender {
+    [ratatamController stopProgress];
 }
 
 @end

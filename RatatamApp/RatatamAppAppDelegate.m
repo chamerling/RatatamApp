@@ -16,6 +16,8 @@
 #import "UserPreferences.h"
 #import "NSString+JavaAPI.h"
 
+#define mainToolbarItemID     @"DefaultToolbarItem"
+
 @interface RatatamAppAppDelegate (Private)
 - (void) doLike:(id) sender;
 @end
@@ -31,7 +33,7 @@
     [window setBackgroundColor:[NSColor colorWithPatternImage:[NSImage imageNamed:@"background"]]];
     
     [self registerURLHandler:nil];
-    
+            
     fetcher = [[InstagramFetcher alloc] init];
     if (fetcher && ratatamController) {
         [fetcher setRatatamController:ratatamController];
@@ -309,6 +311,30 @@
     [window makeKeyAndOrderFront:nil];
     [ratatamController clearBadgeCount];
     [NSApp activateIgnoringOtherApps:YES];
+}
+
+#pragma mark - toolbar delegate
+- (NSToolbarItem *)toolbar:(NSToolbar *)toolbar itemForItemIdentifier:(NSString *)itemIdentifier willBeInsertedIntoToolbar:(BOOL)flag
+{
+    NSToolbarItem *item = [[[NSToolbarItem alloc] initWithItemIdentifier:itemIdentifier] autorelease];
+    [item setView:toolbarView];
+    
+    return item;
+}
+
+- (NSArray *)toolbarDefaultItemIdentifiers:(NSToolbar *)toolbar
+{
+    return [NSArray arrayWithObjects:   mainToolbarItemID,
+            nil];
+}
+
+- (NSArray *)toolbarAllowedItemIdentifiers:(NSToolbar *)toolbar
+{
+    return [NSArray arrayWithObjects:   mainToolbarItemID,
+            nil];
+    // note:
+    // that since our toolbar is defined from Interface Builder, an additional separator and customize
+    // toolbar items will be automatically added to the "default" list of items.
 }
 
 
