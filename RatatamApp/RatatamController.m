@@ -88,9 +88,8 @@
 
 - (void) incrementBadgeCount {
     // only increments when the window is not visible
-    // TODO
-    unread ++;
     if (![mainWindow isVisible]) {
+        unread ++;
         [[[NSApplication sharedApplication] dockTile] setBadgeLabel:[NSString stringWithFormat:@"%d", unread]];
     }
 }
@@ -105,8 +104,8 @@
 }
 
 - (void) startProgress:(NSString *) message {
-    [toolbarLabel setStringValue:message];
-    [toolbarLabel setHidden:NO];
+    //[toolbarLabel setStringValue:message];
+    //[toolbarLabel setHidden:NO];
     [toolbarProgress startAnimation:nil];
 }
 
