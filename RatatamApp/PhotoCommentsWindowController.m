@@ -109,18 +109,18 @@
     NSString *text = [[commentText stringValue] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     NSString *photoId = [photoData valueForKey:@"id"];
     
-    if (text && photoId) {
+    if (text && [text length] > 0 && photoId) {
         [progress startAnimation:self];
         InstagramClient *client = [[InstagramClient alloc] init];
         [client commentPhoto:photoId commnent:text];
         [progress stopAnimation:self];
+        
+        [NSApp endSheet: [self window]];
+        [[self window] orderOut: self];
     } else {
         // i
         NSBeep();
     }
-    
-    [NSApp endSheet: [self window]];
-    [[self window] orderOut: self];
 }
 
 - (void)cancel:(id)sender {
