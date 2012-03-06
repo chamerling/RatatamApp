@@ -41,7 +41,6 @@
 }
 
 - (void)start {
-    [[NotificationManager get] notifyOK:@"Loading image feed..."];
     [ratatamController startProgress:@"Loading data..."];
     [self performSelectorInBackground:@selector(doStart:) withObject:nil];        
 }
