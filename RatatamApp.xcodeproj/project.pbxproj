@@ -30,6 +30,9 @@
 		C96A286214F5091E0081DF05 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C96A286114F5091E0081DF05 /* Security.framework */; };
 		C96A286414F5092B0081DF05 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C96A286314F5092B0081DF05 /* libz.dylib */; };
 		C96A286714F509BA0081DF05 /* InstagramClient.m in Sources */ = {isa = PBXBuildFile; fileRef = C96A286614F509BA0081DF05 /* InstagramClient.m */; };
+		C96C61A515063E31008C8E76 /* PhotoCommentsWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = C96C61A415063E31008C8E76 /* PhotoCommentsWindow.xib */; };
+		C96C61AC15063F62008C8E76 /* CommentCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = C96C61AB15063F62008C8E76 /* CommentCellView.m */; };
+		C96C61AF150643E6008C8E76 /* PhotoCommentsWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = C96C61AE150643E6008C8E76 /* PhotoCommentsWindowController.m */; };
 		C9DE90DA14FFC5A7003FA27F /* RatatamApp.icns in Resources */ = {isa = PBXBuildFile; fileRef = C9DE90D914FFC5A7003FA27F /* RatatamApp.icns */; };
 		C9DE90DD14FFC5B8003FA27F /* RatatamApp.icns in Resources */ = {isa = PBXBuildFile; fileRef = C9DE90DC14FFC5B8003FA27F /* RatatamApp.icns */; };
 		C9DE90EC150014F9003FA27F /* Preferences.m in Sources */ = {isa = PBXBuildFile; fileRef = C9DE90EB150014F9003FA27F /* Preferences.m */; };
@@ -113,6 +116,11 @@
 		C96A286314F5092B0081DF05 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		C96A286514F509BA0081DF05 /* InstagramClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstagramClient.h; sourceTree = "<group>"; };
 		C96A286614F509BA0081DF05 /* InstagramClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstagramClient.m; sourceTree = "<group>"; };
+		C96C61A415063E31008C8E76 /* PhotoCommentsWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhotoCommentsWindow.xib; sourceTree = "<group>"; };
+		C96C61AA15063F62008C8E76 /* CommentCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentCellView.h; sourceTree = "<group>"; };
+		C96C61AB15063F62008C8E76 /* CommentCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentCellView.m; sourceTree = "<group>"; };
+		C96C61AD150643E6008C8E76 /* PhotoCommentsWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoCommentsWindowController.h; sourceTree = "<group>"; };
+		C96C61AE150643E6008C8E76 /* PhotoCommentsWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoCommentsWindowController.m; sourceTree = "<group>"; };
 		C9DE90D914FFC5A7003FA27F /* RatatamApp.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = RatatamApp.icns; sourceTree = "<group>"; };
 		C9DE90DC14FFC5B8003FA27F /* RatatamApp.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = RatatamApp.icns; sourceTree = "<group>"; };
 		C9DE90EA150014F9003FA27F /* Preferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Preferences.h; sourceTree = "<group>"; };
@@ -233,6 +241,11 @@
 				C9E1F6A314FBFF8700868888 /* PhotoAddCommentWindowController.m */,
 				C9DE90EA150014F9003FA27F /* Preferences.h */,
 				C9DE90EB150014F9003FA27F /* Preferences.m */,
+				C96C61A415063E31008C8E76 /* PhotoCommentsWindow.xib */,
+				C96C61AD150643E6008C8E76 /* PhotoCommentsWindowController.h */,
+				C96C61AE150643E6008C8E76 /* PhotoCommentsWindowController.m */,
+				C96C61AA15063F62008C8E76 /* CommentCellView.h */,
+				C96C61AB15063F62008C8E76 /* CommentCellView.m */,
 			);
 			path = RatatamApp;
 			sourceTree = "<group>";
@@ -392,6 +405,7 @@
 				C9DE90DD14FFC5B8003FA27F /* RatatamApp.icns in Resources */,
 				C9DE90F3150018C8003FA27F /* UserPreferences.xib in Resources */,
 				C9DE90F81500194F003FA27F /* AccountPreferencesViewController.xib in Resources */,
+				C96C61A515063E31008C8E76 /* PhotoCommentsWindow.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -429,6 +443,8 @@
 				C9DE90F2150018C8003FA27F /* UserPreferences.m in Sources */,
 				C9DE90F71500194F003FA27F /* AccountPreferencesViewController.m in Sources */,
 				C9DE90FB15002DB6003FA27F /* NSString+JavaAPI.m in Sources */,
+				C96C61AC15063F62008C8E76 /* CommentCellView.m in Sources */,
+				C96C61AF150643E6008C8E76 /* PhotoCommentsWindowController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

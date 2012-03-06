@@ -15,6 +15,7 @@
 #import "AccountPreferencesViewController.h"
 #import "UserPreferences.h"
 #import "NSString+JavaAPI.h"
+#import "PhotoCommentsWindowController.h"
 
 #define mainToolbarItemID     @"DefaultToolbarItem"
 
@@ -230,11 +231,14 @@
 }
 
 - (IBAction)comment:(id)sender {
+    
+    PhotoCommentsWindowController *commentsWindow = [[PhotoCommentsWindowController alloc] initWithWindowNibName:@"PhotoCommentsWindow"];
+    // TODO : Get all comments instead of having just default comments...
     NSDictionary *data = sender;
-    PhotoAddCommentWindowController *commentWindow = [[PhotoAddCommentWindowController alloc] initWithWindowNibName:@"PhotoAddCommentWindow"];
     NSMutableDictionary *photoData = [[NSMutableDictionary alloc] initWithDictionary:data copyItems:NO];
-    [commentWindow setPhotoData: photoData];
-    [NSApp beginSheet:[commentWindow window] modalForWindow:[self window] modalDelegate:nil didEndSelector:nil contextInfo:nil];
+
+    [commentsWindow setPhotoData:photoData];
+    [NSApp beginSheet:[commentsWindow window] modalForWindow:[self window] modalDelegate:nil didEndSelector:nil contextInfo:nil];
 }
 
 #pragma mark - Custom URL handling
