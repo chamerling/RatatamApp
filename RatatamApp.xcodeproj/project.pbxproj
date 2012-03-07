@@ -33,6 +33,9 @@
 		C96C61A515063E31008C8E76 /* PhotoCommentsWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = C96C61A415063E31008C8E76 /* PhotoCommentsWindow.xib */; };
 		C96C61AC15063F62008C8E76 /* CommentCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = C96C61AB15063F62008C8E76 /* CommentCellView.m */; };
 		C96C61AF150643E6008C8E76 /* PhotoCommentsWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = C96C61AE150643E6008C8E76 /* PhotoCommentsWindowController.m */; };
+		C9797A7A1508089B00AAED09 /* comment.png in Resources */ = {isa = PBXBuildFile; fileRef = C9797A791508089B00AAED09 /* comment.png */; };
+		C9797A7D15080A0200AAED09 /* heart.png in Resources */ = {isa = PBXBuildFile; fileRef = C9797A7C15080A0200AAED09 /* heart.png */; };
+		C9797A831508151000AAED09 /* CountTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = C9797A821508151000AAED09 /* CountTransformer.m */; };
 		C9DE90DA14FFC5A7003FA27F /* RatatamApp.icns in Resources */ = {isa = PBXBuildFile; fileRef = C9DE90D914FFC5A7003FA27F /* RatatamApp.icns */; };
 		C9DE90DD14FFC5B8003FA27F /* RatatamApp.icns in Resources */ = {isa = PBXBuildFile; fileRef = C9DE90DC14FFC5B8003FA27F /* RatatamApp.icns */; };
 		C9DE90EC150014F9003FA27F /* Preferences.m in Sources */ = {isa = PBXBuildFile; fileRef = C9DE90EB150014F9003FA27F /* Preferences.m */; };
@@ -121,6 +124,10 @@
 		C96C61AB15063F62008C8E76 /* CommentCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentCellView.m; sourceTree = "<group>"; };
 		C96C61AD150643E6008C8E76 /* PhotoCommentsWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoCommentsWindowController.h; sourceTree = "<group>"; };
 		C96C61AE150643E6008C8E76 /* PhotoCommentsWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoCommentsWindowController.m; sourceTree = "<group>"; };
+		C9797A791508089B00AAED09 /* comment.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = comment.png; sourceTree = "<group>"; };
+		C9797A7C15080A0200AAED09 /* heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heart.png; sourceTree = "<group>"; };
+		C9797A811508151000AAED09 /* CountTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountTransformer.h; sourceTree = "<group>"; };
+		C9797A821508151000AAED09 /* CountTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountTransformer.m; sourceTree = "<group>"; };
 		C9DE90D914FFC5A7003FA27F /* RatatamApp.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = RatatamApp.icns; sourceTree = "<group>"; };
 		C9DE90DC14FFC5B8003FA27F /* RatatamApp.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = RatatamApp.icns; sourceTree = "<group>"; };
 		C9DE90EA150014F9003FA27F /* Preferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Preferences.h; sourceTree = "<group>"; };
@@ -246,6 +253,8 @@
 				C96C61AE150643E6008C8E76 /* PhotoCommentsWindowController.m */,
 				C96C61AA15063F62008C8E76 /* CommentCellView.h */,
 				C96C61AB15063F62008C8E76 /* CommentCellView.m */,
+				C9797A811508151000AAED09 /* CountTransformer.h */,
+				C9797A821508151000AAED09 /* CountTransformer.m */,
 			);
 			path = RatatamApp;
 			sourceTree = "<group>";
@@ -319,6 +328,8 @@
 		C9C9D7EF14FD39A300521B1D /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				C9797A791508089B00AAED09 /* comment.png */,
+				C9797A7C15080A0200AAED09 /* heart.png */,
 				C9DE90D914FFC5A7003FA27F /* RatatamApp.icns */,
 				C9DFA4AE14FBA77100467DC8 /* background.png */,
 			);
@@ -406,6 +417,8 @@
 				C9DE90F3150018C8003FA27F /* UserPreferences.xib in Resources */,
 				C9DE90F81500194F003FA27F /* AccountPreferencesViewController.xib in Resources */,
 				C96C61A515063E31008C8E76 /* PhotoCommentsWindow.xib in Resources */,
+				C9797A7A1508089B00AAED09 /* comment.png in Resources */,
+				C9797A7D15080A0200AAED09 /* heart.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -445,6 +458,7 @@
 				C9DE90FB15002DB6003FA27F /* NSString+JavaAPI.m in Sources */,
 				C96C61AC15063F62008C8E76 /* CommentCellView.m in Sources */,
 				C96C61AF150643E6008C8E76 /* PhotoCommentsWindowController.m in Sources */,
+				C9797A831508151000AAED09 /* CountTransformer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -482,7 +496,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -500,6 +515,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = macosx;
 			};
 			name = Debug;
@@ -508,7 +524,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -519,6 +536,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = macosx;
 			};
 			name = Release;
@@ -526,6 +544,7 @@
 		C96A282E14F507570081DF05 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -534,6 +553,7 @@
 				GCC_PREFIX_HEADER = "RatatamApp/RatatamApp-Prefix.pch";
 				INFOPLIST_FILE = "RatatamApp/RatatamApp-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -541,6 +561,7 @@
 		C96A282F14F507570081DF05 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -549,6 +570,7 @@
 				GCC_PREFIX_HEADER = "RatatamApp/RatatamApp-Prefix.pch";
 				INFOPLIST_FILE = "RatatamApp/RatatamApp-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

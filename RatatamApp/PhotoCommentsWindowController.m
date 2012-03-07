@@ -49,6 +49,8 @@
 {
     [super windowDidLoad];
     
+    NSLog(@"%@", photoData);
+    
     [titleField setStringValue:[NSString stringWithFormat:@"Comment %@'s photo", [[photoData valueForKey:@"user"] valueForKey:@"username"]]];
     
     if ([photoData valueForKey:@"caption"] != [NSNull null]) {
