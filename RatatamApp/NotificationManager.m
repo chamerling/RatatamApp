@@ -31,6 +31,11 @@ static NotificationManager *sharedInstance = nil;
 }
 
 - (void) notifyNewImage:(NSDictionary *)dictionary {
+    if (![GrowlApplicationBridge isGrowlRunning]) {
+        // return now if growl is not installed not running, looks like it can cause problems...
+        return;
+    }
+    
     NSString *url = [[[dictionary valueForKey:@"images"] valueForKey:@"thumbnail"]valueForKey:@"url"];
     
     NSImage *image = [[NSImage alloc] initWithContentsOfURL:[NSURL URLWithString:url]];
@@ -56,6 +61,11 @@ static NotificationManager *sharedInstance = nil;
 }
 
 - (void) notifyError:(NSString *)error {
+    if (![GrowlApplicationBridge isGrowlRunning]) {
+        // return now if growl is not installed not running, looks like it can cause problems...
+        return;
+    }
+    
     NSImage *image = [NSImage imageNamed:@"RatatamApp"];
     
     [GrowlApplicationBridge notifyWithTitle:@"Ratatam Error"
@@ -68,6 +78,11 @@ static NotificationManager *sharedInstance = nil;
 }
 
 - (void) notifyOK:(NSString *)message {
+    if (![GrowlApplicationBridge isGrowlRunning]) {
+        // return now if growl is not installed not running, looks like it can cause problems...
+        return;
+    }
+    
     NSImage *image = [NSImage imageNamed:@"RatatamApp"];
     
     [GrowlApplicationBridge notifyWithTitle:@"Ratatam Status"
