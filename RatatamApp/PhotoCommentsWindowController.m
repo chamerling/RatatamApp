@@ -50,7 +50,13 @@
     [super windowDidLoad];
     
     [titleField setStringValue:[NSString stringWithFormat:@"Comment %@'s photo", [[photoData valueForKey:@"user"] valueForKey:@"username"]]];
-    [disclosureField setStringValue:[[photoData valueForKey:@"caption"] valueForKey:@"text"]];
+    
+    if ([photoData valueForKey:@"caption"] != [NSNull null]) {
+        [disclosureField setStringValue:[[photoData valueForKey:@"caption"] valueForKey:@"text"]];
+    } else {
+        [disclosureField setStringValue:@""];        
+    }
+    
     NSString *url = [[[photoData valueForKey:@"images"] valueForKey:@"thumbnail"] valueForKey:@"url"];
     [photoView setImage:[[NSImage alloc] initWithContentsOfURL:[NSURL URLWithString:url]]];
     
