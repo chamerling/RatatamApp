@@ -74,35 +74,36 @@
     
     NSDictionary *photos = nil;
     if (!lastId) {
-        // first call, we get 10 photos for now...
+        // first call, we get 20 photos for now...
         photos = [client getNPhotos:20];
         // update lastId
     } else {
+        // for tests
+        //photos = [client getNPhotos:3];
         photos = [client getPhotosSince:lastId];
     }
      
     NSDictionary *data = [photos valueForKey:@"data"];
     
+    if (!data) {
+        return;
+    }
+    
     int i = 0;
     for (NSDictionary *photo in data) {
-        //NSLog(@"Processing photo %@ from %@", [photo valueForKey:@"id"], [photo valueForKey:@"user"]);
         if (photo && i == 0) {
             lastId = [photo valueForKey:@"id"];
         }
-        i++;
-        
-        // check if this image is new
-        // we whould already be here if only the photo is new...
         
         InstagramPhoto *ip = [[InstagramPhoto alloc] init];
         [ip setProperties:[[NSMutableDictionary alloc] initWithDictionary:photo]];
         
         if (!firstCall) {
             [notificationManager notifyNewImage:photo];
-            [ratatamController addPhoto:ip atTop:NO];
-        } else {
-            [ratatamController addPhoto:ip atTop:YES];            
         }
+        
+        [ratatamController addPhoto:ip at:i];
+        i++;
     }
     
     if (firstCall) {

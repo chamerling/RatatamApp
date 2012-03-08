@@ -22,7 +22,8 @@
 
 @property (nonatomic, retain) NSMutableArray *photos;
 
-- (void) addPhoto:(InstagramPhoto*) photo atTop:(BOOL)top;
+- (void) addPhoto:(InstagramPhoto*) photo at:(int)index;
+
 - (void) removeAllPhotos;
 - (void) incrementBadgeCount;
 - (void) clearBadgeCount;
