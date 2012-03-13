@@ -12,6 +12,9 @@
 
 @interface RatatamController (Private)
 - (void) doAddPhotoAtPosition:(NSDictionary *) photo;
+- (void) doStartStatusMessage:(NSString *) message;
+- (void) doStopStatusMessage:(NSString *) message;
+- (void) hideAll:(id) sender;
 @end
 
 @implementation RatatamController
@@ -110,5 +113,35 @@
     [toolbarProgress stopAnimation:nil];
     [toolbarLabel setStringValue:@""];
 }
+
+- (void) startStatusMessage:(NSString *)message {
+    [self performSelectorOnMainThread:@selector(doStartStatusMessage:) withObject:message waitUntilDone:NO];
+}
+
+- (void) doStartStatusMessage:(NSString *)message {
+    [toolbarLabel setStringValue:message];
+    [toolbarLabel setHidden:NO];
+    [toolbarProgress startAnimation:nil];
+}
+
+- (void) stopStatusMessage:(NSString *)message withDelay:(NSInteger) delay {
+    [self performSelectorOnMainThread:@selector(doStopStatusMessage:) withObject:message waitUntilDone:NO];    
+}
+
+- (void) doStopStatusMessage:(NSString *)message {
+    [toolbarLabel setStringValue:message];
+    //[toolbarLabel setHidden:NO];
+    //[toolbarProgress startAnimation:nil];
+    
+    [self performSelector:@selector(hideAll:) withObject:nil afterDelay:1.0];
+}
+
+- (void) hideAll:(id)sender {
+    [toolbarLabel setHidden:YES];
+    [toolbarProgress stopAnimation:nil];
+}
+
+
+
 
 @end

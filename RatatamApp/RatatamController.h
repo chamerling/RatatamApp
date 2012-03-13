@@ -32,4 +32,7 @@
 - (void) startProgress:(NSString *) message;
 - (void) stopProgress;
 
+- (void) startStatusMessage:(NSString *)message;
+- (void) stopStatusMessage:(NSString *)message withDelay:(NSInteger) delay;
+
 @end
