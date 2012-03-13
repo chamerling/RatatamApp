@@ -707,7 +707,7 @@
 				<string key="NSName">_NSMainMenu</string>
 			</object>
 			<object class="NSWindowTemplate" id="972006081">
-				<int key="NSWindowStyleMask">4103</int>
+				<int key="NSWindowStyleMask">4111</int>
 				<int key="NSWindowBacking">2</int>
 				<string key="NSWindowRect">{{335, 390}, {500, 600}}</string>
 				<int key="NSWTFlags">1954021376</int>
@@ -734,7 +734,7 @@
 					<reference key="NSToolbarIBSelectableItems" ref="0"/>
 				</object>
 				<nil key="NSUserInterfaceItemIdentifier"/>
-				<string key="NSWindowContentMaxSize">{500, 600}</string>
+				<string key="NSWindowContentMaxSize">{500, 1200}</string>
 				<string key="NSWindowContentMinSize">{500, 600}</string>
 				<object class="NSView" key="NSWindowView" id="439893737">
 					<reference key="NSNextResponder"/>
@@ -878,6 +878,7 @@
 									<string key="NSFrame">{{0, 585}, {500, 15}}</string>
 									<reference key="NSSuperview" ref="64130925"/>
 									<reference key="NSWindow"/>
+									<reference key="NSNextKeyView"/>
 									<string key="NSReuseIdentifierKey">_NS:1216</string>
 									<bool key="NSEnabled">YES</bool>
 									<int key="NSsFlags">1</int>
@@ -907,7 +908,7 @@
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {1440, 878}}</string>
 				<string key="NSMinSize">{500, 641}</string>
-				<string key="NSMaxSize">{500, 641}</string>
+				<string key="NSMaxSize">{500, 1241}</string>
 				<bool key="NSWindowIsRestorable">YES</bool>
 			</object>
 			<object class="NSCustomObject" id="976324537">
@@ -964,6 +965,7 @@
 						<string key="NSFrame">{{469, 5}, {16, 16}}</string>
 						<reference key="NSSuperview" ref="53695350"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:3954</string>
 						<int key="NSpiFlags">28938</int>
 						<double key="NSMaxValue">100</double>
@@ -2519,6 +2521,7 @@
 							<reference ref="109974499"/>
 						</object>
 						<reference key="parent" ref="0"/>
+						<string key="objectName">Window - Ratatam</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">372</int>
