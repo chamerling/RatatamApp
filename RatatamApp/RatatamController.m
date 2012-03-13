@@ -115,7 +115,7 @@
 }
 
 - (void) startStatusMessage:(NSString *)message {
-    [self performSelectorOnMainThread:@selector(doStartStatusMessage:) withObject:message waitUntilDone:NO];
+    [self performSelectorOnMainThread:@selector(doStartStatusMessage:) withObject:message waitUntilDone:YES];
 }
 
 - (void) doStartStatusMessage:(NSString *)message {

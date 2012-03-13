@@ -223,16 +223,17 @@
 }
 
 - (IBAction)like:(id)sender {
-    [self performSelectorInBackground:@selector(doLike:) withObject:[sender valueForKey:@"id"]];            
+    [self performSelectorInBackground:@selector(doLike:) withObject:sender];            
 }
 
 - (void) doLike:(id)sender {
-    [ratatamController startStatusMessage:@"Liking photo..."];
-    BOOL liked = [client likePhoto:sender];
+    [ratatamController startStatusMessage:@"Liking..."];
+    BOOL liked = [client likePhoto:[sender valueForKey:@"id"]];
     if (liked) {
         [ratatamController stopStatusMessage:@"Done!" withDelay:0];
         
-        // update the count...
+        // get the button and update the title count
+        // TODO
         
     } else {
         [ratatamController stopStatusMessage:@"Problem while liking!" withDelay:0];
@@ -242,11 +243,24 @@
 - (IBAction)comment:(id)sender {
     
     PhotoCommentsWindowController *commentsWindow = [[PhotoCommentsWindowController alloc] initWithWindowNibName:@"PhotoCommentsWindow"];
-    // TODO : Get all comments instead of having just default comments...
+
+    //[ratatamController startStatusMessage:@"Getting comments..."];
+    [ratatamController startProgress:nil];
     NSDictionary *data = sender;
+    NSDictionary *comments = [client getCommentsForPhoto:[data valueForKey:@"id"]];
+    [ratatamController stopProgress];
+
+    NSDictionary *commentsData = nil;
+    if (comments) {
+        commentsData = [comments valueForKey:@"data"];
+    } else {
+        commentsData = [[data valueForKey:@"comments"] valueForKey:@"data"];
+    }
+    
     NSMutableDictionary *photoData = [[NSMutableDictionary alloc] initWithDictionary:data copyItems:NO];
 
     [commentsWindow setPhotoData:photoData];
+    [commentsWindow setComments:commentsData];
     [NSApp beginSheet:[commentsWindow window] modalForWindow:[self window] modalDelegate:nil didEndSelector:nil contextInfo:nil];
 }
 

@@ -10,6 +10,7 @@
 
 @interface PhotoCommentsWindowController : NSWindowController {
     NSDictionary *photoData;
+    NSDictionary *comments;
     NSMutableArray *array;
     
     NSScrollView *scrolllView;
@@ -33,6 +34,7 @@
 @property (assign) IBOutlet NSTextField *commentText;
 
 @property (assign) NSDictionary *photoData;
+@property (assign) NSDictionary *comments;
 @property (assign) IBOutlet NSButton *disclosureButton;
 @property (assign) IBOutlet NSScrollView *scrolllView;
 @property (assign) IBOutlet NSView *rootView;

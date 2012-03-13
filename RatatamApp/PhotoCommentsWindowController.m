@@ -28,6 +28,7 @@
 @synthesize commentsCountField;
 @synthesize commentText;
 @synthesize photoData;
+@synthesize comments;
 
 - (id)initWithWindow:(NSWindow *)window
 {
@@ -60,7 +61,7 @@
     NSString *url = [[[photoData valueForKey:@"images"] valueForKey:@"thumbnail"] valueForKey:@"url"];
     [photoView setImage:[[NSImage alloc] initWithContentsOfURL:[NSURL URLWithString:url]]];
     
-    NSDictionary *comments = [[photoData valueForKey:@"comments"] valueForKey:@"data"];
+    //NSDictionary *comments = [[photoData valueForKey:@"comments"] valueForKey:@"data"];
     NSInteger index = 0;
     for (NSDictionary *comment in comments) {
         [array insertObject:comment atIndex:index];
