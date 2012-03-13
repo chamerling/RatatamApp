@@ -718,7 +718,7 @@
 			<object class="NSWindowTemplate" id="972006081">
 				<int key="NSWindowStyleMask">4111</int>
 				<int key="NSWindowBacking">2</int>
-				<string key="NSWindowRect">{{335, 390}, {500, 615}}</string>
+				<string key="NSWindowRect">{{335, 390}, {500, 600}}</string>
 				<int key="NSWTFlags">1954021376</int>
 				<string key="NSWindowTitle">RatatamApp</string>
 				<string key="NSWindowClass">NSWindow</string>
@@ -743,8 +743,8 @@
 					<reference key="NSToolbarIBSelectableItems" ref="0"/>
 				</object>
 				<nil key="NSUserInterfaceItemIdentifier"/>
-				<string key="NSWindowContentMaxSize">{500, 615}</string>
-				<string key="NSWindowContentMinSize">{500, 615}</string>
+				<string key="NSWindowContentMaxSize">{500, 600}</string>
+				<string key="NSWindowContentMinSize">{500, 600}</string>
 				<object class="NSView" key="NSWindowView" id="439893737">
 					<reference key="NSNextResponder"/>
 					<int key="NSvFlags">256</int>
@@ -763,7 +763,7 @@
 										<object class="NSTableView" id="935132713">
 											<reference key="NSNextResponder" ref="711252609"/>
 											<int key="NSvFlags">256</int>
-											<string key="NSFrameSize">{503, 686}</string>
+											<string key="NSFrameSize">{503, 600}</string>
 											<reference key="NSSuperview" ref="711252609"/>
 											<reference key="NSWindow"/>
 											<reference key="NSNextKeyView" ref="81403260"/>
@@ -856,7 +856,7 @@
 											<int key="NSTableViewGroupRowStyle">1</int>
 										</object>
 									</object>
-									<string key="NSFrameSize">{500, 686}</string>
+									<string key="NSFrameSize">{500, 600}</string>
 									<reference key="NSSuperview" ref="64130925"/>
 									<reference key="NSWindow"/>
 									<reference key="NSNextKeyView" ref="935132713"/>
@@ -884,10 +884,9 @@
 								<object class="NSScroller" id="151096144">
 									<reference key="NSNextResponder" ref="64130925"/>
 									<int key="NSvFlags">256</int>
-									<string key="NSFrame">{{0, 671}, {500, 15}}</string>
+									<string key="NSFrame">{{0, 585}, {500, 15}}</string>
 									<reference key="NSSuperview" ref="64130925"/>
 									<reference key="NSWindow"/>
-									<reference key="NSNextKeyView"/>
 									<string key="NSReuseIdentifierKey">_NS:1216</string>
 									<bool key="NSEnabled">YES</bool>
 									<int key="NSsFlags">1</int>
@@ -896,7 +895,7 @@
 									<double key="NSPercent">0.99403578528827041</double>
 								</object>
 							</object>
-							<string key="NSFrame">{{0, -71}, {500, 686}}</string>
+							<string key="NSFrameSize">{500, 600}</string>
 							<reference key="NSSuperview" ref="439893737"/>
 							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="711252609"/>
@@ -909,15 +908,15 @@
 							<bytes key="NSScrollAmts">QSAAAEEgAABEEYAARBGAAA</bytes>
 						</object>
 					</object>
-					<string key="NSFrameSize">{500, 615}</string>
+					<string key="NSFrameSize">{500, 600}</string>
 					<reference key="NSSuperview"/>
 					<reference key="NSWindow"/>
 					<reference key="NSNextKeyView" ref="64130925"/>
 					<int key="NSViewLayerContentsRedrawPolicy">2</int>
 				</object>
-				<string key="NSScreenRect">{{0, 0}, {1440, 878}}</string>
-				<string key="NSMinSize">{500, 656}</string>
-				<string key="NSMaxSize">{500, 656}</string>
+				<string key="NSScreenRect">{{0, 0}, {1680, 1028}}</string>
+				<string key="NSMinSize">{500, 641}</string>
+				<string key="NSMaxSize">{500, 641}</string>
 				<bool key="NSWindowIsRestorable">YES</bool>
 			</object>
 			<object class="NSCustomObject" id="976324537">
@@ -974,7 +973,6 @@
 						<string key="NSFrame">{{469, 5}, {16, 16}}</string>
 						<reference key="NSSuperview" ref="53695350"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:3954</string>
 						<int key="NSpiFlags">28938</int>
 						<double key="NSMaxValue">100</double>
