@@ -82,10 +82,16 @@
         //photos = [client getNPhotos:3];
         photos = [client getPhotosSince:lastId];
     }
+    
+    if (!photos) {
+        [self performSelectorOnMainThread:@selector(hideProgress:) withObject:nil waitUntilDone:YES];
+        return;
+    }
      
     NSDictionary *data = [photos valueForKey:@"data"];
     
     if (!data) {
+        [self performSelectorOnMainThread:@selector(hideProgress:) withObject:nil waitUntilDone:YES];
         return;
     }
     
