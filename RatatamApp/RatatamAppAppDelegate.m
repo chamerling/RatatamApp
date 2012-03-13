@@ -227,9 +227,9 @@
 }
 
 - (void) doLike:(id)sender {
-    [ratatamController startStatusMessage:@"Liking..."];
+    [ratatamController startStatusMessage:@"Liking photo..."];
     [client likePhoto:sender];
-    [ratatamController stopStatusMessage:@"Image liked!" withDelay:0];
+    [ratatamController stopStatusMessage:@"Done!" withDelay:0];
 }
 
 - (IBAction)comment:(id)sender {
