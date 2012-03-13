@@ -36,7 +36,6 @@
 		C9797A7A1508089B00AAED09 /* comment.png in Resources */ = {isa = PBXBuildFile; fileRef = C9797A791508089B00AAED09 /* comment.png */; };
 		C9797A7D15080A0200AAED09 /* heart.png in Resources */ = {isa = PBXBuildFile; fileRef = C9797A7C15080A0200AAED09 /* heart.png */; };
 		C9797A831508151000AAED09 /* CountTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = C9797A821508151000AAED09 /* CountTransformer.m */; };
-		C98AC999150F40A000CE8583 /* RRTImage.m in Sources */ = {isa = PBXBuildFile; fileRef = C98AC998150F40A000CE8583 /* RRTImage.m */; };
 		C9DE90DA14FFC5A7003FA27F /* RatatamApp.icns in Resources */ = {isa = PBXBuildFile; fileRef = C9DE90D914FFC5A7003FA27F /* RatatamApp.icns */; };
 		C9DE90DD14FFC5B8003FA27F /* RatatamApp.icns in Resources */ = {isa = PBXBuildFile; fileRef = C9DE90DC14FFC5B8003FA27F /* RatatamApp.icns */; };
 		C9DE90EC150014F9003FA27F /* Preferences.m in Sources */ = {isa = PBXBuildFile; fileRef = C9DE90EB150014F9003FA27F /* Preferences.m */; };
@@ -129,8 +128,6 @@
 		C9797A7C15080A0200AAED09 /* heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heart.png; sourceTree = "<group>"; };
 		C9797A811508151000AAED09 /* CountTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountTransformer.h; sourceTree = "<group>"; };
 		C9797A821508151000AAED09 /* CountTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountTransformer.m; sourceTree = "<group>"; };
-		C98AC997150F40A000CE8583 /* RRTImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRTImage.h; sourceTree = "<group>"; };
-		C98AC998150F40A000CE8583 /* RRTImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRTImage.m; sourceTree = "<group>"; };
 		C9DE90D914FFC5A7003FA27F /* RatatamApp.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = RatatamApp.icns; sourceTree = "<group>"; };
 		C9DE90DC14FFC5B8003FA27F /* RatatamApp.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = RatatamApp.icns; sourceTree = "<group>"; };
 		C9DE90EA150014F9003FA27F /* Preferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Preferences.h; sourceTree = "<group>"; };
@@ -258,8 +255,6 @@
 				C96C61AB15063F62008C8E76 /* CommentCellView.m */,
 				C9797A811508151000AAED09 /* CountTransformer.h */,
 				C9797A821508151000AAED09 /* CountTransformer.m */,
-				C98AC997150F40A000CE8583 /* RRTImage.h */,
-				C98AC998150F40A000CE8583 /* RRTImage.m */,
 			);
 			path = RatatamApp;
 			sourceTree = "<group>";
@@ -464,7 +459,6 @@
 				C96C61AC15063F62008C8E76 /* CommentCellView.m in Sources */,
 				C96C61AF150643E6008C8E76 /* PhotoCommentsWindowController.m in Sources */,
 				C9797A831508151000AAED09 /* CountTransformer.m in Sources */,
-				C98AC999150F40A000CE8583 /* RRTImage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
