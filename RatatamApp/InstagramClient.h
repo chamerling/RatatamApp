@@ -19,7 +19,7 @@
 - (NSDictionary*) getCommentsForUser:(int)size;
 - (NSDictionary*) getLikesForUser:(int)size;
 
-- (void) likePhoto:(NSString*)photo;
+- (BOOL) likePhoto:(NSString*)photo;
 - (void) disLikePhoto:(NSString*)photo;
 
 - (void) commentPhoto:(NSString*)photo commnent:(NSString*) comment;

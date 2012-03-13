@@ -228,8 +228,15 @@
 
 - (void) doLike:(id)sender {
     [ratatamController startStatusMessage:@"Liking photo..."];
-    [client likePhoto:sender];
-    [ratatamController stopStatusMessage:@"Done!" withDelay:0];
+    BOOL liked = [client likePhoto:sender];
+    if (liked) {
+        [ratatamController stopStatusMessage:@"Done!" withDelay:0];
+        
+        // update the count...
+        
+    } else {
+        [ratatamController stopStatusMessage:@"Problem while liking!" withDelay:0];
+    }
 }
 
 - (IBAction)comment:(id)sender {

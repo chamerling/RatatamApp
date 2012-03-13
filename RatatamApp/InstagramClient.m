@@ -114,7 +114,7 @@
     return nil;
 }
 
-- (void) likePhoto:(NSString*)photo {
+- (BOOL) likePhoto:(NSString*)photo {
     // /media/{media-id}/likes/
     Preferences *pref = [Preferences sharedInstance];
 
@@ -128,7 +128,7 @@
     
     if (code == 0) {
         [[NotificationManager get] notifyError:@"Error while sending request"];
-        return;
+        return NO;
     }
     
     NSDictionary* dict = [[request responseString] objectFromJSONString];
@@ -137,10 +137,12 @@
         // ouch!
         NSString *error = [dict valueForKey:@"data"];
         [[NotificationManager get] notifyError:@"Error while liking image"];
+        return NO;
 
     } else {
         // well done...
         [[NotificationManager get] notifyOK:@"Image liked"];
+        return YES;
     }
 }
 
