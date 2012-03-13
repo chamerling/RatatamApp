@@ -64,7 +64,7 @@
 					<bool key="EncodedWithXMLCoder">YES</bool>
 					<object class="NSMenuItem" id="694149608">
 						<reference key="NSMenu" ref="649796088"/>
-						<string key="NSTitle">RatatamApp</string>
+						<string key="NSTitle">Ratatam</string>
 						<string key="NSKeyEquiv"/>
 						<int key="NSKeyEquivModMask">1048576</int>
 						<int key="NSMnemonicLoc">2147483647</int>
@@ -78,12 +78,12 @@
 						</object>
 						<string key="NSAction">submenuAction:</string>
 						<object class="NSMenu" key="NSSubmenu" id="110575045">
-							<string key="NSTitle">RatatamApp</string>
+							<string key="NSTitle">Ratatam</string>
 							<object class="NSMutableArray" key="NSMenuItems">
 								<bool key="EncodedWithXMLCoder">YES</bool>
 								<object class="NSMenuItem" id="238522557">
 									<reference key="NSMenu" ref="110575045"/>
-									<string key="NSTitle">About RatatamApp</string>
+									<string key="NSTitle">About Ratatam</string>
 									<string key="NSKeyEquiv"/>
 									<int key="NSMnemonicLoc">2147483647</int>
 									<reference key="NSOnImage" ref="35465992"/>
@@ -150,7 +150,7 @@
 								</object>
 								<object class="NSMenuItem" id="755159360">
 									<reference key="NSMenu" ref="110575045"/>
-									<string key="NSTitle">Hide RatatamApp</string>
+									<string key="NSTitle">Hide Ratatam</string>
 									<string key="NSKeyEquiv">h</string>
 									<int key="NSKeyEquivModMask">1048576</int>
 									<int key="NSMnemonicLoc">2147483647</int>
@@ -188,7 +188,7 @@
 								</object>
 								<object class="NSMenuItem" id="632727374">
 									<reference key="NSMenu" ref="110575045"/>
-									<string key="NSTitle">Quit RatatamApp</string>
+									<string key="NSTitle">Quit Ratatam</string>
 									<string key="NSKeyEquiv">q</string>
 									<int key="NSKeyEquivModMask">1048576</int>
 									<int key="NSMnemonicLoc">2147483647</int>
@@ -654,15 +654,6 @@
 									<reference key="NSOnImage" ref="35465992"/>
 									<reference key="NSMixedImage" ref="502551668"/>
 								</object>
-								<object class="NSMenuItem" id="575023229">
-									<reference key="NSMenu" ref="835318025"/>
-									<string key="NSTitle">Zoom</string>
-									<string key="NSKeyEquiv"/>
-									<int key="NSKeyEquivModMask">1048576</int>
-									<int key="NSMnemonicLoc">2147483647</int>
-									<reference key="NSOnImage" ref="35465992"/>
-									<reference key="NSMixedImage" ref="502551668"/>
-								</object>
 								<object class="NSMenuItem" id="299356726">
 									<reference key="NSMenu" ref="835318025"/>
 									<bool key="NSIsDisabled">YES</bool>
@@ -701,7 +692,7 @@
 								<bool key="EncodedWithXMLCoder">YES</bool>
 								<object class="NSMenuItem" id="105068016">
 									<reference key="NSMenu" ref="992780483"/>
-									<string key="NSTitle">RatatamApp Help</string>
+									<string key="NSTitle">Ratatam Help</string>
 									<string key="NSKeyEquiv">?</string>
 									<int key="NSKeyEquivModMask">1048576</int>
 									<int key="NSMnemonicLoc">2147483647</int>
@@ -716,11 +707,11 @@
 				<string key="NSName">_NSMainMenu</string>
 			</object>
 			<object class="NSWindowTemplate" id="972006081">
-				<int key="NSWindowStyleMask">4111</int>
+				<int key="NSWindowStyleMask">4103</int>
 				<int key="NSWindowBacking">2</int>
 				<string key="NSWindowRect">{{335, 390}, {500, 600}}</string>
 				<int key="NSWTFlags">1954021376</int>
-				<string key="NSWindowTitle">RatatamApp</string>
+				<string key="NSWindowTitle">Ratatam</string>
 				<string key="NSWindowClass">NSWindow</string>
 				<object class="NSToolbar" key="NSViewClass" id="109974499">
 					<object class="NSMutableString" key="NSToolbarIdentifier">
@@ -914,7 +905,7 @@
 					<reference key="NSNextKeyView" ref="64130925"/>
 					<int key="NSViewLayerContentsRedrawPolicy">2</int>
 				</object>
-				<string key="NSScreenRect">{{0, 0}, {1680, 1028}}</string>
+				<string key="NSScreenRect">{{0, 0}, {1440, 878}}</string>
 				<string key="NSMinSize">{500, 641}</string>
 				<string key="NSMaxSize">{500, 641}</string>
 				<bool key="NSWindowIsRestorable">YES</bool>
@@ -1141,14 +1132,6 @@
 						<reference key="destination" ref="437104165"/>
 					</object>
 					<int key="connectionID">235</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBActionConnection" key="connection">
-						<string key="label">performZoom:</string>
-						<reference key="source" ref="1014"/>
-						<reference key="destination" ref="575023229"/>
-					</object>
-					<int key="connectionID">240</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBActionConnection" key="connection">
@@ -2435,7 +2418,6 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<reference ref="299356726"/>
 							<reference ref="625202149"/>
-							<reference ref="575023229"/>
 							<reference ref="1011231497"/>
 						</object>
 						<reference key="parent" ref="713487014"/>
@@ -2448,11 +2430,6 @@
 					<object class="IBObjectRecord">
 						<int key="objectID">5</int>
 						<reference key="object" ref="625202149"/>
-						<reference key="parent" ref="835318025"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">239</int>
-						<reference key="object" ref="575023229"/>
 						<reference key="parent" ref="835318025"/>
 					</object>
 					<object class="IBObjectRecord">
@@ -2958,7 +2935,6 @@
 					<string>221.IBPluginDependency</string>
 					<string>23.IBPluginDependency</string>
 					<string>236.IBPluginDependency</string>
-					<string>239.IBPluginDependency</string>
 					<string>24.IBPluginDependency</string>
 					<string>29.IBPluginDependency</string>
 					<string>346.IBPluginDependency</string>
@@ -3054,7 +3030,6 @@
 				</object>
 				<object class="NSMutableArray" key="dict.values">
 					<bool key="EncodedWithXMLCoder">YES</bool>
-					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -3207,7 +3182,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">868</int>
+			<int key="maxID">876</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
