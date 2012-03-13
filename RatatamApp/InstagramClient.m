@@ -84,6 +84,24 @@
     return dict;
 }
 
+- (NSDictionary*) getCommentsForPhoto:(NSString*)photo {
+    Preferences *pref = [Preferences sharedInstance];
+    
+    NSString *url = [NSString stringWithFormat:@"https://api.instagram.com/v1/media/%@/comments?access_token=%@", photo, [pref oauthToken]];
+    ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:url]];
+    [request setDelegate:self];
+    [request startSynchronous];
+    
+    if ([request responseStatusCode] == 0) {
+        // fail!!!
+        [[NotificationManager get] notifyError:@"Error while sending request"];
+        return nil;
+    } 
+    
+    NSDictionary* dict = [[request responseString] objectFromJSONString];
+    return dict;
+}
+
 - (NSDictionary*) getPhotosSince:(NSString*)lastId {
     Preferences *pref = [Preferences sharedInstance];
 
