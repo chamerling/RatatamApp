@@ -9,7 +9,7 @@
 	<key>CFBundleIconFile</key>
 	<string>RatatamApp.icns</string>
 	<key>CFBundleIdentifier</key>
-	<string>org.chamerling.${PRODUCT_NAME:rfc1034identifier}</string>
+	<string>org.chamerling.RatatamApp</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
