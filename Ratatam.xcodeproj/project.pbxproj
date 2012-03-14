@@ -72,7 +72,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		C96A280C14F507570081DF05 /* Ratatam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ratatam.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C96A280C14F507570081DF05 /* RatatamApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RatatamApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C96A281014F507570081DF05 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		C96A281314F507570081DF05 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		C96A281414F507570081DF05 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -190,7 +190,7 @@
 		C96A280D14F507570081DF05 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C96A280C14F507570081DF05 /* Ratatam.app */,
+				C96A280C14F507570081DF05 /* RatatamApp.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -376,7 +376,7 @@
 			);
 			name = RatatamApp;
 			productName = RatatamApp;
-			productReference = C96A280C14F507570081DF05 /* Ratatam.app */;
+			productReference = C96A280C14F507570081DF05 /* RatatamApp.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -384,7 +384,7 @@
 /* Begin PBXProject section */
 		C96A280314F507560081DF05 /* Project object */ = {
 			isa = PBXProject;
-			buildConfigurationList = C96A280614F507560081DF05 /* Build configuration list for PBXProject "Ratatam" */;
+			buildConfigurationList = C96A280614F507560081DF05 /* Build configuration list for PBXProject "RatatamApp" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -552,7 +552,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RatatamApp/RatatamApp-Prefix.pch";
 				INFOPLIST_FILE = "RatatamApp/RatatamApp-Info.plist";
-				PRODUCT_NAME = Ratatam;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
@@ -569,7 +569,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RatatamApp/RatatamApp-Prefix.pch";
 				INFOPLIST_FILE = "RatatamApp/RatatamApp-Info.plist";
-				PRODUCT_NAME = Ratatam;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
@@ -578,7 +578,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C96A280614F507560081DF05 /* Build configuration list for PBXProject "Ratatam" */ = {
+		C96A280614F507560081DF05 /* Build configuration list for PBXProject "RatatamApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C96A282B14F507570081DF05 /* Debug */,
