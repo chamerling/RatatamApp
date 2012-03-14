@@ -36,6 +36,8 @@
 		C9797A7A1508089B00AAED09 /* comment.png in Resources */ = {isa = PBXBuildFile; fileRef = C9797A791508089B00AAED09 /* comment.png */; };
 		C9797A7D15080A0200AAED09 /* heart.png in Resources */ = {isa = PBXBuildFile; fileRef = C9797A7C15080A0200AAED09 /* heart.png */; };
 		C9797A831508151000AAED09 /* CountTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = C9797A821508151000AAED09 /* CountTransformer.m */; };
+		C99DF3271510D3F400732AEE /* NSDate+Delay.m in Sources */ = {isa = PBXBuildFile; fileRef = C99DF3261510D3F400732AEE /* NSDate+Delay.m */; };
+		C9B28CE21510DEC100BCCFD9 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = C9B28CE11510DEC100BCCFD9 /* README.md */; };
 		C9DE90DA14FFC5A7003FA27F /* RatatamApp.icns in Resources */ = {isa = PBXBuildFile; fileRef = C9DE90D914FFC5A7003FA27F /* RatatamApp.icns */; };
 		C9DE90DD14FFC5B8003FA27F /* RatatamApp.icns in Resources */ = {isa = PBXBuildFile; fileRef = C9DE90DC14FFC5B8003FA27F /* RatatamApp.icns */; };
 		C9DE90EC150014F9003FA27F /* Preferences.m in Sources */ = {isa = PBXBuildFile; fileRef = C9DE90EB150014F9003FA27F /* Preferences.m */; };
@@ -128,6 +130,10 @@
 		C9797A7C15080A0200AAED09 /* heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heart.png; sourceTree = "<group>"; };
 		C9797A811508151000AAED09 /* CountTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountTransformer.h; sourceTree = "<group>"; };
 		C9797A821508151000AAED09 /* CountTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountTransformer.m; sourceTree = "<group>"; };
+		C99DF3251510D3F400732AEE /* NSDate+Delay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Delay.h"; sourceTree = "<group>"; };
+		C99DF3261510D3F400732AEE /* NSDate+Delay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Delay.m"; sourceTree = "<group>"; };
+		C99DF3291510D44800732AEE /* DevUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DevUtils.h; sourceTree = "<group>"; };
+		C9B28CE11510DEC100BCCFD9 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		C9DE90D914FFC5A7003FA27F /* RatatamApp.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = RatatamApp.icns; sourceTree = "<group>"; };
 		C9DE90DC14FFC5B8003FA27F /* RatatamApp.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = RatatamApp.icns; sourceTree = "<group>"; };
 		C9DE90EA150014F9003FA27F /* Preferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Preferences.h; sourceTree = "<group>"; };
@@ -180,6 +186,7 @@
 		C96A280114F507560081DF05 = {
 			isa = PBXGroup;
 			children = (
+				C9B28CE11510DEC100BCCFD9 /* README.md */,
 				C9DE90DC14FFC5B8003FA27F /* RatatamApp.icns */,
 				C96A281614F507570081DF05 /* RatatamApp */,
 				C96A280F14F507570081DF05 /* Frameworks */,
@@ -221,6 +228,7 @@
 		C96A281614F507570081DF05 /* RatatamApp */ = {
 			isa = PBXGroup;
 			children = (
+				C99DF3291510D44800732AEE /* DevUtils.h */,
 				C9DE90EE15001839003FA27F /* Preferences */,
 				C96A281714F507570081DF05 /* Supporting Files */,
 				C96A283014F508A20081DF05 /* Dependencies */,
@@ -255,6 +263,8 @@
 				C96C61AB15063F62008C8E76 /* CommentCellView.m */,
 				C9797A811508151000AAED09 /* CountTransformer.h */,
 				C9797A821508151000AAED09 /* CountTransformer.m */,
+				C99DF3251510D3F400732AEE /* NSDate+Delay.h */,
+				C99DF3261510D3F400732AEE /* NSDate+Delay.m */,
 			);
 			path = RatatamApp;
 			sourceTree = "<group>";
@@ -419,6 +429,7 @@
 				C96C61A515063E31008C8E76 /* PhotoCommentsWindow.xib in Resources */,
 				C9797A7A1508089B00AAED09 /* comment.png in Resources */,
 				C9797A7D15080A0200AAED09 /* heart.png in Resources */,
+				C9B28CE21510DEC100BCCFD9 /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -459,6 +470,7 @@
 				C96C61AC15063F62008C8E76 /* CommentCellView.m in Sources */,
 				C96C61AF150643E6008C8E76 /* PhotoCommentsWindowController.m in Sources */,
 				C9797A831508151000AAED09 /* CountTransformer.m in Sources */,
+				C99DF3271510D3F400732AEE /* NSDate+Delay.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

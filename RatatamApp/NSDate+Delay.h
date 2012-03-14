@@ -10,4 +10,6 @@
 
 @interface NSDate (Delay)
 
+- (NSString *) delay:(NSDate*) date;
+
 @end
