@@ -20,7 +20,6 @@
     NSManagedObjectModel *__managedObjectModel;
     NSManagedObjectContext *__managedObjectContext;
     
-    NSArrayController *_arrayController;
     IBOutlet RatatamController *ratatamController;
     
     MASPreferencesWindowController *_preferencesWindowController;
@@ -31,7 +30,6 @@
     IBOutlet NSView *toolbarView;
     IBOutlet NSToolbar *toolbar;
 }
-@property (assign) IBOutlet NSArrayController *arrayController;
 
 @property (assign) IBOutlet NSWindow *window;
 @property (assign) IBOutlet NSView *view;

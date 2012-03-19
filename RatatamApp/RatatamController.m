@@ -9,6 +9,8 @@
 #import "RatatamController.h"
 
 #import "InstagramClient.h"
+#import "PhotoCellView.h"
+#import "EGOCache.h"
 
 @interface RatatamController (Private)
 - (void) doAddPhotoAtPosition:(NSDictionary *) photo;
@@ -20,6 +22,7 @@
 @implementation RatatamController
 
 @synthesize photos;
+@synthesize tableView;
 
 - (id)init {
     self = [super init];
@@ -31,8 +34,11 @@
     return self;
 }
 
+// called by the fetcher...
 - (void) addPhoto:(InstagramPhoto*) photo at:(int)index {
     if (photo) {
+        
+        // lock it, we can not add photos while enumerating. Waiting on last method fixes the problem but cleaner integration will be better...
         
         for (NSDictionary *available in photos) {
     
@@ -60,29 +66,18 @@
 // This works with KVO and bindings.
 - (void) doAddPhotoAtPosition:(NSDictionary *) dict {
     
-    // works but just for init, same with add object...
-    //[photos insertObject:photo atIndex:0];
-    
-    // works in init too...
-    // NSMutableArray *array = [[NSMutableArray alloc] initWithArray:photos];
-    //[array addObject:photo];
-    //[photos release];
-    //photos = array;
-    
     InstagramPhoto *photo = [dict valueForKey:@"photo"];
     NSNumber *position = [dict valueForKey:@"position"];
-    
-    // this proxy is KVO enabled, not the photos array itself...
-    id proxy = [self mutableArrayValueForKey:@"photos"];
-    NSInteger index = [position intValue];
         
     [self incrementBadgeCount];
-    [proxy insertObject:photo atIndex:index];
+    [photos insertObject:photo atIndex:[position intValue]];
+    [[self tableView] reloadData];
 }
 
 - (void) removeAllPhotos {
-    id proxy = [self mutableArrayValueForKey:@"photos"];
-    [proxy removeAllObjects];    
+    photos = [[NSMutableArray alloc] init];
+    [[EGOCache currentCache] clearCache];
+    [[self tableView] reloadData];  
 }
 
 - (void) incrementBadgeCount {
@@ -141,7 +136,55 @@
     [toolbarProgress stopAnimation:nil];
 }
 
+#pragma mark Table view methods
 
+- (NSInteger)numberOfSectionsInTableView:(NSTableView *)tableView {
+    return 1;
+}
 
+// Customize the number of rows in the table view.
+- (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView {
+    return photos.count;
+}
+
+- (NSView *)tableView:(NSTableView *)_tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row {
+    
+    InstagramPhoto *photo = [photos objectAtIndex:row];
+    if (!photo) {
+        return nil;
+    }
+    NSDictionary *data = [photo properties];
+    
+    PhotoCellView *cell = [_tableView makeViewWithIdentifier:@"PhotoCell" owner:self];
+    [cell setInstagramPhoto:photo];
+    
+    [[cell username] setStringValue:[[data valueForKey:@"user"] valueForKey:@"full_name"]];
+    NSString *userAvatar = [[[photo properties] valueForKey:@"user"] valueForKey:@"profile_picture"];
+    [cell setAvatar:userAvatar];
+    
+    if ([data valueForKey:@"caption"] != [NSNull null]) {
+        [[cell caption] setStringValue:[[data valueForKey:@"caption"] valueForKey:@"text"]];
+    } else {
+        [[cell caption] setStringValue:@""];        
+    }    
+    
+    NSString *createdAt = [[photo properties] valueForKey:@"created_time"];
+    NSDateFormatter *f = [[NSDateFormatter alloc] init];
+    [f setDateStyle:NSDateFormatterLongStyle];
+    [f setTimeStyle:NSDateFormatterMediumStyle];
+    NSString *date = [f stringFromDate:[NSDate dateWithTimeIntervalSince1970:[createdAt longLongValue]]];
+    [[cell date] setStringValue:date];
+    
+    NSString *url = [[[[photo properties] valueForKey:@"images"] valueForKey:@"standard_resolution"] valueForKey:@"url"];
+    [cell setPhoto:url];
+    
+    [[cell likeButton] setAction:@selector(like:)];
+    [[cell likeButton] setTarget:cell];
+    
+    [[cell commentButton] setAction:@selector(comment:)];
+    [[cell commentButton] setTarget:cell];
+    
+    return cell;
+}
 
 @end

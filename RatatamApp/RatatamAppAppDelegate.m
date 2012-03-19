@@ -24,7 +24,6 @@
 @end
 
 @implementation RatatamAppAppDelegate
-@synthesize arrayController = _arrayController;
 
 @synthesize window;
 @synthesize view = _view;

@@ -13,7 +13,6 @@
     NSInteger unread;
     NSMutableArray *photos;
     
-    IBOutlet NSArrayController *arrayController;
     IBOutlet NSWindow *mainWindow;
     IBOutlet NSView *rootView;
     IBOutlet NSProgressIndicator *toolbarProgress;
@@ -21,6 +20,7 @@
 }
 
 @property (nonatomic, retain) NSMutableArray *photos;
+@property (assign) IBOutlet NSTableView *tableView;
 
 - (void) addPhoto:(InstagramPhoto*) photo at:(int)index;
 

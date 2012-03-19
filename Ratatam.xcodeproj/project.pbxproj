@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C9500AA41517E5FE006577C0 /* EGOImageLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = C9500A9D1517E5FE006577C0 /* EGOImageLoader.m */; };
+		C9500AA51517E5FE006577C0 /* EGOImageLoadConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = C9500A9F1517E5FE006577C0 /* EGOImageLoadConnection.m */; };
+		C9500AA61517E5FE006577C0 /* EGOCache.m in Sources */ = {isa = PBXBuildFile; fileRef = C9500AA11517E5FE006577C0 /* EGOCache.m */; };
+		C9500AA71517E5FE006577C0 /* EGOImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = C9500AA31517E5FE006577C0 /* EGOImageView.m */; };
+		C9500AA91517EC1C006577C0 /* loading.gif in Resources */ = {isa = PBXBuildFile; fileRef = C9500AA81517EC1C006577C0 /* loading.gif */; };
 		C96A281114F507570081DF05 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C96A281014F507570081DF05 /* Cocoa.framework */; };
 		C96A281B14F507570081DF05 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C96A281914F507570081DF05 /* InfoPlist.strings */; };
 		C96A281D14F507570081DF05 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C96A281C14F507570081DF05 /* main.m */; };
@@ -74,6 +79,15 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		C9500A9C1517E5FE006577C0 /* EGOImageLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGOImageLoader.h; sourceTree = "<group>"; };
+		C9500A9D1517E5FE006577C0 /* EGOImageLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGOImageLoader.m; sourceTree = "<group>"; };
+		C9500A9E1517E5FE006577C0 /* EGOImageLoadConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGOImageLoadConnection.h; sourceTree = "<group>"; };
+		C9500A9F1517E5FE006577C0 /* EGOImageLoadConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGOImageLoadConnection.m; sourceTree = "<group>"; };
+		C9500AA01517E5FE006577C0 /* EGOCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGOCache.h; sourceTree = "<group>"; };
+		C9500AA11517E5FE006577C0 /* EGOCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGOCache.m; sourceTree = "<group>"; };
+		C9500AA21517E5FE006577C0 /* EGOImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGOImageView.h; sourceTree = "<group>"; };
+		C9500AA31517E5FE006577C0 /* EGOImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGOImageView.m; sourceTree = "<group>"; };
+		C9500AA81517EC1C006577C0 /* loading.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = loading.gif; sourceTree = "<group>"; };
 		C96A280C14F507570081DF05 /* Ratatam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ratatam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C96A281014F507570081DF05 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		C96A281314F507570081DF05 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -183,6 +197,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C9500A9A1517E5E1006577C0 /* AsyncNSImageView */ = {
+			isa = PBXGroup;
+			children = (
+				C9500AA81517EC1C006577C0 /* loading.gif */,
+				C9500A9C1517E5FE006577C0 /* EGOImageLoader.h */,
+				C9500A9D1517E5FE006577C0 /* EGOImageLoader.m */,
+				C9500A9E1517E5FE006577C0 /* EGOImageLoadConnection.h */,
+				C9500A9F1517E5FE006577C0 /* EGOImageLoadConnection.m */,
+				C9500AA01517E5FE006577C0 /* EGOCache.h */,
+				C9500AA11517E5FE006577C0 /* EGOCache.m */,
+				C9500AA21517E5FE006577C0 /* EGOImageView.h */,
+				C9500AA31517E5FE006577C0 /* EGOImageView.m */,
+			);
+			name = AsyncNSImageView;
+			sourceTree = "<group>";
+		};
 		C96A280114F507560081DF05 = {
 			isa = PBXGroup;
 			children = (
@@ -284,6 +314,7 @@
 		C96A283014F508A20081DF05 /* Dependencies */ = {
 			isa = PBXGroup;
 			children = (
+				C9500A9A1517E5E1006577C0 /* AsyncNSImageView */,
 				C9FCEEB514F50B9A00DA3B7E /* JSONKit */,
 				C96A283D14F508EE0081DF05 /* XMLReader.h */,
 				C96A283E14F508EE0081DF05 /* XMLReader.m */,
@@ -430,6 +461,7 @@
 				C9797A7A1508089B00AAED09 /* comment.png in Resources */,
 				C9797A7D15080A0200AAED09 /* heart.png in Resources */,
 				C9B28CE21510DEC100BCCFD9 /* README.md in Resources */,
+				C9500AA91517EC1C006577C0 /* loading.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -471,6 +503,10 @@
 				C96C61AF150643E6008C8E76 /* PhotoCommentsWindowController.m in Sources */,
 				C9797A831508151000AAED09 /* CountTransformer.m in Sources */,
 				C99DF3271510D3F400732AEE /* NSDate+Delay.m in Sources */,
+				C9500AA41517E5FE006577C0 /* EGOImageLoader.m in Sources */,
+				C9500AA51517E5FE006577C0 /* EGOImageLoadConnection.m in Sources */,
+				C9500AA61517E5FE006577C0 /* EGOCache.m in Sources */,
+				C9500AA71517E5FE006577C0 /* EGOImageView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

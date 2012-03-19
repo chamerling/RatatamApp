@@ -8,6 +8,7 @@
 
 #import "PhotoCellView.h"
 #import "PhotoAddCommentWindowController.h"
+#import "EGOImageView.h"
 #import <QuartzCore/QuartzCore.h>
 
 @implementation PhotoCellView
@@ -19,16 +20,26 @@
 @synthesize likeButton;
 @synthesize commentButton;
 @synthesize box;
+@synthesize instagramPhoto;
 
-- (id)init
+- (id)initWithFrame:(NSRect)frame
 {
-    self = [super init];
+    self = [super initWithFrame:frame];
     if (self) {
+        image = [[EGOImageView alloc] initWithPlaceholderImage:[NSImage imageNamed:@"loading.gif"] delegate:self];
+        [self addSubview:image];
     }
     
     return self;
 }
 
+- (void)setPhoto:(NSString*)photo {
+	image.imageURL = [NSURL URLWithString:photo];
+}
+
+- (void)setAvatar:(NSString*)url {
+    contactImage.imageURL = [NSURL URLWithString:url];
+}
 
 - (void)drawRect:(NSRect)dirtyRect {
     /*
@@ -46,6 +57,18 @@
     
     box.layer.shadowPath = path.CGPath;
      */
+}
+
+- (void)imageViewLoadedImage:(EGOImageView*)imageView {
+    NSLog(@"Image has been loaded : %@", imageView.imageURL);
+}
+
+- (IBAction)like:(id)sender {
+    NSLog(@"Like %@", [instagramPhoto properties]);    
+}
+
+- (IBAction)comment:(id)sender {
+    NSLog(@"comment %@", [instagramPhoto properties]);    
 }
 
 @end

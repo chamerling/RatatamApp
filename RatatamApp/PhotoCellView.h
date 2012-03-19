@@ -7,27 +7,39 @@
 //
 
 #import <AppKit/AppKit.h>
+#import "EGOImageView.h"
+#import "InstagramPhoto.h"
 
-@interface PhotoCellView : NSTableCellView {
+@interface PhotoCellView : NSTableCellView<EGOImageViewDelegate> {
 
 @private
-    IBOutlet NSImageView *image;
+    IBOutlet EGOImageView *image;
     IBOutlet NSTextField *username;
     IBOutlet NSTextField *date;
     IBOutlet NSTextField *caption;
     IBOutlet NSButton *likeButton;
     IBOutlet NSButton *commentButton;
-    IBOutlet NSImageView *contactImage;
+    IBOutlet EGOImageView *contactImage;
     IBOutlet NSBox *box;
+    
+    InstagramPhoto *instagramPhoto;
 }
 
+@property(assign) InstagramPhoto *instagramPhoto;
+
 @property(assign) NSBox *box;
-@property(assign) NSImageView *image;
-@property(assign) NSImageView *contactImage;
+@property(assign) EGOImageView *image;
+@property(assign) EGOImageView *contactImage;
 @property(assign) NSTextField *username;
 @property(assign) NSTextField *date;
 @property(assign) NSTextField *caption;
 @property(assign) NSButton *commentButton;
 @property(assign) NSButton *likeButton;
+
+- (void)setPhoto:(NSString*)photo;
+- (void)setAvatar:(NSString*)url;
+
+- (IBAction)like:(id)sender;
+- (IBAction)comment:(id)sender;
 
 @end
