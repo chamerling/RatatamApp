@@ -17,6 +17,8 @@
     IBOutlet NSView *rootView;
     IBOutlet NSProgressIndicator *toolbarProgress;
     IBOutlet NSTextField *toolbarLabel;
+    
+    IBOutlet NSTableView *tableView;
 }
 
 @property (nonatomic, retain) NSMutableArray *photos;

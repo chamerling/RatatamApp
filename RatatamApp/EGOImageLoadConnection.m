@@ -29,7 +29,7 @@
 
 @implementation EGOImageLoadConnection
 @synthesize imageURL=_imageURL, response=_response, /*delegate=_delegate,*/ timeoutInterval=_timeoutInterval;
-@synthesize delegate=_delegate;
+@synthesize delegate;
 
 #if __EGOIL_USE_BLOCKS
 @synthesize handlers;
