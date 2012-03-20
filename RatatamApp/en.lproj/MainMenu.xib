@@ -676,7 +676,7 @@
 							<string key="NSName">_NSWindowsMenu</string>
 						</object>
 					</object>
-					<object class="NSMenuItem" id="631112452">
+					<object class="NSMenuItem" id="40110515">
 						<reference key="NSMenu" ref="649796088"/>
 						<bool key="NSIsHidden">YES</bool>
 						<string key="NSTitle">Debug</string>
@@ -685,12 +685,12 @@
 						<reference key="NSOnImage" ref="35465992"/>
 						<reference key="NSMixedImage" ref="502551668"/>
 						<string key="NSAction">submenuAction:</string>
-						<object class="NSMenu" key="NSSubmenu" id="6913172">
+						<object class="NSMenu" key="NSSubmenu" id="1054349554">
 							<string key="NSTitle">Debug</string>
 							<object class="NSMutableArray" key="NSMenuItems">
 								<bool key="EncodedWithXMLCoder">YES</bool>
-								<object class="NSMenuItem" id="60895116">
-									<reference key="NSMenu" ref="6913172"/>
+								<object class="NSMenuItem" id="212388524">
+									<reference key="NSMenu" ref="1054349554"/>
 									<string key="NSTitle">Clear cache</string>
 									<string key="NSKeyEquiv"/>
 									<int key="NSMnemonicLoc">2147483647</int>
@@ -1800,7 +1800,7 @@
 					<object class="IBActionConnection" key="connection">
 						<string key="label">clearCache:</string>
 						<reference key="source" ref="976324537"/>
-						<reference key="destination" ref="60895116"/>
+						<reference key="destination" ref="212388524"/>
 					</object>
 					<int key="connectionID">893</int>
 				</object>
@@ -1842,7 +1842,7 @@
 							<reference ref="952259628"/>
 							<reference ref="379814623"/>
 							<reference ref="448692316"/>
-							<reference ref="631112452"/>
+							<reference ref="40110515"/>
 						</object>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -2599,27 +2599,27 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">886</int>
-						<reference key="object" ref="631112452"/>
+						<reference key="object" ref="40110515"/>
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<reference ref="6913172"/>
+							<reference ref="1054349554"/>
 						</object>
 						<reference key="parent" ref="649796088"/>
 						<string key="objectName">Menu Item - Debug</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">887</int>
-						<reference key="object" ref="6913172"/>
+						<reference key="object" ref="1054349554"/>
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<reference ref="60895116"/>
+							<reference ref="212388524"/>
 						</object>
-						<reference key="parent" ref="631112452"/>
+						<reference key="parent" ref="40110515"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">888</int>
-						<reference key="object" ref="60895116"/>
-						<reference key="parent" ref="6913172"/>
+						<reference key="object" ref="212388524"/>
+						<reference key="parent" ref="1054349554"/>
 					</object>
 				</object>
 			</object>
@@ -2923,7 +2923,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">893</int>
+			<int key="maxID">895</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -2982,6 +2982,7 @@
 							<string>date</string>
 							<string>image</string>
 							<string>likeButton</string>
+							<string>progress</string>
 							<string>username</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
@@ -2993,6 +2994,7 @@
 							<string>NSTextField</string>
 							<string>EGOImageView</string>
 							<string>NSButton</string>
+							<string>NSProgressIndicator</string>
 							<string>NSTextField</string>
 						</object>
 					</object>
@@ -3007,6 +3009,7 @@
 							<string>date</string>
 							<string>image</string>
 							<string>likeButton</string>
+							<string>progress</string>
 							<string>username</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
@@ -3038,6 +3041,10 @@
 							<object class="IBToOneOutletInfo">
 								<string key="name">likeButton</string>
 								<string key="candidateClassName">NSButton</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">progress</string>
+								<string key="candidateClassName">NSProgressIndicator</string>
 							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">username</string>

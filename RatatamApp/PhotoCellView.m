@@ -49,7 +49,7 @@
 
 - (void)initialize:(id)sender {
     if (!initialized) {
-        NSLog(@"Initializing...");
+        //NSLog(@"Initializing...");
         image = [[EGOImageView alloc] initWithPlaceholderImage:[NSImage imageNamed:@"loading.gif"] delegate:self];
         [self addSubview:image];
 
@@ -87,6 +87,10 @@
 
 - (void)imageViewLoadedImage:(EGOImageView*)imageView {
     //NSLog(@"Image has been loaded : %@", imageView.imageURL);
+}
+
+- (void)imageViewFailedToLoadImage:(EGOImageView*)imageView error:(NSError*)error {
+    
 }
 
 #pragma mark - Instagram interaction
