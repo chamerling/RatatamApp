@@ -159,9 +159,6 @@
     NSDictionary *data = [photo properties];
     
     PhotoCellView *cell = [_tableView makeViewWithIdentifier:@"PhotoCell" owner:self];
-    //EGOImageView *imageView = [[EGOImageView alloc] initWithPlaceholderImage:[NSImage imageNamed:@"loading.gif"] delegate:cell];
-    //[cell setImage:imageView];
-    
     [cell setInstagramPhoto:photo];
     
     [[cell username] setStringValue:[[data valueForKey:@"user"] valueForKey:@"full_name"]];
