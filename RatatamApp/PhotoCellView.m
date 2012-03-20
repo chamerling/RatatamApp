@@ -86,7 +86,7 @@
 }
 
 - (void)imageViewLoadedImage:(EGOImageView*)imageView {
-    NSLog(@"Image has been loaded : %@", imageView.imageURL);
+    //NSLog(@"Image has been loaded : %@", imageView.imageURL);
 }
 
 #pragma mark - Instagram interaction

@@ -160,6 +160,7 @@
     
     PhotoCellView *cell = [_tableView makeViewWithIdentifier:@"PhotoCell" owner:self];
     [cell setInstagramPhoto:photo];
+    [[cell image] setDelegate:cell];
     
     [[cell username] setStringValue:[[data valueForKey:@"user"] valueForKey:@"full_name"]];
     NSString *userAvatar = [[[photo properties] valueForKey:@"user"] valueForKey:@"profile_picture"];

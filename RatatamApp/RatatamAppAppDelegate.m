@@ -16,6 +16,7 @@
 #import "UserPreferences.h"
 #import "NSString+JavaAPI.h"
 #import "PhotoCommentsWindowController.h"
+#import "EGOCache.h"
 
 #define mainToolbarItemID     @"DefaultToolbarItem"
 
@@ -317,6 +318,14 @@
     // note:
     // that since our toolbar is defined from Interface Builder, an additional separator and customize
     // toolbar items will be automatically added to the "default" list of items.
+}
+
+#pragma mark - debug
+- (IBAction)clearCache:(id)sender {
+    NSLog(@"Remove all photos and clear cache");
+    //[ratatamController removeAllPhotos];
+    [[EGOCache currentCache] clearCache];
+
 }
 
 

@@ -56,5 +56,8 @@
 # pragma mark - Window management
 - (IBAction)showMainWindow:(id)sender;
 
+# pragma mark - debug
+- (IBAction)clearCache:(id)sender;
+
 
 @end
