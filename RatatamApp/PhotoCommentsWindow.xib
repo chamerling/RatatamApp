@@ -83,7 +83,6 @@
 											<reference key="NSWindow"/>
 											<reference key="NSNextKeyView" ref="64672108"/>
 											<string key="NSReuseIdentifierKey">_NS:1197</string>
-											<bool key="NSEnabled">YES</bool>
 											<object class="_NSCornerView" key="NSCornerView">
 												<nil key="NSNextResponder"/>
 												<int key="NSvFlags">-2147483392</int>
@@ -97,7 +96,7 @@
 													<double key="NSMinWidth">40</double>
 													<double key="NSMaxWidth">1000</double>
 													<object class="NSTableHeaderCell" key="NSHeaderCell">
-														<int key="NSCellFlags">75628096</int>
+														<int key="NSCellFlags">612499008</int>
 														<int key="NSCellFlags2">2048</int>
 														<string key="NSContents"/>
 														<object class="NSFont" key="NSSupport">
@@ -120,7 +119,7 @@
 														</object>
 													</object>
 													<object class="NSTextFieldCell" key="NSDataCell" id="162144548">
-														<int key="NSCellFlags">337772096</int>
+														<int key="NSCellFlags">874643008</int>
 														<int key="NSCellFlags2">2048</int>
 														<string key="NSContents">Text Cell</string>
 														<object class="NSFont" key="NSSupport" id="878172916">
@@ -158,13 +157,8 @@
 												<bytes key="NSWhite">MSAwAA</bytes>
 											</object>
 											<object class="NSColor" key="NSGridColor">
-												<int key="NSColorSpace">6</int>
-												<string key="NSCatalogName">System</string>
-												<string key="NSColorName">gridColor</string>
-												<object class="NSColor" key="NSColor">
-													<int key="NSColorSpace">3</int>
-													<bytes key="NSWhite">MC41AA</bytes>
-												</object>
+												<int key="NSColorSpace">1</int>
+												<bytes key="NSRGB">MSAxIDEAA</bytes>
 											</object>
 											<double key="NSRowHeight">60</double>
 											<int key="NSTvFlags">306184192</int>

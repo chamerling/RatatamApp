@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "InstagramPhoto.h"
+#import "InstagramClient.h"
 
 @interface RatatamController : NSObject {
     NSInteger unread;
@@ -19,6 +20,8 @@
     IBOutlet NSTextField *toolbarLabel;
     
     IBOutlet NSTableView *tableView;
+    
+    InstagramClient *client;
 }
 
 @property (nonatomic, retain) NSMutableArray *photos;

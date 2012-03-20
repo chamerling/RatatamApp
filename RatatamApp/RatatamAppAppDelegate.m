@@ -38,9 +38,7 @@
     if (fetcher && ratatamController) {
         [fetcher setRatatamController:ratatamController];
     }
-    
-    client = [[InstagramClient alloc] init];
-    
+        
     Preferences* preferences = [Preferences sharedInstance];
     if ([[preferences oauthToken]length] == 0) {
         [self openPreferences:nil];
@@ -219,48 +217,6 @@
     }
 
     return NSTerminateNow;
-}
-
-- (IBAction)like:(id)sender {
-    [self performSelectorInBackground:@selector(doLike:) withObject:sender];            
-}
-
-- (void) doLike:(id)sender {
-    [ratatamController startStatusMessage:@"Liking..."];
-    BOOL liked = [client likePhoto:[sender valueForKey:@"id"]];
-    if (liked) {
-        [ratatamController stopStatusMessage:@"Done!" withDelay:0];
-        
-        // get the button and update the title count
-        // TODO
-        
-    } else {
-        [ratatamController stopStatusMessage:@"Problem while liking!" withDelay:0];
-    }
-}
-
-- (IBAction)comment:(id)sender {
-    
-    PhotoCommentsWindowController *commentsWindow = [[PhotoCommentsWindowController alloc] initWithWindowNibName:@"PhotoCommentsWindow"];
-
-    //[ratatamController startStatusMessage:@"Getting comments..."];
-    [ratatamController startProgress:nil];
-    NSDictionary *data = sender;
-    NSDictionary *comments = [client getCommentsForPhoto:[data valueForKey:@"id"]];
-    [ratatamController stopProgress];
-
-    NSDictionary *commentsData = nil;
-    if (comments) {
-        commentsData = [comments valueForKey:@"data"];
-    } else {
-        commentsData = [[data valueForKey:@"comments"] valueForKey:@"data"];
-    }
-    
-    NSMutableDictionary *photoData = [[NSMutableDictionary alloc] initWithDictionary:data copyItems:NO];
-
-    [commentsWindow setPhotoData:photoData];
-    [commentsWindow setComments:commentsData];
-    [NSApp beginSheet:[commentsWindow window] modalForWindow:[self window] modalDelegate:nil didEndSelector:nil contextInfo:nil];
 }
 
 #pragma mark - Custom URL handling

@@ -9,10 +9,14 @@
 #import <AppKit/AppKit.h>
 #import "EGOImageView.h"
 #import "InstagramPhoto.h"
+#import "InstagramClient.h"
+#import "RatatamController.h"
 
 @interface PhotoCellView : NSTableCellView<EGOImageViewDelegate> {
 
 @private
+    BOOL initialized;
+    
     IBOutlet EGOImageView *image;
     IBOutlet NSTextField *username;
     IBOutlet NSTextField *date;
@@ -23,9 +27,15 @@
     IBOutlet NSBox *box;
     
     InstagramPhoto *instagramPhoto;
+    InstagramClient *client;
+    RatatamController *controller;
+    NSWindow *mainWindow;
 }
 
 @property(assign) InstagramPhoto *instagramPhoto;
+@property(assign) InstagramClient *client;
+@property(assign) RatatamController *controller;
+@property(assign) NSWindow *mainWindow;
 
 @property(assign) NSBox *box;
 @property(assign) EGOImageView *image;
@@ -38,6 +48,8 @@
 
 - (void)setPhoto:(NSString*)photo;
 - (void)setAvatar:(NSString*)url;
+
+- (void)initialize:(id)sender;
 
 - (IBAction)like:(id)sender;
 - (IBAction)comment:(id)sender;

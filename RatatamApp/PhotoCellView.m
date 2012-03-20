@@ -10,6 +10,7 @@
 #import "PhotoAddCommentWindowController.h"
 #import "EGOImageView.h"
 #import <QuartzCore/QuartzCore.h>
+#import "PhotoCommentsWindowController.h"
 
 @implementation PhotoCellView
 @synthesize image;
@@ -21,16 +22,39 @@
 @synthesize commentButton;
 @synthesize box;
 @synthesize instagramPhoto;
+@synthesize client;
+@synthesize controller;
+@synthesize mainWindow;
+
+- (id)init {
+    self = [super init];
+    if (self) {
+        // not called
+    }
+    return self;
+}
 
 - (id)initWithFrame:(NSRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
+        // not called...
+        
         image = [[EGOImageView alloc] initWithPlaceholderImage:[NSImage imageNamed:@"loading.gif"] delegate:self];
         [self addSubview:image];
     }
     
     return self;
+}
+
+- (void)initialize:(id)sender {
+    if (!initialized) {
+        NSLog(@"Initializing...");
+        image = [[EGOImageView alloc] initWithPlaceholderImage:[NSImage imageNamed:@"loading.gif"] delegate:self];
+        [self addSubview:image];
+
+        initialized = YES;
+    }
 }
 
 - (void)setPhoto:(NSString*)photo {
@@ -42,6 +66,8 @@
 }
 
 - (void)drawRect:(NSRect)dirtyRect {
+    // This is called each time a cell is displayed...
+    
     /*
     CGSize size = box.bounds.size;
 	CGFloat curlFactor = 15.0f;
@@ -63,12 +89,43 @@
     NSLog(@"Image has been loaded : %@", imageView.imageURL);
 }
 
+#pragma mark - Instagram interaction
 - (IBAction)like:(id)sender {
-    NSLog(@"Like %@", [instagramPhoto properties]);    
+    [self performSelectorInBackground:@selector(doLike:) withObject:sender];            
+}
+
+- (void) doLike:(id)sender {
+    [controller startStatusMessage:@"Liking..."];
+        
+    BOOL liked = [client likePhoto:[[instagramPhoto properties] valueForKey:@"id"]];
+    if (liked) {
+        [controller stopStatusMessage:@"Done!" withDelay:0];
+    } else {
+        [controller stopStatusMessage:@"Problem while liking!" withDelay:0];
+    }
 }
 
 - (IBAction)comment:(id)sender {
-    NSLog(@"comment %@", [instagramPhoto properties]);    
+    
+    PhotoCommentsWindowController *commentsWindow = [[PhotoCommentsWindowController alloc] initWithWindowNibName:@"PhotoCommentsWindow"];
+    
+    [controller startProgress:nil];
+    NSDictionary *data = [instagramPhoto properties];
+    NSDictionary *comments = [client getCommentsForPhoto:[data valueForKey:@"id"]];
+    [controller stopProgress];
+    
+    NSDictionary *commentsData = nil;
+    if (comments) {
+        commentsData = [comments valueForKey:@"data"];
+    } else {
+        commentsData = [[data valueForKey:@"comments"] valueForKey:@"data"];
+    }
+    
+    NSMutableDictionary *photoData = [[NSMutableDictionary alloc] initWithDictionary:data copyItems:NO];
+    
+    [commentsWindow setPhotoData:photoData];
+    [commentsWindow setComments:commentsData];
+    [NSApp beginSheet:[commentsWindow window] modalForWindow:mainWindow modalDelegate:nil didEndSelector:nil contextInfo:nil];
 }
 
 @end

@@ -24,7 +24,6 @@
     
     MASPreferencesWindowController *_preferencesWindowController;
     InstagramFetcher *fetcher;
-    InstagramClient *client;
 
     // toolbar
     IBOutlet NSView *toolbarView;

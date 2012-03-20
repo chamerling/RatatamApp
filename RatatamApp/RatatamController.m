@@ -11,6 +11,8 @@
 #import "InstagramClient.h"
 #import "PhotoCellView.h"
 #import "EGOCache.h"
+#import "EGOImageView.h"
+#import "PhotoCommentsWindowController.h"
 
 @interface RatatamController (Private)
 - (void) doAddPhotoAtPosition:(NSDictionary *) photo;
@@ -29,6 +31,7 @@
     if (self) {
         photos = [[NSMutableArray alloc] init];
         unread = 0;
+        client = [[InstagramClient alloc] init];
     }
          
     return self;
@@ -156,6 +159,9 @@
     NSDictionary *data = [photo properties];
     
     PhotoCellView *cell = [_tableView makeViewWithIdentifier:@"PhotoCell" owner:self];
+    //EGOImageView *imageView = [[EGOImageView alloc] initWithPlaceholderImage:[NSImage imageNamed:@"loading.gif"] delegate:cell];
+    //[cell setImage:imageView];
+    
     [cell setInstagramPhoto:photo];
     
     [[cell username] setStringValue:[[data valueForKey:@"user"] valueForKey:@"full_name"]];
@@ -183,6 +189,10 @@
     
     [[cell commentButton] setAction:@selector(comment:)];
     [[cell commentButton] setTarget:cell];
+    
+    [cell setMainWindow:mainWindow];
+    [cell setClient:client];
+    [cell setController:self];
     
     return cell;
 }
