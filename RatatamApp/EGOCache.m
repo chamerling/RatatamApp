@@ -27,11 +27,11 @@
 #import "EGOCache.h"
 
 #if DEBUG
-	#define CHECK_FOR_EGOCACHE_PLIST() if([key isEqualToString:@"EGOCache.plist"]) { \
-		NSLog(@"EGOCache.plist is a reserved key and can not be modified."); \
-		return; }
+#define CHECK_FOR_EGOCACHE_PLIST() if([key isEqualToString:@"EGOCache.plist"]) { \
+NSLog(@"EGOCache.plist is a reserved key and can not be modified."); \
+return; }
 #else
-	#define CHECK_FOR_EGOCACHE_PLIST() if([key isEqualToString:@"EGOCache.plist"]) return;
+#define CHECK_FOR_EGOCACHE_PLIST() if([key isEqualToString:@"EGOCache.plist"]) return;
 #endif
 
 
@@ -113,7 +113,7 @@ static EGOCache* __instance;
 
 - (void)removeCacheForKey:(NSString*)key {
 	CHECK_FOR_EGOCACHE_PLIST();
-
+    
 	[self removeItemFromCache:key];
 	[self saveCacheDictionary];
 }
@@ -204,7 +204,7 @@ static EGOCache* __instance;
 #pragma mark String methods
 
 - (NSString*)stringForKey:(NSString*)key {
-	return [[NSString alloc] initWithData:[self dataForKey:key] encoding:NSUTF8StringEncoding];
+	return [[[NSString alloc] initWithData:[self dataForKey:key] encoding:NSUTF8StringEncoding] autorelease];
 }
 
 - (void)setString:(NSString*)aString forKey:(NSString*)key {
@@ -236,7 +236,7 @@ static EGOCache* __instance;
 #else
 
 - (NSImage*)imageForKey:(NSString*)key {
-	return [[NSImage alloc] initWithData:[self dataForKey:key]];
+	return [[[NSImage alloc] initWithData:[self dataForKey:key]] autorelease];
 }
 
 - (void)setImage:(NSImage*)anImage forKey:(NSString*)key {
