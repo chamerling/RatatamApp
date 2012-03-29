@@ -600,6 +600,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RatatamApp/RatatamApp-Prefix.pch";
 				INFOPLIST_FILE = "RatatamApp/RatatamApp-Info.plist";
+				"OTHER_CFLAGS[arch=*]" = DDEBUG;
 				PRODUCT_NAME = Ratatam;
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
