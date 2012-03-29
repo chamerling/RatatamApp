@@ -52,8 +52,25 @@ static NotificationManager *sharedInstance = nil;
 							   clickContext:nil]; 
 }
 
-- (void) notifyNewComment:(NSDictionary *)dictionary {
-    // NOP  
+- (void) notifyNewComment:(NSDictionary *)comment forPhoto:(NSDictionary*)photo {
+    if (![GrowlApplicationBridge isGrowlRunning]) {
+        // return now if growl is not installed not running, looks like it can cause problems...
+        return;
+    }
+    
+    NSString *url = [[[photo valueForKey:@"images"] valueForKey:@"thumbnail"]valueForKey:@"url"];
+    NSImage *image = [[NSImage alloc] initWithContentsOfURL:[NSURL URLWithString:url]];
+    NSDictionary *from = [comment valueForKey:@"from"];
+    
+    NSString *title = [NSString stringWithFormat:@"%@ commented your photo", [from valueForKey:@"username"]];
+    NSString *description = [NSString stringWithFormat:@"%@", [comment valueForKey:@"text"]];    
+    [GrowlApplicationBridge notifyWithTitle:title
+								description:description
+						   notificationName:@"Ratatam"
+								   iconData:[image TIFFRepresentation]
+								   priority:0
+								   isSticky:NO
+							   clickContext:nil]; 
 }
 
 - (void) notifyNewLike:(NSDictionary *)dictionary {

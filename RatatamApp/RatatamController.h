@@ -13,6 +13,9 @@
 @interface RatatamController : NSObject {
     NSInteger unread;
     NSMutableArray *photos;
+    NSMutableDictionary *selfPhotos;
+    
+    NSMutableDictionary *commentsCache;
     
     IBOutlet NSWindow *mainWindow;
     IBOutlet NSView *rootView;
@@ -39,5 +42,9 @@
 
 - (void) startStatusMessage:(NSString *)message;
 - (void) stopStatusMessage:(NSString *)message withDelay:(NSInteger) delay;
+
+// comment processing
+- (void) addPhotoForComment:(NSDictionary *)photo notify:(BOOL)status;
+- (void) notifyNewComment:(NSDictionary *)comment forPhoto:(NSDictionary *)photo;
 
 @end

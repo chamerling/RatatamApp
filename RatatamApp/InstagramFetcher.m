@@ -47,6 +47,7 @@
 
 - (void)stop {
     [newPhotoTimer invalidate];
+    [newCommentTimer invalidate];
     lastId = nil;
 }
 
@@ -56,13 +57,15 @@
     NSRunLoop* runLoop = [NSRunLoop currentRunLoop];
     
     newPhotoTimer = [NSTimer scheduledTimerWithTimeInterval:60 target:self selector:@selector(getNewPhotos:) userInfo:nil repeats:YES];
+    newCommentTimer = [NSTimer scheduledTimerWithTimeInterval:100 target:self selector:@selector(getNewComments:) userInfo:nil repeats:YES];
     
     [[NSRunLoop currentRunLoop] addTimer:newPhotoTimer forMode:NSRunLoopCommonModes];
     [newPhotoTimer setFireDate: [NSDate dateWithTimeIntervalSinceNow:1]];
+    [[NSRunLoop currentRunLoop] addTimer:newCommentTimer forMode:NSRunLoopCommonModes];
+    [newCommentTimer setFireDate: [NSDate dateWithTimeIntervalSinceNow:5]];
     
     [runLoop run];
     [pool release];
-
 }
 
 - (void)getNewPhotos:(id)sender {
@@ -116,6 +119,37 @@
         // first call, we show the final view when all is loaded
         [self performSelectorOnMainThread:@selector(hideProgress:) withObject:nil waitUntilDone:YES];
         [ratatamController showRootView:YES];
+    }
+}
+
+- (void)getNewComments:(id)sender {
+    DLog(@"Getting new comments for self photos");
+    NSDictionary *photos = nil;
+    BOOL firstCall = (lastCommentId == nil);
+
+
+    if (firstCall) {
+        photos = [client getNSelfPhotos:20];
+    } else {
+        photos = [client getSelfPhotosSince:lastCommentId];
+    }
+    
+    if (!photos) {
+        return;
+    }
+    
+    NSDictionary *data = [photos valueForKey:@"data"];
+
+    if (!data) {
+        return;
+    }
+    
+    int i = 0;
+    for (NSDictionary *photo in data) {
+        // cache the first photo we get...
+        lastCommentId = [photo valueForKey:@"id"];
+        [ratatamController addPhotoForComment:photo notify:!firstCall];
+        i++;
     }
 }
 

@@ -15,8 +15,12 @@
 {
     NSDictionary *latest;
     NSTimer* newPhotoTimer;
+    NSTimer* newCommentTimer;
     
     NSMutableArray *photoCache;
+    
+    // used for new comments processing
+    NSString *lastCommentId;
     
     NSString *lastId;
 
@@ -28,6 +32,7 @@
 @property (assign) RatatamController *ratatamController;
 
 - (void) getNewPhotos:(id) sender;
+- (void) getNewComments:(id) sender;
 
 - (void) pause;
 - (void) resume;

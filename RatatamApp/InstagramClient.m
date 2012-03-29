@@ -84,6 +84,24 @@
     return dict;
 }
 
+- (NSDictionary*) getNSelfPhotos:(int)size {
+    Preferences *pref = [Preferences sharedInstance];
+    
+    NSString *url = [NSString stringWithFormat:@"https://api.instagram.com/v1/users/self/media/recent?count=%ld&access_token=%@", size, [pref oauthToken]];
+    ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:url]];
+    [request setDelegate:self];
+    [request startSynchronous];
+    
+    if ([request responseStatusCode] == 0) {
+        // fail!!!
+        [[NotificationManager get] notifyError:@"Error while sending request"];
+        return nil;
+    } 
+    
+    NSDictionary* dict = [[request responseString] objectFromJSONString];
+    return dict;
+}
+
 - (NSDictionary*) getCommentsForPhoto:(NSString*)photo {
     Preferences *pref = [Preferences sharedInstance];
     
@@ -119,6 +137,25 @@
     NSDictionary* dict = [[request responseString] objectFromJSONString];
     return dict;
 }
+
+- (NSDictionary*) getSelfPhotosSince:(NSString*)lastId {
+    Preferences *pref = [Preferences sharedInstance];
+    
+    NSString *url = [NSString stringWithFormat:@"https://api.instagram.com/v1/users/self/media/recent?min_id=%@&access_token=%@", lastId, [pref oauthToken]];
+    ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:url]];
+    [request setDelegate:self];
+    [request startSynchronous];
+    
+    if ([request responseStatusCode] == 0) {
+        // fail!!!
+        [[NotificationManager get] notifyError:@"Error while sending request"];
+        return nil;
+    } 
+    
+    NSDictionary* dict = [[request responseString] objectFromJSONString];
+    return dict;
+}
+
 
 - (NSDictionary*) getCommentsForUser:(int)size {
     //Preferences *pref = [Preferences sharedInstance];

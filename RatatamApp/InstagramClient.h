@@ -20,6 +20,11 @@
 - (NSDictionary*) getLikesForUser:(int)size;
 - (NSDictionary*) getCommentsForPhoto:(NSString*)photo;
 
+// self photos
+- (NSDictionary*) getNSelfPhotos:(int) size;
+- (NSDictionary*) getSelfPhotosSince:(NSString*) lastId;
+
+
 - (BOOL) likePhoto:(NSString*)photo;
 - (void) disLikePhoto:(NSString*)photo;
 
