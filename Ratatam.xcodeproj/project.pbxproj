@@ -56,6 +56,9 @@
 		C9DFA4B214FBAB9500467DC8 /* DateValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = C9DFA4B114FBAB9100467DC8 /* DateValueTransformer.m */; };
 		C9E1F6A414FBFF8700868888 /* PhotoAddCommentWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E1F6A314FBFF8700868888 /* PhotoAddCommentWindowController.m */; };
 		C9E1F6A614FBFF9900868888 /* PhotoAddCommentWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9E1F6A514FBFF9900868888 /* PhotoAddCommentWindow.xib */; };
+		C9E53634152CE71D004416A0 /* BulkDownloadWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9E53633152CE71D004416A0 /* BulkDownloadWindow.xib */; };
+		C9E53638152CF034004416A0 /* BulkDownloadWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E53637152CF034004416A0 /* BulkDownloadWindowController.m */; };
+		C9E53643152DABAD004416A0 /* BulkDownloadOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E53642152DABAD004416A0 /* BulkDownloadOperation.m */; };
 		C9FCEEB914F50BAA00DA3B7E /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FCEEB814F50BAA00DA3B7E /* JSONKit.m */; };
 		C9FCEEC014F5107900DA3B7E /* InstagramFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FCEEBF14F5107900DA3B7E /* InstagramFetcher.m */; };
 		C9FCEEC214F51BAB00DA3B7E /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9FCEEC114F51BAB00DA3B7E /* Growl.framework */; };
@@ -168,6 +171,11 @@
 		C9E1F6A214FBFF8700868888 /* PhotoAddCommentWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoAddCommentWindowController.h; sourceTree = "<group>"; };
 		C9E1F6A314FBFF8700868888 /* PhotoAddCommentWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoAddCommentWindowController.m; sourceTree = "<group>"; };
 		C9E1F6A514FBFF9900868888 /* PhotoAddCommentWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhotoAddCommentWindow.xib; sourceTree = "<group>"; };
+		C9E53633152CE71D004416A0 /* BulkDownloadWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BulkDownloadWindow.xib; sourceTree = "<group>"; };
+		C9E53636152CF034004416A0 /* BulkDownloadWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BulkDownloadWindowController.h; sourceTree = "<group>"; };
+		C9E53637152CF034004416A0 /* BulkDownloadWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BulkDownloadWindowController.m; sourceTree = "<group>"; };
+		C9E53641152DABAD004416A0 /* BulkDownloadOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BulkDownloadOperation.h; sourceTree = "<group>"; };
+		C9E53642152DABAD004416A0 /* BulkDownloadOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BulkDownloadOperation.m; sourceTree = "<group>"; };
 		C9FCEEB714F50BAA00DA3B7E /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
 		C9FCEEB814F50BAA00DA3B7E /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
 		C9FCEEBE14F5107900DA3B7E /* InstagramFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstagramFetcher.h; sourceTree = "<group>"; };
@@ -295,6 +303,11 @@
 				C9797A821508151000AAED09 /* CountTransformer.m */,
 				C99DF3251510D3F400732AEE /* NSDate+Delay.h */,
 				C99DF3261510D3F400732AEE /* NSDate+Delay.m */,
+				C9E53641152DABAD004416A0 /* BulkDownloadOperation.h */,
+				C9E53642152DABAD004416A0 /* BulkDownloadOperation.m */,
+				C9E53633152CE71D004416A0 /* BulkDownloadWindow.xib */,
+				C9E53636152CF034004416A0 /* BulkDownloadWindowController.h */,
+				C9E53637152CF034004416A0 /* BulkDownloadWindowController.m */,
 			);
 			path = RatatamApp;
 			sourceTree = "<group>";
@@ -462,6 +475,7 @@
 				C9797A7D15080A0200AAED09 /* heart.png in Resources */,
 				C9B28CE21510DEC100BCCFD9 /* README.md in Resources */,
 				C9500AA91517EC1C006577C0 /* loading.gif in Resources */,
+				C9E53634152CE71D004416A0 /* BulkDownloadWindow.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -507,6 +521,8 @@
 				C9500AA51517E5FE006577C0 /* EGOImageLoadConnection.m in Sources */,
 				C9500AA61517E5FE006577C0 /* EGOCache.m in Sources */,
 				C9500AA71517E5FE006577C0 /* EGOImageView.m in Sources */,
+				C9E53638152CF034004416A0 /* BulkDownloadWindowController.m in Sources */,
+				C9E53643152DABAD004416A0 /* BulkDownloadOperation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -23,6 +23,9 @@
 // self photos
 - (NSDictionary*) getNSelfPhotos:(int) size;
 - (NSDictionary*) getSelfPhotosSince:(NSString*) lastId;
+- (NSMutableSet*) getAllSelfPhotos;
+// get all the photos for a given URL. This URL is generally retrived from a pagination object...
+- (NSDictionary*) getPartSelfPhotos:(NSString *) baseURL;
 
 
 - (BOOL) likePhoto:(NSString*)photo;

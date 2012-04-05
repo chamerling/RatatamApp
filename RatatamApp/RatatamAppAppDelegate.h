@@ -59,5 +59,8 @@
 # pragma mark - debug
 - (IBAction)clearCache:(id)sender;
 
+# pragma mark - tools
+- (IBAction)downloadAction:(id)sender;
+
 
 @end

@@ -259,4 +259,49 @@
     }
 }
 
+- (NSMutableSet*) getAllSelfPhotos {
+    Preferences *pref = [Preferences sharedInstance];
+    NSMutableSet *set = [[NSMutableSet alloc] init];
+    
+    // initial URL
+    NSString *url = [NSString stringWithFormat:@"https://api.instagram.com/v1/users/self/media/recent?access_token=%@", [pref oauthToken]];
+    
+    while (url) {
+        NSDictionary *dict = [self getPartSelfPhotos:url];
+        if (dict) {
+            NSDictionary *data = [dict valueForKey:@"data"];
+            if (data) {
+                for (NSDictionary *photo in data) {
+                    [set addObject:photo];
+                }
+            }
+            
+            if ([dict valueForKey:@"pagination"] && [[dict valueForKey:@"pagination"] valueForKey:@"next_url"]) {
+                url = [[dict valueForKey:@"pagination"] valueForKey:@"next_url"];
+            } else{
+                url = nil;
+            }
+        } else {
+            url = nil;
+        }
+    }
+    return set;
+}
+
+- (NSDictionary*) getPartSelfPhotos:(NSString *) baseURL {
+    ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:baseURL]];
+    [request setDelegate:self];
+    [request startSynchronous];
+    
+    if ([request responseStatusCode] == 0) {
+        // fail!!!
+        //[[NotificationManager get] notifyError:@"Error while sending request"];
+        return nil;
+    } 
+    
+    NSDictionary* dict = [[request responseString] objectFromJSONString];
+    
+    return dict;
+}
+
 @end

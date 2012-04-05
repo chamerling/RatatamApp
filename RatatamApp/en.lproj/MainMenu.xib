@@ -630,6 +630,29 @@
 							</object>
 						</object>
 					</object>
+					<object class="NSMenuItem" id="524773414">
+						<reference key="NSMenu" ref="649796088"/>
+						<string key="NSTitle">Tools</string>
+						<string key="NSKeyEquiv"/>
+						<int key="NSMnemonicLoc">2147483647</int>
+						<reference key="NSOnImage" ref="35465992"/>
+						<reference key="NSMixedImage" ref="502551668"/>
+						<string key="NSAction">submenuAction:</string>
+						<object class="NSMenu" key="NSSubmenu" id="960269358">
+							<string key="NSTitle">Tools</string>
+							<object class="NSMutableArray" key="NSMenuItems">
+								<bool key="EncodedWithXMLCoder">YES</bool>
+								<object class="NSMenuItem" id="5823276">
+									<reference key="NSMenu" ref="960269358"/>
+									<string key="NSTitle">Download...</string>
+									<string key="NSKeyEquiv"/>
+									<int key="NSMnemonicLoc">2147483647</int>
+									<reference key="NSOnImage" ref="35465992"/>
+									<reference key="NSMixedImage" ref="502551668"/>
+								</object>
+							</object>
+						</object>
+					</object>
 					<object class="NSMenuItem" id="713487014">
 						<reference key="NSMenu" ref="649796088"/>
 						<string key="NSTitle">Window</string>
@@ -1804,6 +1827,14 @@
 					</object>
 					<int key="connectionID">893</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">downloadAction:</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="5823276"/>
+					</object>
+					<int key="connectionID">901</int>
+				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<object class="NSArray" key="orderedObjects">
@@ -1843,6 +1874,7 @@
 							<reference ref="379814623"/>
 							<reference ref="448692316"/>
 							<reference ref="40110515"/>
+							<reference ref="524773414"/>
 						</object>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -2621,6 +2653,31 @@
 						<reference key="object" ref="212388524"/>
 						<reference key="parent" ref="1054349554"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">896</int>
+						<reference key="object" ref="524773414"/>
+						<object class="NSMutableArray" key="children">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<reference ref="960269358"/>
+						</object>
+						<reference key="parent" ref="649796088"/>
+						<string key="objectName">Menu Item - Tools</string>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">897</int>
+						<reference key="object" ref="960269358"/>
+						<object class="NSMutableArray" key="children">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<reference ref="5823276"/>
+						</object>
+						<reference key="parent" ref="524773414"/>
+						<string key="objectName">Menu - Tools</string>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">898</int>
+						<reference key="object" ref="5823276"/>
+						<reference key="parent" ref="960269358"/>
+					</object>
 				</object>
 			</object>
 			<object class="NSMutableDictionary" key="flattenedProperties">
@@ -2764,6 +2821,9 @@
 					<string>886.IBPluginDependency</string>
 					<string>887.IBPluginDependency</string>
 					<string>888.IBPluginDependency</string>
+					<string>896.IBPluginDependency</string>
+					<string>897.IBPluginDependency</string>
+					<string>898.IBPluginDependency</string>
 					<string>92.IBPluginDependency</string>
 				</object>
 				<object class="NSMutableArray" key="dict.values">
@@ -2909,6 +2969,9 @@
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 				</object>
 			</object>
 			<object class="NSMutableDictionary" key="unlocalizedProperties">
@@ -2923,7 +2986,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">895</int>
+			<int key="maxID">901</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -2982,7 +3045,6 @@
 							<string>date</string>
 							<string>image</string>
 							<string>likeButton</string>
-							<string>progress</string>
 							<string>username</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
@@ -2994,7 +3056,6 @@
 							<string>NSTextField</string>
 							<string>EGOImageView</string>
 							<string>NSButton</string>
-							<string>NSProgressIndicator</string>
 							<string>NSTextField</string>
 						</object>
 					</object>
@@ -3009,7 +3070,6 @@
 							<string>date</string>
 							<string>image</string>
 							<string>likeButton</string>
-							<string>progress</string>
 							<string>username</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
@@ -3043,10 +3103,6 @@
 								<string key="candidateClassName">NSButton</string>
 							</object>
 							<object class="IBToOneOutletInfo">
-								<string key="name">progress</string>
-								<string key="candidateClassName">NSProgressIndicator</string>
-							</object>
-							<object class="IBToOneOutletInfo">
 								<string key="name">username</string>
 								<string key="candidateClassName">NSTextField</string>
 							</object>
@@ -3066,6 +3122,7 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>clearCache:</string>
 							<string>comment:</string>
+							<string>downloadAction:</string>
 							<string>like:</string>
 							<string>openPreferences:</string>
 							<string>saveAction:</string>
@@ -3073,6 +3130,7 @@
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>id</string>
 							<string>id</string>
 							<string>id</string>
 							<string>id</string>
@@ -3087,6 +3145,7 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>clearCache:</string>
 							<string>comment:</string>
+							<string>downloadAction:</string>
 							<string>like:</string>
 							<string>openPreferences:</string>
 							<string>saveAction:</string>
@@ -3100,6 +3159,10 @@
 							</object>
 							<object class="IBActionInfo">
 								<string key="name">comment:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">downloadAction:</string>
 								<string key="candidateClassName">id</string>
 							</object>
 							<object class="IBActionInfo">

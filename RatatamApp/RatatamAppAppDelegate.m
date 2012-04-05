@@ -17,6 +17,7 @@
 #import "NSString+JavaAPI.h"
 #import "PhotoCommentsWindowController.h"
 #import "EGOCache.h"
+#import "BulkDownloadWindowController.h"
 
 #define mainToolbarItemID     @"DefaultToolbarItem"
 
@@ -329,6 +330,13 @@
 }
 
 
+#pragma mark - menu
+- (IBAction)downloadAction:(id)sender {
+    BulkDownloadWindowController *bulkwindow = [[BulkDownloadWindowController alloc] initWithWindowNibName:@"BulkDownloadWindow"];
+    [bulkwindow showWindow:self];
+}
+
+#pragma mark - memory management
 - (void)dealloc
 {
     [__managedObjectContext release];
@@ -336,5 +344,6 @@
     [__managedObjectModel release];
     [super dealloc];
 }
+
 
 @end
