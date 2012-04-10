@@ -257,6 +257,8 @@
     }
 }
 
+#pragma mark - window management
+
 - (IBAction)openPreferences:(id)sender {
     [NSApp activateIgnoringOtherApps: YES];
     [self.preferencesWindowController showWindow:nil];
@@ -285,6 +287,14 @@
         [_preferencesWindowController selectControllerAtIndex:0];        
     }
     return _preferencesWindowController;
+}
+
+- (BOOL) applicationShouldOpenUntitledFile:(NSApplication *)sender
+{
+    // hack to show window when it is closed.
+    // This method is only called when there is no visible window
+    [self showMainWindow:self];
+    return NO;
 }
 
 - (IBAction)showMainWindow:(id)sender {
@@ -338,6 +348,5 @@
     [__managedObjectModel release];
     [super dealloc];
 }
-
 
 @end
