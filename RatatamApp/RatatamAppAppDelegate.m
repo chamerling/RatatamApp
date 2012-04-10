@@ -21,10 +21,6 @@
 
 #define mainToolbarItemID     @"DefaultToolbarItem"
 
-@interface RatatamAppAppDelegate (Private)
-- (void) doLike:(id) sender;
-@end
-
 @implementation RatatamAppAppDelegate
 
 @synthesize window;
@@ -326,14 +322,12 @@
     NSLog(@"Remove all photos and clear cache");
     //[ratatamController removeAllPhotos];
     [[EGOCache currentCache] clearCache];
-
 }
-
 
 #pragma mark - menu
 - (IBAction)downloadAction:(id)sender {
-    BulkDownloadWindowController *bulkwindow = [[BulkDownloadWindowController alloc] initWithWindowNibName:@"BulkDownloadWindow"];
-    [bulkwindow showWindow:self];
+    BulkDownloadWindowController *dlController = [[BulkDownloadWindowController alloc] initWithWindowNibName:@"BulkDownloadWindow"];
+    [dlController showWindow:self];
 }
 
 #pragma mark - memory management

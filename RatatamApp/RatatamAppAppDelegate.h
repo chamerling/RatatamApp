@@ -23,6 +23,7 @@
     IBOutlet RatatamController *ratatamController;
     
     MASPreferencesWindowController *_preferencesWindowController;
+    
     InstagramFetcher *fetcher;
 
     // toolbar
@@ -42,10 +43,6 @@
 
 # pragma mark - app actions
 - (IBAction)saveAction:(id)sender;
-
-# pragma mark - instagram actions
-- (IBAction)like:(id)sender;
-- (IBAction)comment:(id)sender;
 
 # pragma mark - URL handling
 - (void)getUrl:(NSAppleEventDescriptor *)event;

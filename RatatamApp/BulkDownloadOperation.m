@@ -36,8 +36,11 @@
     
     NSData *imageData = [NSData dataWithContentsOfURL:url]; 
     if ( self.isCancelled ) return;
-
-    [imageData writeToFile:self.downloadPath atomically:NO];
+    
+    NSString *filename = [NSString stringWithFormat:@"Image %@ - %@.%@", [photo valueForKey:@"created_time"], [photo valueForKey:@"id"], [[url path] pathExtension]];
+    NSString *targetFolder = [self.downloadPath stringByAppendingPathComponent:filename];
+    
+    [imageData writeToFile:targetFolder atomically:NO];
     if (nil != delegate) {
         [delegate performSelectorOnMainThread:@selector(photoDownloaded:) withObject:self waitUntilDone:YES];
     }

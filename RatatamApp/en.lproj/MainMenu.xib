@@ -644,7 +644,7 @@
 								<bool key="EncodedWithXMLCoder">YES</bool>
 								<object class="NSMenuItem" id="5823276">
 									<reference key="NSMenu" ref="960269358"/>
-									<string key="NSTitle">Download...</string>
+									<string key="NSTitle">Photo Backup...</string>
 									<string key="NSKeyEquiv"/>
 									<int key="NSMnemonicLoc">2147483647</int>
 									<reference key="NSOnImage" ref="35465992"/>

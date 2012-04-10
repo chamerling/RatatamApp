@@ -24,8 +24,14 @@
 @synthesize progress;
 @synthesize cancelButton;
 @synthesize startButton;
+@synthesize importToMenu;
 @synthesize operationQueue;
 @synthesize downloadPathLabel;
+@synthesize targetMenuItem;
+@synthesize separator;
+@synthesize popupButton;
+@synthesize selectedPath;
+@synthesize downloadFolder;
 
 - (id)initWithWindow:(NSWindow *)window
 {
@@ -48,6 +54,7 @@
 - (IBAction)cancelAction:(id)sender {
     // need to stop, if not download continues in the background...
     [operationQueue cancelAllOperations];
+    [label setStringValue:@"Click the 'Start' button to backup your photos"];
     [[self window]close];
 }
 
@@ -71,28 +78,47 @@
     
     [self performSelectorOnMainThread:@selector(dataReceived:) withObject:nil waitUntilDone:YES];
     
-    // Create download folder
-    NSArray *searchPaths = NSSearchPathForDirectoriesInDomains(NSDownloadsDirectory, NSUserDomainMask, YES);
-    NSString *downloadFolder = [[searchPaths lastObject] stringByAppendingPathComponent:@"Image Download"];
-    if ( ![[NSFileManager defaultManager] fileExistsAtPath:downloadFolder] ) {
-        [[NSFileManager defaultManager] createDirectoryAtPath:downloadFolder attributes:nil];
+    // get the selected item for download...
+    NSInteger selectedItem = [popupButton indexOfSelectedItem];
+    if (selectedItem == 0) {
+        // Desktop
+        NSArray *searchPaths = NSSearchPathForDirectoriesInDomains(NSDesktopDirectory, NSUserDomainMask, YES);
+        self.downloadFolder = [[searchPaths lastObject] stringByAppendingPathComponent:@"Instagram"];
+        if ( ![[NSFileManager defaultManager] fileExistsAtPath:self.downloadFolder] ) {
+            [[NSFileManager defaultManager] createDirectoryAtPath:self.downloadFolder attributes:nil];
+        }
+        
+    } else if (selectedItem == 1) {
+        // Images
+        NSArray *searchPaths = NSSearchPathForDirectoriesInDomains(NSPicturesDirectory, NSUserDomainMask, YES);
+        self.downloadFolder = [[searchPaths lastObject] stringByAppendingPathComponent:@"Instagram"];
+        if ( ![[NSFileManager defaultManager] fileExistsAtPath:self.downloadFolder] ) {
+            [[NSFileManager defaultManager] createDirectoryAtPath:self.downloadFolder attributes:nil];
+        }
+
+    } else if (selectedItem == 3 && self.selectedPath) {
+        // custom
+        NSURL *folder = [NSURL fileURLWithPath:self.selectedPath];
+        NSURL *createFolder = [folder URLByAppendingPathComponent:@"Instagram"];
+        self.downloadFolder = [createFolder path];
+        [[NSFileManager defaultManager] createDirectoryAtPath:downloadFolder withIntermediateDirectories:YES attributes:nil error:nil];
+
+    } else {
+        NSArray *searchPaths = NSSearchPathForDirectoriesInDomains(NSDesktopDirectory, NSUserDomainMask, YES);
+        self.downloadFolder = [[searchPaths lastObject] stringByAppendingPathComponent:@"Instagram"];
+        if ( ![[NSFileManager defaultManager] fileExistsAtPath:self.downloadFolder] ) {
+            [[NSFileManager defaultManager] createDirectoryAtPath:self.downloadFolder attributes:nil];
+        }
     }
     
     // let's download...
     if (photoSet) {
-        NSInteger current = 1;
         nbDownloads = 0;
         nbPhotos = [photoSet count];
-        
+                
         for(NSDictionary* photo in photoSet) {
-            NSURL* url = [NSURL URLWithString:[[[photo valueForKey:@"images"] valueForKey:@"standard_resolution"] valueForKey:@"url"]];
-            // maybe we can use a HTTP stream to get status and progress...
-            NSString *extension = [[url path] pathExtension];
-            NSString *filename = [NSString stringWithFormat:@"Image %d.%@", current++, extension];
-            NSString *downloadPath = [downloadFolder stringByAppendingPathComponent:filename];
-            BulkDownloadOperation *operation = [[BulkDownloadOperation alloc] initWithPhoto:photo downloadPath:downloadPath];
+            BulkDownloadOperation *operation = [[BulkDownloadOperation alloc] initWithPhoto:photo downloadPath:downloadFolder];
             operation.delegate = self;
-            
             [operationQueue addOperation:operation];
         }
     }
@@ -118,6 +144,7 @@
     if (state > 100) {
         state = 100;
     }
+    
     [progress setDoubleValue:state];
 }
 
@@ -137,11 +164,14 @@
         // Get an array containing the full filenames of all
         // files and directories selected.
         NSArray* files = [openDlg URLs];
-        
-        for (NSURL *url in files) {
-            NSLog(@"URL %@", url);
-            [downloadPathLabel setStringValue:[NSString stringWithFormat:@"%@", url]];
-        }
+        NSURL *url = [files objectAtIndex:0];
+        self.selectedPath = [NSString stringWithFormat:@"%@", [url path]];           
+        [targetMenuItem setHidden:NO];
+        [targetMenuItem setEnabled:YES];
+        [targetMenuItem setState:1];
+        [targetMenuItem setTitle:[[url path] lastPathComponent]];
+        [separator setHidden:NO];
+        [popupButton selectItemAtIndex:3];
     }
 }
 
@@ -156,6 +186,8 @@
         [startButton setEnabled:YES];
         
         [[self window] close];
+        [[NSWorkspace sharedWorkspace] openFile:self.downloadFolder];
+        NSBeep();
         // open the folder...
     }
 }
