@@ -340,6 +340,14 @@
     [dlController showWindow:self];
 }
 
+- (IBAction)goToTopAction:(id)sender {
+    // http://stackoverflow.com/questions/4506391/nsscrollview-jumping-to-bottom-on-scroll
+    if ([scrollView hasVerticalScroller]) {
+        scrollView.verticalScroller.floatValue = 0;
+    }
+    [[scrollView contentView] scrollToPoint: NSMakePoint(0, 0)];
+}
+
 #pragma mark - memory management
 - (void)dealloc
 {

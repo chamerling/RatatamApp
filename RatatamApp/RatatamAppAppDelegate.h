@@ -26,6 +26,8 @@
     
     InstagramFetcher *fetcher;
 
+    IBOutlet NSScrollView *scrollView;
+    
     // toolbar
     IBOutlet NSView *toolbarView;
     IBOutlet NSToolbar *toolbar;
@@ -59,5 +61,7 @@
 # pragma mark - tools
 - (IBAction)downloadAction:(id)sender;
 
+# pragma mark - navigate
+- (IBAction)goToTopAction:(id)sender;
 
 @end
