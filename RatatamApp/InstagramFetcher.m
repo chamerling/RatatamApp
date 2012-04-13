@@ -47,7 +47,7 @@
 
 - (void)stop {
     [newPhotoTimer invalidate];
-    [newCommentTimer invalidate];
+    //[newCommentTimer invalidate];
     lastId = nil;
 }
 
@@ -57,12 +57,12 @@
     NSRunLoop* runLoop = [NSRunLoop currentRunLoop];
     
     newPhotoTimer = [NSTimer scheduledTimerWithTimeInterval:60 target:self selector:@selector(getNewPhotos:) userInfo:nil repeats:YES];
-    newCommentTimer = [NSTimer scheduledTimerWithTimeInterval:100 target:self selector:@selector(getNewComments:) userInfo:nil repeats:YES];
+    //newCommentTimer = [NSTimer scheduledTimerWithTimeInterval:100 target:self selector:@selector(getNewComments:) userInfo:nil repeats:YES];
     
     [[NSRunLoop currentRunLoop] addTimer:newPhotoTimer forMode:NSRunLoopCommonModes];
     [newPhotoTimer setFireDate: [NSDate dateWithTimeIntervalSinceNow:1]];
-    [[NSRunLoop currentRunLoop] addTimer:newCommentTimer forMode:NSRunLoopCommonModes];
-    [newCommentTimer setFireDate: [NSDate dateWithTimeIntervalSinceNow:5]];
+    //[[NSRunLoop currentRunLoop] addTimer:newCommentTimer forMode:NSRunLoopCommonModes];
+    //[newCommentTimer setFireDate: [NSDate dateWithTimeIntervalSinceNow:5]];
     
     [runLoop run];
     [pool release];
