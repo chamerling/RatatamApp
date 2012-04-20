@@ -24,7 +24,7 @@
 @synthesize progress;
 @synthesize cancelButton;
 @synthesize startButton;
-@synthesize importToMenu;
+@synthesize importTo;
 @synthesize operationQueue;
 @synthesize downloadPathLabel;
 @synthesize targetMenuItem;
@@ -48,13 +48,18 @@
     [super windowDidLoad];
     
     // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
-    [label setStringValue:@"Click the 'Start' button to backup your photos"];
+    [label setStringValue:@"Click the 'Start...' button to backup your photos"];
 }
 
 - (IBAction)cancelAction:(id)sender {
     // need to stop, if not download continues in the background...
     [operationQueue cancelAllOperations];
-    [label setStringValue:@"Click the 'Start' button to backup your photos"];
+    [label setStringValue:@"Click the 'Start...' button to backup your photos"];
+    
+    if (nbDownloads > 0 && self.downloadFolder) {
+        [[NSWorkspace sharedWorkspace] openFile:self.downloadFolder];
+    }
+    
     [[self window]close];
 }
 
@@ -78,25 +83,7 @@
     
     [self performSelectorOnMainThread:@selector(dataReceived:) withObject:nil waitUntilDone:YES];
     
-    // get the selected item for download...
-    NSInteger selectedItem = [popupButton indexOfSelectedItem];
-    if (selectedItem == 0) {
-        // Desktop
-        NSArray *searchPaths = NSSearchPathForDirectoriesInDomains(NSDesktopDirectory, NSUserDomainMask, YES);
-        self.downloadFolder = [[searchPaths lastObject] stringByAppendingPathComponent:@"Instagram"];
-        if ( ![[NSFileManager defaultManager] fileExistsAtPath:self.downloadFolder] ) {
-            [[NSFileManager defaultManager] createDirectoryAtPath:self.downloadFolder attributes:nil];
-        }
-        
-    } else if (selectedItem == 1) {
-        // Images
-        NSArray *searchPaths = NSSearchPathForDirectoriesInDomains(NSPicturesDirectory, NSUserDomainMask, YES);
-        self.downloadFolder = [[searchPaths lastObject] stringByAppendingPathComponent:@"Instagram"];
-        if ( ![[NSFileManager defaultManager] fileExistsAtPath:self.downloadFolder] ) {
-            [[NSFileManager defaultManager] createDirectoryAtPath:self.downloadFolder attributes:nil];
-        }
-
-    } else if (selectedItem == 3 && self.selectedPath) {
+    if (self.selectedPath) {
         // custom
         NSURL *folder = [NSURL fileURLWithPath:self.selectedPath];
         NSURL *createFolder = [folder URLByAppendingPathComponent:@"Instagram"];
@@ -156,6 +143,7 @@
     [openDlg setCanChooseDirectories:YES];
     [openDlg setCanCreateDirectories:YES];
     [openDlg setAllowsMultipleSelection:NO];
+    [openDlg setTitle:@"Choose Backup Destination Folder"];
     
     // Display the dialog.  If the OK button was pressed,
     // process the files.
@@ -165,13 +153,13 @@
         // files and directories selected.
         NSArray* files = [openDlg URLs];
         NSURL *url = [files objectAtIndex:0];
-        self.selectedPath = [NSString stringWithFormat:@"%@", [url path]];           
-        [targetMenuItem setHidden:NO];
-        [targetMenuItem setEnabled:YES];
-        [targetMenuItem setState:1];
-        [targetMenuItem setTitle:[[url path] lastPathComponent]];
-        [separator setHidden:NO];
-        [popupButton selectItemAtIndex:3];
+        self.selectedPath = [NSString stringWithFormat:@"%@", [url path]];  
+        
+        [importTo setStringValue:[NSString stringWithFormat:@"Importing photos to %@/Instagram", self.selectedPath]];
+        [importTo setHidden:NO];
+        
+        // let's download
+        [self startAction:self];
     }
 }
 
