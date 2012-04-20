@@ -27,8 +27,6 @@
 @synthesize importTo;
 @synthesize operationQueue;
 @synthesize downloadPathLabel;
-@synthesize targetMenuItem;
-@synthesize separator;
 @synthesize popupButton;
 @synthesize selectedPath;
 @synthesize downloadFolder;

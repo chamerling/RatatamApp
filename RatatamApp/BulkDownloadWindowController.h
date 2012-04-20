@@ -39,8 +39,6 @@
 
 @property (readwrite, retain) NSOperationQueue *operationQueue;
 @property (assign) IBOutlet NSTextField *downloadPathLabel;
-@property (assign) IBOutlet NSMenuItem *targetMenuItem;
-@property (assign) IBOutlet NSMenuItem *separator;
 @property (assign) IBOutlet NSPopUpButton *popupButton;
 
 - (IBAction)cancelAction:(id)sender;
