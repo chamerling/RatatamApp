@@ -2,6 +2,8 @@
 
 OS X Client for Instagram.
 
+![Ratatam](http://f.cl.ly/items/0Q2Y3l3f3i3a1101431b/ratatamapp.png "Ratatam Screenshot")
+
 ## Notes
 
 I originally launched Ratatam as a paid application on the Mac App Store in 2012. As of today (11/2013), the application has been downloaded hundreds of times and got quite good feedback from users.
